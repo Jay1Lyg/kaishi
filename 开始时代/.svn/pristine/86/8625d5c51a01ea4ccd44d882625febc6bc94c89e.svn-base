@@ -1,0 +1,444 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title 模板选择
+    link(rel='stylesheet', href='/css/load.css')
+    style.
+      .return{
+      position:fixed;
+      width:40px;
+      left:10px;
+      top:10px;
+      z-index: 6;
+      }
+      .outCast{
+      width:100%;
+      }
+      .smCaD{
+      width:48%;
+      float:left;
+      margin:2px;
+      }
+      .choice{
+      position: relative;
+      right:20px;
+      }
+      .smCas{
+      width:100%;
+      }
+      .dis{
+      display:none;
+      }
+      .choi{
+      width:30px;
+      position:absolute;
+      left:150px;
+      top:5px;
+      }
+      .tit{
+      height:50px;
+      width:100%;
+      text-align:center;
+      font-size:15px;
+      color:#4da2ad;
+      }
+      .explain{
+      font-size:14px;
+      color:#868686;
+      }
+      .ale1,.alert2{
+      position: fixed;
+      z-index:1000;
+      width:100%;
+      height:100%;
+      }
+      .aleO,.alert3{
+      position: fixed;
+      z-index:900;
+      width:100%;
+      height:100%;
+      opacity: 0.7;
+      background: black;
+      }
+      #alertIn,.alertIn{
+      background: white;
+      width:220px;
+      height:110px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      border-radius:5%;
+      }
+      .confi{
+      margin-top:20px;
+      width:30px;
+      }
+      .alertSi,#alert4>.alertIn>.alertSi{
+      color:#4da2ad;
+      }
+      .alert3In{
+      font-size:15px;
+      width:70%;
+      height:150px;
+      color:#666;
+      }
+      .alert3In p{
+      font-size:14px;
+      margin-top:22px;
+      margin-bottom:22px;
+      }
+      .alert3In span{
+      font-size:15px;
+      color:#33cc66
+      }
+      #choseMobi{
+      background:#f2f2f2;
+      width:100%;
+      height:50px;
+      z-index:2222;
+      position: fixed;
+      left:0;
+      bottom: 0;
+      text-align: center;
+      }
+      #showPic{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:1211;
+        height:100%;
+        overflow:auto;
+      }
+      #showPic img{
+        width:100%;
+      }
+      
+  body
+    img.return(src='/img/castting/return.png', alt='')
+    .outCast(data-out='10')
+      //
+        <div class="smCaD">
+        <div class="choice">
+        <img class="choi no" src="/img/castting/NoChoi.png" alt="">
+        <img class="dis ch" src="/img/castting/xuanzhong.png" alt="">
+        </div>
+        <img class="smCas" src="/img/castting/casting4.png" alt="">
+        <p class="tit">青春绿荫 <span class="explain">(免费)</span></p>
+        </div>
+    #alert.dis.ale1
+      #alertIn.alertIn
+        img.confi(src='/img/castting/choice.png', alt='')
+        p
+          | 已 选用
+          span.alertSi 青春绿荫
+          | 为当前模板
+    #alert2.dis.aleO
+    #alert4.dis.ale1
+      .alertIn.alert3In
+        p.alertSi 保存成功
+        p 请为你的简历选择模板用于分享
+        span 确定
+    #alert3.dis.aleO
+    #choseMobi.dis
+    #showPic.dis
+    script(src='/js/jquery-2.1.4.js')
+    script(src='/js/vconsole.min.js')
+    script(type='text/javascript', src='/js/url.js')
+    script.
+      function GetRequest() {
+          var url = location.search; //获取url中"?"符后的字串
+          var theRequest = new Object();
+          if (url.indexOf("?") != -1) {
+              var str = url.substr(1);
+              strs = str.split("&");
+              for (var i = 0; i < strs.length; i++) {
+                  theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+              }
+          }
+          return theRequest;
+      }
+      var a=GetRequest();
+       var a=GetRequest();
+      var str=a.u;
+      var str_arr=str.split("/");
+      var userid=str_arr[0];
+      var appid=str_arr[1];
+      var openid=str_arr[2];
+      console.log(str)
+      console.log(str.split("/"));
+      
+      console.log(userid);
+      var url_url = '/agent/a_userprofile/' + userid + '/null';
+      $.ajax({
+        url:url_url,
+        type:"get",
+        dataType:"jsonp",
+        success:function(data){
+          console.log(data);
+        }
+      })
+
+      var actorTemplateInUser_id="";
+      var old_actorTemplateInUser_id="";
+      var url1="/WX/page_previewGreenshadeofyouthActorTemplate/:userid";
+      var actUrl="/WX/wx_searchActorTemplateStatus";
+      var jumpUrl = [
+        {"scanUrl":"/WX/page_useGreenshadeofyouthActorTemplate/","urlShare":"/WX/page_previewGreenshadeofyouthActorTemplate/"},
+        {"scanUrl":"/WX/page_useAtmosphericBluesActorTemplate/","urlShare":"/WX/page_previewAtmosphericBluesActorTemplate/"},
+        {"scanUrl":"/WX/page_usePayFashionInsiderActorTemplate/","urlShare":"/WX/page_previewPayFashionInsiderActorTemplate/"}]
+      var arr=[
+      {"index":1,"url":"/img/castting/casting1.png","urls":"/img/castting/casting4.png","poi":1,"name":"青春绿荫"},
+      {"index":2,"url":"/img/castting/casting2.png","urls":"/img/castting/casting5.png","poi":0,"name":"大气蓝调","price":"3.00"},
+      {"index":3,"url":"/img/castting/casting3.png","urls":"/img/castting/casting6.png","poi":0,"name":"时尚达人","price":"6.9"}
+      ];
+      $.ajax({
+        type : "POST",
+        url:actUrl,
+        data:{"user_id":userid},
+        dataType:"jsonp",
+        success:function(data){
+          console.log(data);
+          arr[1].data=data.AtmosphericBlues;
+          arr[0].data=data.Greenshadeofyouth;
+          arr[2].data=data.FashionInsider;
+          render(arr);
+          bindClick();
+        }
+      })
+
+      function alert2(str){
+        var $ale1=$("#alert"),$ale2=$("#alert2");
+        $ale1.removeClass("dis")
+        $ale2.removeClass("dis")
+        $ale1.unbind().on("touchstart",function(){
+          $ale2.addClass("dis")
+          $ale1.addClass("dis")
+        })
+        $(".alertSi").html(str);  
+      }
+      function alert3(){
+          var $ale1=$("#alert3"),$ale2=$("#alert4");
+          $ale1.removeClass("dis")
+          $ale2.removeClass("dis")
+          $ale2.unbind().on("touchstart",function(){
+          $ale2.addClass("dis")
+          $ale1.addClass("dis")
+        })
+      }
+      function render(arr){
+        var html="",str="";
+        for(var i = 0 ; i < arr.length;i++){
+        var isCan=arr[i].data.ifCanBeUsed;
+        html+="<div class='smCaD'"
+        html+=" data='"+arr[i].urls+"'><div class='choice ";
+        html+=isCan?"":" dis ";
+        html+="' data-num="+arr[i].index+" data-actor='" +arr[i].data.actorTemplateInUser_id+ "'><img class='choi no"
+        html+=(arr[i].data.ifUsed=="2")?" ":" dis";
+        html+=" ' src='/img/castting/NoChoi.png' alt=''><img class='";
+        if(arr[i].data.ifUsed=="2"){
+           html+=" dis ";
+        }else{
+          //- console.log(arr[i].data.ifUsed)
+           actorTemplateInUser_id=arr[i].data.actorTemplateInUser_id;
+        }
+          
+        html+=" ch choi ' src='/img/castting/xuanzhong.png' alt=''></div>";
+        html+="<img class='smCas' src="+arr[i].url+" alt=''>"
+        html+="<p class='tit'><span class='picName' data-pic="+arr[i].index+">"+arr[i].name+"</span> <span class='explain'>";
+        var poi=arr[i].poi;
+        if(arr[i].data.ifCanBeUsed||poi){
+          html+="(可使用)";
+        }else{
+          html+="￥:"+arr[i].price;
+        }
+
+        html+= " </span></p></div>";
+        str+="<p class='dis pay' data-actor='" +arr[i].data.actorTemplateInUser_id+ "'  data-mod='"+arr[i].index+"'><span class='alertSi'>选用模板</span>";
+        str+="￥:"+arr[i].price+"</p>";
+        }
+        $(".outCast").html(html);
+        $("#choseMobi").html(str);
+        var left = $(".smCas").width();
+        $(".choice img").css({
+        "left":left-15
+        })
+        $(".return").on("touchstart",function(){
+          window.history.go(-1);
+        })
+      }
+      function bindClick(){
+        $('.choice').on("touchstart",function(e){
+          var isChoice = $(e.target).hasClass("ch");
+          
+          if(isChoice){
+            //- ;
+            //- $(e.target).addClass('dis').siblings().removeClass('dis').addClass('choi');
+          }else{
+            $(".ch").addClass('dis').siblings().removeClass('dis')
+            $(e.target).addClass('dis').siblings().removeClass('dis').addClass('choi');
+            var new_actorTemplateInUser_id = $(e.target).parent().data("actor");
+            choiceMod(new_actorTemplateInUser_id)
+          }
+        })
+        $('.smCas').on('touchstart',function(e){
+          var $choi = $(e.target).siblings('.choice')
+          var isChoice = $choi.hasClass('dis');
+          var num = $choi.data('num');
+          if(isChoice){
+            showPic(num)
+          }else{            
+            if($choi.children('.ch').hasClass("dis")){
+                $choi.data('actor')
+                window.location.href=jumpUrl[num-1].scanUrl+userid+"/"+actorTemplateInUser_id+"/"+$choi.data('actor')+"/"+appid;
+              }else{
+                 window.location.href=jumpUrl[num-1].urlShare+userid+"/"+appid;
+              }
+          }
+        });
+        $('body').on('click','.pay',function(e){
+          var temId = $(e.target).data('actor');
+          
+          $.ajax({
+            url:"/WX/wx_payActorTemplate",
+            type:"POST",
+            dataType:"jsonp",
+            data:{
+              "openid":openid,
+              "appid":appid,
+              "total_fee":"0.1"
+            },
+            success:function(data){
+              console.log(data);
+             
+              var $choi = $(e.target).siblings('.choice')
+              var data1=data;
+               if (typeof WeixinJSBridge == "undefined"){
+                     if( document.addEventListener ){
+                         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                     }else if (document.attachEvent){
+                         document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+                         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                     }
+                  }else{
+                     onBridgeReady();
+                  }
+
+                  function onBridgeReady(){
+                  
+                     WeixinJSBridge.invoke(
+                         'getBrandWCPayRequest', 
+                         {
+                             "appId" : data1.appid,     //公众号名称，由商户传入     
+                             "timeStamp" : data1.timeStamp,         //时间戳，自1970年以来的秒数     
+                             "nonceStr" : data1.nonceStr, //随机串     
+                             "package" : "prepay_id="+data1.prepay_id,     
+                             "signType" : "MD5",         //微信签名方式：     
+                             "paySign" : data1.paySign,//微信签名 
+                         },
+                         function(res){   
+                             //alert(res.err_msg);  
+                             var timestamp = Date.parse(new Date());
+                             console.log(res.err_msg == "get_brand_wcpay_request:ok");
+                             if(res.err_msg == "get_brand_wcpay_request:ok") {
+                             var data={
+                                      "user_id":userid,
+                                      "new_actorTemplateInUser_id":temId,
+                                      "appid": data1.appid,
+                                      "openid": data1.openid,
+                                      "out_trade_no": data1.out_trade_no,
+                                      "total_fee": data1.total_fee,
+                                      "date":timestamp,
+                             }
+                             console.log(1111111111)
+                             console.log(data)
+                              $.ajax({
+                                    url:"/WX/wx_changeActorTemplatePayStatus",
+                                    type:"POST",
+                                    dataType:"jsonp",
+                                    data:data,
+                                    success:function(data){
+                                        console.log(data);
+                                        console.log(44444);
+                                        window.location.href='/WX/page_usePayFashionInsiderActorTemplate/'+userid+'/'+actorTemplateInUser_id+'/'+temId+'/'+appid;
+                                        actorTemplateInUser_id=temId;
+
+                                    },
+                                    error:function(data){
+                                        alert("fail")
+                                    }
+                              })
+                                var u22='/WX/page_usePayFashionInsiderActorTemplate/'+userid+'/'+actorTemplateInUser_id+'/'+temId;
+                                
+                                console.log(u22)
+                               //window.location.href='/WX/page_usePayFashionInsiderActorTemplate/'+userid+'/'+actorTemplateInUser_id+'/'+temId;
+                                
+                             }else if(res.err_msg == "get_brand_wcpay_request:fail"){
+                             $alert('支付失败')
+                             }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+                         }
+                     ); 
+                  }
+           
+            },
+            error:function(data){
+              alert("没有成功啊！ 请重新再试一次！")
+            }
+          })
+        })
+      }
+        function showPic(num){
+          var img = new Image();
+          img.src=arr[num-1].urls;
+          $('#showPic').html(img).removeClass("dis").on('touchstart',function(e){
+            var _touch = e.originalEvent.targetTouches[0];
+            var _x= _touch.pageY;
+            //- e.preventDefault();
+            var _date1 = new Date();
+              $('#showPic').on('touchend',function(e){
+                var _touch2 = e.originalEvent.changedTouches[0];
+                var _x2= _touch2.pageY;
+
+                e.preventDefault();
+         
+                var _date2 = new Date();
+                if((_date2-_date1)<200&&Math.abs(_x2-_x)<10){
+                  $('#showPic').addClass('dis');
+                  $('[data-mod='+num+']').addClass('dis');
+                }
+              })
+            });
+
+            $("#choseMobi").removeClass('dis').children("p").addClass("dis");
+            $('[data-mod='+num+']').removeClass('dis');
+        }
+
+      function choiceMod(new_actorTemplateInUser_id){
+        $.ajax({
+          url:"/WX/wx_useActorTemplate",
+          type:"POST",
+          dataType:"jsonp",
+          data:{
+            "user_id":userid,
+            "old_actorTemplateInUser_id":actorTemplateInUser_id,
+            "new_actorTemplateInUser_id":new_actorTemplateInUser_id
+          },
+          success:function(data){
+            console.log(data);
+            actorTemplateInUser_id=new_actorTemplateInUser_id;
+            old_actorTemplateInUser_id=actorTemplateInUser_id;
+          },
+          error:function(data){
+            alert("没有选选择成功啊！ 请重新再试一次！")
+          }
+        })
+      }
+
+      

@@ -1,0 +1,129 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='Generator', content='EditPlus®')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title casting3
+    link(rel='stylesheet', href='/css/casting3.css')
+    style.
+      .alertSi{
+       color:#4da2ad;
+      }
+      .choseMobi{
+        background:#f2f2f2;
+        width:100%;
+        height:50px;
+        z-index:100;
+        position: fixed;
+        left:0;
+        bottom: 0;
+        text-align: center;
+        font-size:20px;
+        line-height:50px;
+      }
+  body
+    .container
+    script(src='/js/jquery-2.1.4.js')
+    script(type='text/javascript', src='/js/pinyin_dict_notone.js')
+    script(type='text/javascript', src='/js/pinyinUtil.js')
+    script(type='text/javascript', src='/js/pinyin.js')
+    script.
+      var userid=!{JSON.stringify(userid)};
+      var appid=!{JSON.stringify(appid)};
+      var url_url = '/agent/a_userprofile/' + userid + '/null';
+      $.ajax({
+        url:url_url,
+        type:"get",
+        dataType:"jsonp",
+        success:function(data){
+          console.log(data);
+          render(data);
+        }
+      })
+      function render(data){
+          var html="";
+        html+='<div class="header"><div class="selfName"><div class="myName"><h1>'+data.realname+'</h1><h1>'+replaceStr(pinyinUtil.getPinyin(data.realname))+'</h1>';
+        html+='</div><div class="actor"><img src="'+data.compress_iconUrl+'"></div></div></div>'
+        html+='<div class="basicMsg"><div class="basicLeft">基本资料</div><div class="basicRight"><ul>';
+        html+='<li>艺&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：'+data.artname+'</li>'
+        html+='<li>真实姓名：'+data.realname+'</li>'
+        html+='<li>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：'+(data.gender==1?"男":"女")+'</li>'
+        html+='<li>出生日期：'+data.birth+'</li>';
+        html+='<li>三&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围：'+data.bust+'/'+data.waist+'/'+data.hip+'</li>';
+        html+='<li>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+data.height+'</li>';
+        html+='<li>体&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+data.weight+'</li>';
+        html+='<li>毕业院校：'+data.schoolname+'</li>';
+        html+='<li>技能特长：'+data.skill_str+'</li>';
+        html+='<li>特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;征：'+data.feature_str+'</li>';
+        html+='</ul></div><div style="clear:both;"></div></div></div>'
+        var workArr=data.workExpArray;
+        if(workArr.length!=0){
+
+        for(var i = 0;i<workArr.length;i++){
+          html+='<div class="canexp"><div class="canexpLeft"><div class="picTop">';
+            var compress=workArr[i].image_set.compressImagesURLArray;
+            if(compress.length!=0){
+              for(var k = 0 ; k < compress.length;k++){
+                html+='<img src="'+compress[k].imagesURL+'">';
+              }
+            }
+          html+='</div><div class="picMsg">';
+          html+='<h2>'+workArr[i].detail.productionName+'</h2>';
+          html+='<p>剧目类型：'+workArr[i].detail.productionType+'</p>';
+          html+='<p>饰演角色：付亚男'+workArr[i].detail.role+'</p>';
+          html+='<p>角色类型：'+workArr[i].detail.roleTag+'</p></div></div>'
+        }}
+        html+='<div class="canexpRight">参演经历</div><div style="clear:both;"></div></div>';
+        html+='<div class="photoVideo"><div class="pvTitle">照片视频 </div><div class="displayBox">';
+        html+='<div class="photoOne"><img src="'+data.CompressCastingImageUrl.compress_frontimage+'"></div>';
+        html+='<div class="photoTwo"><img src="'+data.CompressCastingImageUrl.compress_leftimage45+'"></div>';
+        html+='<div class="photoThree"><img src="'+data.CompressCastingImageUrl.compress_rightimage45+'"></div>';
+        html+='<div class="photoFour"><img src="'+data.CompressCastingImageUrl.compress_rightimage90+'">				</div>';
+        html+='<div class="photoFive"><img src="'+data.CompressCastingImageUrl.compress_leftimage90+'">				</div>';
+        html+='<div class="photoSix"><img src="'+data.CompressCastingImageUrl.compress_frontimagewaist+'">				</div>';
+        html+='<div class="photoSeven"><img src="'+data.CompressCastingImageUrl.compress_frontimageall+'">				</div>';
+        html+='<div class="photoEight"><img src="'+data.CompressCastingImageUrl.compress_frontimagehead+'">				</div>';
+        html+='<div class="photoNine"><img src="'+data.CompressCastingImageUrl.compress_artimage+'">				</div>';
+        html+='</div><div class="videoLink">视频连接：<a href=""></a></div></div><div class="accecpBiao"><div class="acTitle">接戏标准</div>';
+        var nameSet=data.typename.nameSet;
+        if(nameSet.length!=0){
+          for(var i = 0 ; i <nameSet.length;i++ ){
+            html+='<ul class="acMsg"><li>剧目类别：'+nameSet[i].categoryName+'</li><li>剧目类型：';
+            var reper=nameSet[i].repertoireTypeArray;
+            if(reper.length!=0){
+              for(var k = 0 ; k < reper.length ; k ++ ){
+                html+=reper[k].repertoireTypeName;
+              }
+            }
+          }
+        }
+        html+='</li><li>角色类别：'+data.roletag_str+'</li><li>档       期：'+(data.schedule?"有":"没有")+'</li></ul>';
+        html+='<div class="backG"><img src="imags/for.png" width="750" height="105" border="0" alt=""></div></div>'
+        $(".container").html(html);
+        var stt="<div style='height:50px;width:1px;'>";
+        $(".container").append(stt);
+        var str = "</div><div class='choseMobi'><span class='alertSi'>立即使用</span></div>"
+        $('body').append(str);
+        var urlsNow=window.location.href; 
+        urlsNow=urlsNow.split("/")
+        $('.choseMobi').on('touchend',function(){
+          $.ajax({
+            url:"/WX/wx_useActorTemplate",
+            type:"POST",
+            dataType:"jsonp",
+            data:{
+              "user_id":urlsNow[5],
+              "old_actorTemplateInUser_id":urlsNow[6],
+              "new_actorTemplateInUser_id":urlsNow[7]
+            },
+            success:function(data){
+              console.log(data);
+              window.location.href="/WX/page_previewAtmosphericBluesActorTemplate/"+urlsNow[5]+"/"+appid;
+            },
+            error:function(data){
+              alert("没有选选择成功啊！ 请重新再试一次！")
+            }
+          })
+        })
+      }

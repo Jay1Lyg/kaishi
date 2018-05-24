@@ -1,0 +1,35 @@
+.share_templete {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    z-index: 250;
+    /*display: none;*/
+}
+
+.share_templete img {
+    width: 180px;
+    margin: 0 auto;
+    border: 1px solid white;
+
+}
+
+.share_btn {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.share_btn button {
+    margin: 5% 5%;
+    flex: 1;
+    /*width: 200px;*/
+    height: 40px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+}
+#tem{
+    display: none;
+}

@@ -1,0 +1,229 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='Generator', content='EditPlus®')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title casting2
+    link(rel='stylesheet', href='/css/casting2.css')
+    style.
+      .apply{
+      background: #f2f2f2;
+      width: 100%;
+      height: 50px;
+      z-index: 100;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      text-align: center;
+      font-size: 20px;
+      line-height: 50px;
+      }
+      .apply p{
+          color: #4da2ad;
+      }
+
+  body
+  .con
+  .apply
+    p 立即使用
+  script(type='text/javascript', src='/js/jquery-2.1.4.js')
+  script.
+      var userid=!{JSON.stringify(userid)};
+    var appid=!{JSON.stringify(appid)};
+    var url_url='/agent/a_userprofile/'+userid+'/null';
+        
+          $.ajax({
+              type : "get",
+              url : url_url,
+              dataType : "jsonp",
+              success : function(data){
+                console.log(data);
+                 var pin=data.realname;
+                $("title").html("演员|" + pin + "|CASTING");
+                var gender=data.gender;
+                var genderedit;
+                if(gender=='1'){
+                  genderedit='男'
+                }else if(gender=='2'){
+                  genderedit='女'
+                }else{
+                genderedit='不限'
+                };
+               var typename=data.typename.nameSet;
+                 
+                  var span='';
+                   for(var j=0;j<typename[0].repertoireTypeArray.length;j++){
+                    span+='<span style="margin-left:0.1rem;color:#999;font-size:0.26rem" id="'+typename[0].repertoireTypeArray[j].repertoireTypeid+'"class=" leixing1" >'+typename[0].repertoireTypeArray[j].repertoireTypeName+'<span>'
+                  }
+                var infoAll;
+                var workExp,workExparr=data.workExpArray;
+                 for(var i=0;i<workExparr.length;i++){
+                      if(workExparr[i].image_set.compressImagesURLArray.length>0){
+                          var imagesURL=workExparr[i].image_set.compressImagesURLArray[0].compress_imagesURL;
+                       }else{
+                         imagesURL='';
+                       }
+                       };
+                for(work of workExparr){
+                     workExp=`<div class="canphotos">
+                            <div class="canTop">
+                              <img src="${imagesURL}">
+                            </div>
+                            <div class="canBottom"> 
+                              <h2>《${work.detail.productionName}》</h2>
+                              <p>剧目类型：${work.detail.productionType}</p>
+                              <p>饰演角色：${work.detail.role}</p>
+                              <p>角色类型：${work.detail.roleTag}</p>
+                            </div>
+                          </div>`
+                  
+                };
+
+
+                if(data.schedule==false){
+                    var schedule='无档期';
+                  }else{
+                    var schedule='有档期';
+                  }
+                  var typename=data.typename.nameSet;
+                var one1='';
+                  for(var i=0;i<typename.length;i++){
+                  var span='';
+                   for(var j=0;j<typename[i].repertoireTypeArray.length;j++){
+                    span+='<span style="margin-left:0.1rem;color:#90a083;font-size:0.26rem" id="'+typename[i].repertoireTypeArray[j].repertoireTypeid+'"class=" leixing1" >'+typename[i].repertoireTypeArray[j].repertoireTypeName+'<span>'
+                  }
+                   one1 += '<div ><label  class="leibie1" style="font-size:0.28rem;color:#90a083;"> '+typename[i].categoryName+':</label><div style="display:inline" class="allleixing">'+span+'</div></div>'
+                  
+                };
+                var videoset=data.videoset;
+                  if(videoset==null||!(videoset.videos)){
+                    console.log("ll");
+                    video_url=''
+                  }else if(videoset.videos){
+                    video_url= videoset
+                    console.log("jjjj")
+                  }
+                infoAll=` <div class="container">
+                            <div class="search">
+                              <div class="searchLeft">${data.realname}</div>
+                              <div class="searchRight">搜索</div>
+                              <div style="clear:both;"></div>
+                            </div>
+                            <div class="selfMesg">
+                              <div class="photoLeft">
+                                <img src="${data.compress_iconUrl}">
+                              </div>
+                            </div>
+                            <!--个人资料--->
+                            <div class="msgRight">
+                              <div class="canTitle">
+                                <b></b>
+                                <h2>基本资料 Basic information</h2>
+                              </div>
+                              <ul>
+                               <li>艺&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：${data.artname}</li>
+                                <li>真实姓名：${data.realname}</li>
+                                <li>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：${genderedit}</li>
+                                <li>出生日期：${data.birth}</li>
+                                <li>三&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围：${data.bust}/${data.waist}/${data.hip}</li>
+                                <li>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高：${data.height}</li>
+                                <li>体&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重：${data.weight}</li>
+                                <li>毕业院校：${data.schoolname}</li>
+                                <li>技能特长：${data.skill_str}</li>
+                                <li>特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;征：${data.feature_str}</li>
+                              </ul>
+                            </div>
+                            <!--参演经历--->
+                            <div class="canexp">
+                              <div class="canTitle">
+                                <b></b>
+                                <h2>参演经历 Participate in the experience</h2>
+                              </div>
+                              <!--参演经历，可循环-->
+                              ${workExp}
+                              
+                            </div>
+                            <!--照片视频--->
+                            <div class="photoVideo">
+                              <div class="pvTitle">
+                                <b></b>
+                                <h2>照片视频 Photo video</h2>
+                              </div>
+                              <div class="displayBox">
+                                <div class="photoOne">
+                                  <img src="${data.CompressCastingImageUrl.compress_frontimage}">
+                                </div>
+                                <div class="photoTwo">
+                                  <img src="${data.CompressCastingImageUrl.compress_leftimage45}">
+                                </div>
+                                <div class="photoThree">
+                                  <img src="${data.CompressCastingImageUrl.compress_rightimage45}">
+                                </div>
+                                <div class="photoFour">
+                                  <img src="${data.CompressCastingImageUrl.compress_rightimage90}">
+                                </div>
+                                <div class="photoFive">
+                                  <img src="${data.CompressCastingImageUrl.compress_leftimage90}">
+                                </div>
+                                <div class="photoSix">
+                                  <img src="${data.CompressCastingImageUrl.compress_frontimagewaist}">
+                                </div>
+                                <div class="photoSeven">
+                                  <img src="${data.CompressCastingImageUrl.compress_frontimageall}">
+                                </div>
+                                <div class="photoEight">
+                                  <img src="${data.CompressCastingImageUrl.compress_frontimagehead}">
+                              </div>
+                                <div class="photoNine">
+                                  <img src="${data.CompressCastingImageUrl.compress_artimage}">
+                                </div>
+                              </div>
+                              <div class="videoLink">
+                                视频连接：<a href="">${video_url}</a>
+                              </div>
+                            </div>
+                            <!--接戏标准--->
+                            <div class="accecpBiao">
+                              <div class="acTitle">
+                                <b></b>
+                                <h2>接戏标准 Play standard</h2>
+                              </div>
+                              <ul class="acMsg">
+                                <li style="float:left">剧目类别类型：</li><div style="float:left">${one1}</div>
+                                <li style="clear:both;">饰演角色：${data.roletag_str}</li>
+                                <li>档&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期：${schedule}</li>
+                              </ul>
+                              <div class="backG">
+                                <img src="/img/castting/threeh.png">
+                              </div>
+                            </div>
+                           </div>`
+
+                           $('.con').html(infoAll);
+                           
+                }
+              })
+               var urlsNow=window.location.href;
+                urlsNow=urlsNow.split("/");
+                console.log(urlsNow);
+                 $('.apply').on('click',function(){
+                  $.ajax({
+                    url:"/WX/wx_useActorTemplate",
+                    type:"POST",
+                    dataType:"jsonp",
+                    data:{
+                      "user_id":urlsNow[5],
+                      "old_actorTemplateInUser_id":urlsNow[6],
+                      "new_actorTemplateInUser_id":urlsNow[7]
+                    },
+                    success:function(data){
+                      console.log(data);
+                      window.location.href="/WX/page_previewGreenshadeofyouthActorTemplate/"+urlsNow[5]+"/"+appid;
+                    },
+                    error:function(data){
+                      alert("没有选选择成功啊！ 请重新再试一次！")
+                    }
+                  })
+                })
+          

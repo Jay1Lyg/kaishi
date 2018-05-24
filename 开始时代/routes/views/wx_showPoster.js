@@ -1,0 +1,22 @@
+var keystone = require('keystone');
+var path = require('path');
+
+exports = module.exports = function(req, res) {
+    var location = req.params.location;
+	var pid = req.params.productionid;
+	var imagename = req.params.imagename;
+	//console.log(path.resolve('images/'+location+'/'+ pid + '/' +imagename));
+	//res.sendfile( path.resolve('images/'+location+'/'+ pid + '/' +imagename));
+	//res.sendfile( path.resolve('images/frontimage/59409bc8ddcd7a9107e1c3f5/81YpgU1Pa4qzS-kCDO5CZPyvEmxcWnUn_t0eE5Vlx9nyQRtT5sS5xkN5EZw3QvPw.jpg'));
+    var image_path = '/data/images/'+location+'/'+ pid + '/' +imagename;
+    console.log('^^^^^^^^^^^^^^^^^^^^image_path^^^^^^^^^^^^^^^^^^^^^^^^^');
+    console.log(image_path);
+    console.log('^^^^^^^^^^^^^^^^^^^^image_path^^^^^^^^^^^^^^^^^^^^^^^^^');
+	// res.sendfile( path.resolve('images/users/'+ mid + '/' +imgname));
+	//res.sendfile( path.resolve('images/'+location+'/'+ mid + '/' +imgname));
+	//res.sendfile( path.resolve('images/'+location+'/'+ mid + '/' +imgname));
+	res.sendfile(image_path);
+};
+
+
+

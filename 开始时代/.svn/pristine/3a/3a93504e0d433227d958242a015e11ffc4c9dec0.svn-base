@@ -1,0 +1,107 @@
+doctype html
+html(lang='zh-cmn-Hans')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1,user-scalable=0')
+    script(type='text/javascript', src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+    script(src='https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js')
+    title 上传封面
+    link(rel='stylesheet', href='/../css/pic.css')
+    link(rel='stylesheet', href='/../css/weui.css')
+    link(rel='stylesheet', href='/../css/second.css')
+    link(rel='stylesheet', href='/../css/common.css')
+  body   
+    header#header
+      div
+        p 上传封面
+    section
+      .banner-1
+        //<img src=imagesURL alt="">
+        img#img1(src=imagesURL alt='')
+      .p(style='font-size:14px;padding:8px;text-align:center;display:none') 提示:点击“上传封面”会覆盖同一剧组的所有海报封面，可直接点击“下一步”。
+          .page__bd.page__bd_spacing(style='margin-top: 80px')
+      a.weui-btn.upload(onclick='wxchooseImage()') 上传封面
+    footer
+      .page__bd.page__bd_spacing
+        a.weui-btn.look-over 下一步
+    script(src='/../js/zepto.min.js')
+    script(src='/../js/zepto.cookie.js')
+    script(src='/../js/myserume.js')
+    //script(src='/../js/vconsole.min.js')
+    script(type='text/javascript', src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+    script(src='https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js')
+    script(type='text/javascript', src='/js/url.js')
+    script(type='text/javascript', src='/js/jquery-2.1.0.min.js')    
+    script(type='text/javascript', src='/js/SM.js')
+    script(src='/js/mycut.js')
+script.
+    var appid = !{JSON.stringify(appId)};
+    var timestamp = !{JSON.stringify(timestamp)};
+    var nonceStr = !{JSON.stringify(nonceStr)};
+    var signature = !{JSON.stringify(signature)};
+    var production_id = !{JSON.stringify(production_id)};
+    var user_id = !{JSON.stringify(user_id)};
+    var openid = !{JSON.stringify(openid)};
+    var production_crews_id = !{JSON.stringify(production_crews_id)};
+    console.log(appid)
+     wx.config({
+      debug: false,
+      appId: appid,
+      timestamp: timestamp,
+      nonceStr: nonceStr,
+      signature: signature,
+      jsApiList: [
+      'chooseImage', 'uploadImage', 'downloadImage','previewImage'
+      ]
+    });
+
+    wx.ready(function(){
+        
+
+    });
+    var img=$("#img1").attr("src");
+    console.log(img)
+    function no() {
+        if (img=="") {
+            $(".p").css("display","none")
+        }else{
+            $(".p").css("display","block")
+        }
+    }
+    no()
+    
+    wxchooseImage= function () {
+        
+      var data={
+          "production_id":production_id,
+            }
+            var optUrl=url+'/WX/uploadCompressposterimage',navUrl=url+'/WX/uploadposterimage';
+              
+               cutSendMsg(1.5,1,optUrl,data).then(
+
+                 function(msg,imgUrl,smallPic)
+                  {
+                   console.log(msg)
+                    sendBig(imgUrl,navUrl,1,data).then(function(data)
+                    {
+                        console.log(data);
+                        $("#img1").attr("src",msg.data1)
+                         //edit()
+                        
+                    })
+                  }
+              )
+
+    }
+    $(".look-over").click(function(){
+        //alert("lll");
+        console.log($("#img1").attr("src"))
+        if($("#img1").attr("src")){
+            window.location.href=url+'/WX/page_roleList/'+user_id+'/'+production_id+'/'+production_crews_id+'/'+openid+'/'+appid;
+        }else{
+            alert("请上传封面照")
+        }
+    })
+
+
+     

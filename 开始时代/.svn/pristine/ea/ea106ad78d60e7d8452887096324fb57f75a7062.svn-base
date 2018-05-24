@@ -1,0 +1,29 @@
+var keystone = require('keystone'),
+	User = keystone.list('User');
+
+exports = module.exports = function(req, res) {
+  // PublicAccount.model.findOne()
+  // .where('appid','wx1beb5bae19621613')
+  // .exec(function(err,public){
+  //    if(err){
+  //       throw new Error(err);
+  //    }else{
+  //    	console.log(public);
+     	User.model.find()
+		  .where('appid','59e1a6f0a59a48ee2e682261')
+		  .where('allok',true)
+		  .select('realname artname telephone ')
+		  .exec(function(err,ret){
+		  	if(err){
+		      throw new Error(err);
+		  	}else{
+		  	  console.log(ret);
+		      res.send(ret);
+		  	}
+		    
+		  })
+
+  //    }
+  // })
+  
+}

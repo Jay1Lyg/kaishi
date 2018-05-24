@@ -1,0 +1,50 @@
+<view class='produce-info'>
+	<image class='produce-image' src='{{product.image}}'></image>
+	<view class='produce-detail'>
+		<text >{{product.detail}}</text>
+		<image src='{{share}}'></image>
+	</view>
+	<view class='price'>
+		<view class='price-detail'>
+			 <text class='now-price'>价格</text>
+			 <text class='ago-price'>价格</text>
+		</view>
+	  <text class='freight'>快递：</text>
+	  <text class='sales'>销量：</text>
+	</view>
+	<view style='background:#f2f2f2;height:20rpx;'></view>
+</view>
+<view class='parameter'>
+	<text>参数</text>
+	<text style='text-align:right'>></text>
+</view>
+<view class='parameter'>
+	<text>规格</text>
+	<text style='text-align:right'>></text>
+</view>
+<view class='tab'>
+	<view class='produce-tab'>
+		<text class="{{displayred?'displayred':''}}" bindtap="detail">商品详情</text>
+		<text class="{{displayred?'':'displayred'}}" bindtap="evaluate">评价信息</text>
+	</view>
+	<block wx:if='{{display}}'>
+			<view >2</view>
+	</block>
+	<block  wx:else='{{display}}'>
+			<view>3</view>
+	</block>
+	
+</view>
+
+<view class='foot'>
+	<view class='service'>
+		<image src='../../image/kefu.png'></image>
+		<text>客服</text>
+	</view>
+	<view class='add-cart'>
+		<text>加入购物车</text>
+	</view>
+	<view class='buy'>
+		<text>立即购买</text>
+	</view>
+</view>
