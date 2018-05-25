@@ -12,7 +12,10 @@ Page({
 		share:'../../image/share.png',
 		display: true	,
 		displayred: true,
-			
+		overfy:0,
+		canshu:0,
+		buynumber:1,
+		specification:0,
 		
   },
 	detail:function(res){
@@ -29,6 +32,65 @@ Page({
 			displayred:false
 		})
 	},
+	selectassess:function(res){
+		console.log(res)
+	},
+	// 参数
+	checkparameter:function(res){
+		var that=this;
+		that.setData({
+			overfy:1
+		})
+		
+	},
+	checksure:function(res){
+		var that=this;
+		that.setData({
+			overfy: 0
+		})
+	},
+	// 加减购买数量
+	add:function(res){
+		var that=this;
+		var num=that.data.buynumber;
+		num++;
+		console.log(num)
+		that.setData({
+			buynumber:num
+		})
+	},
+	sub: function (res) {
+		var that = this;
+		var num = that.data.buynumber;
+		num--;
+		console.log(num);
+		if(num<1){
+			wx.showToast({
+				title: '不能小于1',
+				icon: 'none',
+				duration: 2000
+			})
+		}else{
+			that.setData({
+				buynumber: num
+			})
+		}
+		
+	},
+	buy:function(res){
+		var that = this;
+		that.setData({
+			specification: 1,
+			overfy: 1
+		})
+	},
+	buysure:function(res){
+		var that = this;
+		that.setData({
+			specification: 0,
+			overfy: 0
+		})
+	},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -40,7 +102,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+		this.animation = wx.createAnimation()
   },
 
   /**
