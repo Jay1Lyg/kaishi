@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+
+  div{
+    width: 48%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    float:left;
+    margin:1%;
+  }
+
+  .Hei{
+    width:100%;
+    height:auto;
+  }
+  .Wid{
+    width:auto;
+    height:100%;
+  }
+</style>
+<body>
+  <div>
+    <img src="img/hk1.png" alt="">
+  </div>
+  <div>
+      <img src="img/hk1.png" alt="">
+  </div>
+  <div>
+      <img src="img/hk1.png" alt="">
+  </div>
+  <script src="jquery.min.js">
+  </script>
+  <script>
+
+    function thum($img){
+        let divWid = parseFloat($img.parent().css('width'))*1.5;
+        $img.parent().css('height',divWid)
+      let width = parseFloat($img.css('width'));
+      let height = parseFloat($img.css('height'));
+      if(width>height){
+        $img.addClass('Wid');
+      }else{
+        $img.addClass('Hei');
+      }
+   }
+
+   $('img').each((index,item)=>{
+    thum($(item));
+   })
+  </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>actor</title>
+    <link rel="stylesheet" href="../css/weui.css">
+    <link rel="stylesheet" href="../css/actor.css">
+  </head>
+  <body>
+    <!-- banner start-->
+    <div class="actor-banner">
+      <ul class="banner-img">
+        <li class="img-current"><img src="../img/职员banner.png" alt=""></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <ul class="banner-index">
+        <li></li>
+        <li></li>
+        <li class="index-current"></li>
+      </ul>
+    </div>
+    <!-- banner end-->
+    <!-- filter start-->
+    <div class="weui-flex actor-filter">
+      <div class="weui-flex__item filter-sex">
+        <div class="placeholder">
+          <p id="sex-val">性别</p><img src="../img/三角black.png" alt="">
+        </div>
+        <ul class="filter-ul fsex-ul">
+          <li class="filter-hover">不限</li>
+          <li>男</li>
+          <li>女</li>
+        </ul>
+      </div>
+      <div class="weui-flex__item filter-age">
+        <div class="placeholder">
+          <p>年龄段</p><img src="../img/三角black.png" alt="">
+        </div>
+        <ul class="filter-ul fage-ul">
+          <li class="filter-hover">不限</li>
+          <li>婴幼儿0-6岁</li>
+          <li>少年7-17岁</li>
+          <li>青年18-40岁</li>
+          <li>中年41-65岁</li>
+          <li>老年66岁以后</li>
+        </ul>
+      </div>
+    </div>
+    <!-- filter end-->
+    <!-- container start-->
+    <div class="actor-container clearfix">
+      <ul class="contain-ul"></ul>
+    </div>
+    <!-- container end-->
+    <!-- load start-->
+    <div class="actor-load">~>_<~ 没有更多了哦</div>
+    <!-- load end-->
+    <script src="../js/zepto.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+    <script src="../js/template-web.js"></script>
+    <!-- <script src="../js/jquery/jquery.js"></script>-->
+    <!-- <script src="../js/jquery/jquery.jsonp.js"></script>-->
+    <script src="../js/jquery/jquery-2.2.4.js"></script>
+    <script id="artTemplate" type="text/html">
+      {{ each actors $value i }}
+      <li>
+      <a href="http://www.kaishiapp.com/WX/page_actorDetail/{{ $value.id }}">
+      <img src="{{ $value.artimage }}" alt="">
+      <div class="contain-cover">{{ $value.realname }}</div>
+      </a>
+      <div class="item-cert">
+      <p class="actor-name">{{ $value.artname }}</p>
+      <div class="contain-cert">
+      <img src="../img/认证-小.png" alt="">
+      <p>已认证</p>
+      </div>
+      </div>
+      </li>
+      {{/each}}
+    </script>
+    <script>
+      $(function () {
+        ajax_function(1,0,0);
+        var $fsex = $('.actor-filter>div');
+        var $ful = $('.filter-ul');
+        var $fsul = $('.fsex-ul');
+        var $faul = $('.fage-ul');
+        var $fage = $('.filter-age');
+        var $slideflag = false;
+      
+        // 给选项绑定点击事件
+        $fsex.click(function () {
+            if ($slideflag == false) {
+                $(this).children('ul').show();
+                $slideflag = true;
+            } else {
+                $(this).children('ul').hide();
+                $slideflag = false;
+      
+            }
+        });
+        // 给每个li绑定点击事件
+        $ful.children('li').on("click", function () {
+      
+            $(this)
+                .addClass('filter-hover')
+                .siblings()
+                .removeClass('filter-hover')
+      
+            $(this)
+                .parent()
+                .siblings('div')
+                .children('p')
+                .text($(this).text())
+                .css('color', '#4da2ad')
+                .siblings('img')
+                .attr('src', '/../img/三角-上blue.png');
+      
+      
+            $(this)
+                .parent()
+                .hide();
+      
+      
+        });
+      
+        $fsul.children("li").on('click',function(){
+            // 性别li标签index
+            var $sexIndex = $(this).index();
+            // 年龄li标签index
+            var $ageIndex = $faul.children('.filter-hover').index();
+            // console.log($thisIndex + '-' + $sibIndex);
+            
+            ajax_function(1, $ageIndex, $sexIndex);
+            
+      
+        });
+        
+        $faul.children("li").on('click',function(){
+            var $ageIndex = $(this).index();
+            var $sexIndex = $fsul.children('.filter-hover').index();
+            // console.log($thisIndex + '-' + $sibIndex);
+      
+            ajax_function(1, $ageIndex, $sexIndex);
+      
+        });     
+      });
+      
+      
+      function ajax_function (page, age, sex){
+        $.ajax({
+          type: "GET",
+          url: "http://www.kaishiapp.com/WX/wx_getalluserresums/"+page+"/"+age+"/"+sex,
+          dataType: "jsonp",
+          success: function (data) {
+            var jsonResult = data;
+            var html = template('artTemplate', {
+            actors: jsonResult
+          });
+          $('.contain-ul').html(html);
+            console.log(data);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

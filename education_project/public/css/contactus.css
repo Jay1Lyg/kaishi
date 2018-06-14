@@ -1,0 +1,16 @@
+.ID_content{
+    color:#333333;
+    font-size:16px;
+    font-family:'微软雅黑';
+    width:50%;
+    border-radius:20px;
+    margin:20px auto;
+}
+.ID_title{
+    font-size:20px;
+    font-weight:bold;
+}
+.ID_code{
+    width:100px;
+    height:100px;
+}

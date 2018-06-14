@@ -1,0 +1,41 @@
+//
+   Created by Admin on 2017/7/31.
+
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        link(rel='stylesheet', href='./css/weui.css')
+        link(rel='stylesheet', href='./css/my_Delivery.css')
+        script(src='./js/zepto.min.js')
+        script(src='./js/my_Delivery.js')
+        script(type='text/javascript', src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+        script(src='https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js')
+        title 投递记录
+    body
+        // title start
+        header.manage-header
+            div
+                img(src='./img/矩形-1-拷贝.png', alt='')
+                p 投递记录
+        // title end
+        // top nav start
+        .weui-tab.manage-nav
+            .weui-flex
+                .weui-flex__item.nav-tab.tab-active
+                    p.tab-text 全部
+                .weui-flex__item.nav-tab
+                    p.tab-text 面试
+                .weui-flex__item.nav-tab
+                    p.tab-text 不合适
+        // top nav end
+        // main start
+        .manage-main
+            .main-contain.main-select
+            .main-interview
+            .main-pase
+        .none_div(style='display: none')
+            p 暂无记录
+            img.none(src='img/暂无记录.png', alt='')

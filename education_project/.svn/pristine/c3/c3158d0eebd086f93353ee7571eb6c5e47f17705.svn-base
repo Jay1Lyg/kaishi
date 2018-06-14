@@ -1,0 +1,132 @@
+//
+   Created by Admin on 2017/8/4.
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 在线报名
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(Rel='ICON NAME', href='/image/linklogo.png')
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/form.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/first_page.js')
+        script(src='/js/form.js')
+        // <script src="js/less.js"></script>
+    body.container(style='padding:0;')
+        header
+            .top_logo
+                img(src='/image/logo_option0.png', alt='')
+            div(style='border-top:1px solid black')
+                ul.nav.navbar-nav.ul2
+                    li.col-xs-4.col-sm-2
+                        a(href='/') 关于领智
+                    li.couse.col-xs-4.col-sm-2
+                        a 课程介绍
+                        ul.tab
+                            li
+                                a(href='/couse/bigdata') 大数据分析与应用
+                            li
+                                a(href='/couse/security') 网络与信息安全工程师
+                    li.col-xs-4.col-sm-2
+                        a(href='/campuslist') 校区一览
+                    li.col-xs-4.col-sm-2
+                        a(href='/teacher') 师资团队
+                    li.col-xs-4.col-sm-2
+                        a(href='/message') 综合消息
+                    li.col-xs-4.col-sm-2
+                        a(href='/contactus') 联系我们
+        section
+            if enquirySubmitted
+                div(style='text-align:center;border:1px solid #d2580e;width:50%;border-radius: 10px;margin:200px auto;clear:both')
+                    h1(style='color:#d2580e') 报名成功
+                    h3(style='color:#666') 请保持电话通畅
+                    h3(style='color:#666') 我们的工作人员将与您联系
+                    a(href='/')
+                        button.btn.btn-primary(style='margin:30px 0') 返回首页
+            else
+                p.clearfix(style='clear: both ;margin-left: 15%;color: #286090')
+                    b 报名信息填写
+                form#form.row(method='post', style='clear: both;width: 60% ;margin: 0 auto')
+                    input(type='hidden', name='action', value='signup')
+                    .col-md-5.col-xs-12(class=validationErrors.name ? 'has-error' : null)
+                        label 姓名
+                        input.form-control.name(type='text', name='name', value=formData['name.full'],placeholder='姓名', aria-describedby='basic-addon1')
+                    .col-md-5.col-md-offset-2.col-xs-12(class=validationErrors.sex ? 'has-error' : null)
+                        label 性别
+                        select(name='sex').form-control.sex
+                            option(value='') (选择)
+                            each type in sex
+                                option(value=type.value, selected=formData.sex == type.value)= type.label
+                    .col-md-5.col-xs-12(class=validationErrors.date ? 'has-error' : null)
+                        label 出生年月
+                        input.form-control.date(type='Date', placeholder='出生年月', aria-describedby='basic-addon1',name='date', value=formData.date)
+                    .col-md-5.col-md-offset-2.col-xs-12(class=validationErrors.birthplace ? 'has-error' : null)
+                        label 籍贯
+                        input.form-control.birthplace(type='text', placeholder='籍贯', aria-describedby='basic-addon1',name='birthplace', value=formData['birthplace.full'])
+                    .col-md-5.col-xs-12(class=validationErrors.school ? 'has-error' : null)
+                        label 所在学校
+                        input.form-control.school(type='text', placeholder='所在学校', aria-describedby='basic-addon1',name='school', value=formData['school.full'])
+                    .col-md-5.col-md-offset-2.col-xs-12(class=validationErrors.specialty ? 'has-error' : null)
+                        label 所学专业
+                        input.form-control.specialty(type='text', placeholder='所学专业', aria-describedby='basic-addon1',name='specialty', value=formData['specialty.full'])
+                    .col-md-5.col-xs-12(class=validationErrors.graduation_time ? 'has-error' : null)
+                        label 毕业时间
+                        input.form-control.graduation_time(type='Date', placeholder='毕业时间', aria-describedby='basic-addon1',name='graduation_time', value=formData['graduation_time.full'])
+                    .col-md-5.col-md-offset-2.col-xs-12(class=validationErrors.specialty_bao ? 'has-error' : null)
+                        label 报培专业
+                        select(name='specialty_bao').form-control.specialty_bao
+                            option(value='specialty_bao') (选择)
+                                each type in specialty_bao
+                                    option(value=type.value,selected=formData.specialty_bao == type.value)= type.label
+                    .col-md-5.col-xs-12(class=validationErrors.phone ? 'has-error' : null)
+                        label 手机/电话
+                        input.form-control.phone(type='tel', placeholder='手机/电话', aria-describedby='basic-addon1', name='phone', value=formData.phone,)
+                    .col-md-5.col-md-offset-2.col-xs-12(class=validationErrors.email ? 'has-error' : null)
+                        label 电子邮箱
+                        input.form-control.email(type='email', placeholder='电子邮箱', aria-describedby='basic-addon1',name='email', value=formData.email)
+                    .col-md-5.col-xs-12(class=validationErrors.qq ? 'has-error' : null)
+                        label QQ/WECHAT
+                        input.form-control.qq(type='text', placeholder='QQ/WECHAT', aria-describedby='basic-addon1' name='qq')
+                    .col-md-5.col-md-offset-2.col-xs-12
+                        label 通讯地址
+                        input.form-control.address(type='text', placeholder='通讯地址', aria-describedby='basic-addon1',name='address', value=formData.address)
+                .sub(style='text-align: center;margin-top: 50px')
+                    button.btn.btn-primary.sub_btn(type='button', style='width: 20%') 报名
+                div(style='clear: both;margin-bottom: 150px')
+            .footer
+                div
+                    ul.row.ul3
+                        li.col-xs-3.col-sm-1.col-sm-offset-2
+                            a(href='http://36kr.com')
+                                img(src='/image/1.png', alt='')
+                        li.col-xs-3.col-sm-1
+                            a(href='http://www.bupt.edu.cn')
+                                img(src='/image/2.png', alt='')
+                        li.col-xs-3.col-sm-1
+                            a(href='http://www.pku.edu.cn/')
+                                img(src='/image/3.png', alt='')
+                        li.col-xs-3.col-sm-1
+                            a(href='https://www.universityofcalifornia.edu/')
+                                img(src='/image/4.png', alt='')
+                        li.col-xs-3.col-sm-1
+                            a(href='http://www.ceiaec.org')
+                                img(src='/image/5.png', alt='')
+                        li.col-xs-3.col-sm-1
+                            a(href='https://www.tencent.com/zh-cn/')
+                                img(src='/image/6.png', alt='')
+                        li.col-xs-3.col-sm-1
+                            a(href='https://www.aliyun.com/')
+                                img(src='/image/7.png', alt='')
+                        li.col-xs-3.col-sm-1
+                            a(href='http://www.chinahitech.com.cn/')
+                                img(src='/image/8.png', alt='')
+                    ul.row.ul4
+                        li.col-xs-12.col-sm-2.col-sm-offset-1 领智教育总部
+                        li.col-xs-12.col-sm-3 地址：北京市海淀区清华东路35号
+                        li.col-xs-12.col-sm-3 联系电话：010-62336169
+                        li.col-xs-12.col-sm-3 报名邮箱：leadingwisdom@aliyun.com

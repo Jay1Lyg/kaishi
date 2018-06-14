@@ -1,0 +1,109 @@
+/*顶部图片*/
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    margin-top: 20px;
+}
+.ul2{
+    width: 100%;
+    margin: 0 auto;
+}
+.ul2 li{
+    text-align: center;
+}
+.ul2 li a{
+    color: #333333;
+    font-family: 微软雅黑;
+
+}
+.top_logo{
+    width: 100%;
+    height: 134px;
+    margin: 0 auto;
+    text-align: center;
+}
+.top_logo img{
+    width: 221px;
+    margin: 0 auto;
+}
+/*轮播*/
+.ul1{
+    position: absolute;bottom: -10px;height: 44px;width: 100%;background: rgba(0,0,0,0.8);z-index: 15;
+    text-align: center;
+}
+.ul1 li{
+    float:left;
+    list-style:none;
+    line-height: 44px;
+    width: 7.6%;
+    color: white;
+    cursor:pointer;
+    text-align: center;
+}
+.ul1 li:hover{
+    color: #ff9900;
+}
+/*巨木
+*/
+.jumbotron{
+background: white;
+}
+.jumbotron h1{
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: #333333;
+}
+.jumbotron p{
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: #333333;
+}
+/*训练图片
+*/
+.train_img{
+ text-align: center;
+    margin-bottom: 200px;
+}
+.train_img img{
+    width: 80%;
+
+}
+.train_img p{
+    line-height: 50px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: #333333;
+}
+
+/*脚部*/
+footer{
+    background: #c3c3c3;
+    width: 100%;
+    height: 144px;
+}
+footer{
+    padding: 40px 0;
+}
+
+footer div .ul3 li{
+    list-style: none;
+    text-align: center;
+
+}
+footer div .ul3 li img{
+    width: 45px;
+}
+footer div .ul4 li{
+    list-style: none;
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 12px;
+    color: #6b6b6b;
+}
+.yellow{
+    color: blue;
+
+}

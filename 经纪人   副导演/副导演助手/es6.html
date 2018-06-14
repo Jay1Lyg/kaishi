@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="123456">rrr</div>
+</body>
+<script>
+    const PageHandler = {
+        id: "123456",
+        init: () =>{
+            document.addEventListener("click", function(event) {
+                this.doSomething(event.type); // error
+            }, false);
+        },
+        doSomething: function(type) {
+            console.log("Handling " + type + " for " + this.id);
+        }
+    };
+
+    console.log(PageHandler.init());
+    let a =7;
+    console.log(a);
+//    alert(a)
+</script>
+</html>

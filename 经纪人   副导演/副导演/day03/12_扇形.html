@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="600" height="600"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			ctx.lineWidth = 5
+			
+			ctx.moveTo(300,300)
+			ctx.arc(300,300,140,0,0.3*Math.PI,false);
+			ctx.fill()
+			
+			ctx.beginPath()
+			ctx.moveTo(300,300)
+			ctx.fillStyle = "#0000FF"
+			ctx.arc(300,300,140,0.3*Math.PI,0.4*Math.PI,false);
+			ctx.fill()
+			
+			ctx.beginPath()
+			ctx.moveTo(300,300)
+			ctx.fillStyle = "#FF00FF"
+			ctx.arc(300,300,140,0.4*Math.PI,0.7*Math.PI,false);
+			ctx.fill()
+			
+			ctx.beginPath()
+			ctx.moveTo(300,300)
+			ctx.fillStyle = "#031"
+			ctx.arc(300,300,140,0.7*Math.PI,1.4*Math.PI,false);
+			ctx.fill()
+			
+			ctx.beginPath()
+			ctx.moveTo(300,300)
+			ctx.fillStyle = "#088"
+			ctx.arc(300,300,140,1.4*Math.PI,2*Math.PI,false);
+			ctx.fill()
+			
+			/*
+			//ctx.arc(x,y,radius,startAngle,endAngle,是否是逆时针)
+			
+			一个完整的圆弧是  2π  2*Math.PI
+			
+			五参:
+				true:	逆时针
+				false:  顺时针
+			*/
+		</script>
+	</body>
+</html>

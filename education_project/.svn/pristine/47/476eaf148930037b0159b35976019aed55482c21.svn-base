@@ -1,0 +1,62 @@
+//
+   Created by Admin on 2017/8/4.
+
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 首页
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(Rel='ICON NAME', href='/image/linklogo.png')
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/lingzhi.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/weixin.js')
+        // <script src="js/less.js"></script>
+    body.container(style='padding: 0;')
+        header
+            .top_logo
+                a(href='/')
+                    img(src='/image/logo_option0.png', alt='')
+        section(style='width: 80%;margin: 0 auto;')
+            .ling
+                p
+                    a 我对大数据时代的看法
+                hr
+            .font
+                span.data 2017-07-31
+                span.weixin
+                    | 领智学苑
+                    ul.tab1.row
+                        .col-xs-4
+                            img(width='100%', style='margin-top: 10px', src='/image/lingma.png', alt='')
+                        .col-xs-8
+                            p(style='margin-top: 5px;color: black')
+                                b 领智学苑
+                            p(style='font-size: 14px;color: #adadad')
+                                b(style='color: black;font-size: 14px') 微信号:
+                                | lingzhixueyuan
+                            p(style='font-size: 14px;color: #adadad')
+                                b(style='color: black;font-size: 14px') 功能介绍
+                                | “领智学苑”隶属于中教领智教育科技有限公司，是业界课程更新速度最快、涵盖范围最广、技术内容最新的IT职业教育机构。致力于“让科技助力未来”，以实战为特色，为注重自我提升的IT从业者和在校学生提供高品质的职业教育。
+                .img_div(style='margin-top:10px')
+                    img(src='/image/101.png',alt='',style='width:70%;vertical-align: middle;')
+                p
+                    | 现在的新媒体正面临着挑战，传统和创新的挑战，其实传统和创新一直都在相互的摩擦和相溶，他们一直属于亦敌亦友的关系，他们在不断地摩擦过程中相互融合，变成了全新的媒体，但现阶段一直处在磨合期，所以会有很多问题的发生。
+                p
+                    | 随着时代的不断地发展改变，很多传统观念渐渐被升华成了全新的观念，人们在追求创新的道路上不断的探索和发掘，最终演变成我们现在看到的大数据时代。但是大数据时代并不代表时代的终结，它还是不断的发展创新的，大数据只是现在的时代所能标志它的一个点而已，而且可以说虽然大数据时代对我们人类而言确实给我们的生活带来了不少便捷，但是它也带来了弊端。
+                p
+                    | 关于大数据时代想必有不少的专家可以说比我更专业理，解剖析的也更透彻，本人也无法和他们相比，而我只是剖析一个我所看到的大数据时代的弊端，那就是大数据时代中的数据信息的真实性。
+                p
+                    | 数据信息的真实性其实在生活中占着异常重要的地位，关于数据信息的报道往往产生的效应是很大的，甚至会影响群众的判断力。因为在这个大数据时代，很多人是依靠数据来进行对事物的判断，现在我们的生活几乎没有办法离开数据信息，因为一旦脱离了数据信息，很多事情就会变得棘手不堪，试想一下当你身边的数据信息，你还能做自己的事么？所以一旦第一时间提供数据信息无论真假往往会被人先确信并传递，人的传播能力之强可想而知，所以一旦数据信息失实了亦或者传递错误都会造成不小的轰动，甚至会危及国家以及个人的利益。细数这些年来的各类因数据信息所引发造成的事故不在少数，我也不一一列举，大家有兴趣可以百度，所以很显然数据信息的真实性的重要，所以我认为失误在所难免，但是在这样一个由数据信息统治的时代，尽力避免此类失误的发生，需要的是一个标准，一个规定来降低数据信息失真，从而完善这个大数据时代。
+                hr
+                span(style='float: right;color: #adadad;font-size: 12px') 2016级第5期学员：XX
+            div(style='margin-bottom: 50px')
+                p
+                    | 阅读 11259
+                    img(style='margin-left: 5px', width='18px', src='/image/zan.png', alt='')
+                    | 赞

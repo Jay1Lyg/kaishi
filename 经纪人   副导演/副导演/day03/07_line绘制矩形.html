@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid #ccc;"></canvas>
+		<script>
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 10;
+			ctx.moveTo(10,10);
+			ctx.lineTo(10,140)
+			ctx.lineTo(280,140);
+			ctx.lineTo(280,10);
+			ctx.closePath();
+			ctx.stroke()
+		</script>
+	</body>
+</html>

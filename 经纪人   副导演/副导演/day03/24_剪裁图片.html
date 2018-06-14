@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+
+			var image = new Image();
+			image.src = "../day02/img/girl.jpg";
+			image.onload = function(){
+				//画布的宽 = 图片的真实宽度  
+				canvas.width = this.width;
+				canvas.height = this.height;
+				ctx.drawImage(this,400,0,300,300,0,0,300,300)
+			}
+			
+			
+			
+			/*
+			ctx.drawImage(图片元素,起点x,起点y,宽度,高度)
+			ctx.drawImage(图片元素,sx,sy,sw,sh,dx,dy,dw,dh)
+			
+			sx,sy  裁剪图片的起始点
+			sw,sh	裁剪图片的尺寸
+			dx,dy   将裁剪完的图片绘制到画布位置 的起点
+			dw,dh	将裁剪完的图片绘制到画布中的显示尺寸
+			
+			*/
+			
+		</script>
+	</body>
+</html>

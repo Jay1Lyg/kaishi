@@ -1,0 +1,117 @@
+//
+   Created by Admin on 2017/8/3.
+
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 动态消息
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/couse.css')
+        link(rel='stylesheet', href='/css/message.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/first_page.js')
+        // <script src="js/less.js"></script>
+    body.container(style='padding:0')
+        header
+            .top_logo
+                img(src='/image/logo_option0.png', alt='')
+            div(style='border-top:1px solid black')
+                ul.nav.navbar-nav.ul2
+                    li.col-xs-2
+                        a(href='/') 关于领智
+                    li.col-xs-2.couse
+                        a 课程介绍
+                        ul.tab
+                            li
+                                a(href='/couse/bigdata') 大数据分析与应用
+                            li
+                                a(href='/couse/security') 网络与信息安全工程师
+                    li.col-xs-2
+                        a(href='/campuslist') 校区一览
+                    li.col-xs-2
+                        a(href='/teacher') 师资团队
+                    li.col-xs-2
+                        a(href='/message') 综合消息
+                    li.col-xs-2
+                        a(href='/contactus') 联系我们
+        section
+            div
+                img(width='100%', src='/image/message.jpg', alt='')
+            .jumbotron.paging_back
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                p.paging_line(style='font-size:16px;')
+                    | iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                    time.paging_time 2017-07-29
+                nav
+                    ul.pager.paging_nav
+                        li.previous
+                            span.paging_previous(style='background:#f1f3fb;') 上一页
+                        button.paging_button 1
+                        button.paging_button 2
+                        button.paging_button 3
+                        button.paging_button(style='border:none;') ……
+                        li.next
+                            span.paging_previous(style='background:#f1f3fb;') 下一页
+            a(href='/signup')
+                div(style='float: right;text-align: center;margin-right:20px')
+                    img(src='/image/baoming.png', alt='',width='50%')
+                    p(style='line-height:20px;color:#666666') 我要报名
+            div(style='clear: both')
+        .footer
+            div
+                ul.row.ul3
+                    li.col-xs-1.col-xs-offset-2
+                        a(href='')
+                            img(src='/image/1.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/2.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/3.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/4.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/5.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/6.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/7.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/8.png', alt='')
+                ul.row.ul4
+                    li.col-xs-2.col-xs-offset-1 领智教育总部
+                    li.col-xs-3 地址：北京市海淀区清华东路35号
+                    li.col-xs-2 联系电话：010-62335989
+                    li.col-xs-3 报名邮箱：leadingwisdom@aliyun.com

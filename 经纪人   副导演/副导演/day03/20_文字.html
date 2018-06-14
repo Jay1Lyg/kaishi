@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="800" height="800" style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+
+			//设置字体样式
+			ctx.font="bold 40px '微软雅黑'"
+			
+			//设置对齐方式
+			ctx.textAlign = "left"	//水平方向对齐
+			ctx.textBaseline = "middle"	//垂直方向
+
+			//绘制文字   一参: 你要写的内容,string; 二,三参  绘制的位置坐标
+			ctx.fillText("你写的东西",100,100);
+			
+			ctx.strokeText("思软科技",100,300)
+			
+			//ctx.measureText("思软科技").width  获取文字的宽度
+			ctx.strokeText(ctx.measureText("思软科技").width,100,500)
+			
+			ctx.strokeRect(100,100,300,100)
+			
+			
+		</script>
+	</body>
+</html>

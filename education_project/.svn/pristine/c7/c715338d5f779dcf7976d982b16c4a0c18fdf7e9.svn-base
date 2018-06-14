@@ -1,0 +1,56 @@
+
+section{
+    clear: both;
+}
+/*轮播*/
+.ul1{
+    position: absolute;bottom: -10px;height: 44px;width: 100%;background: rgba(0,0,0,0.8);z-index: 15;
+    text-align: center;
+}
+.ul1 li{
+    float:left;
+    list-style:none;
+    line-height: 44px;
+    width: 7%;
+    color: white;
+    cursor:pointer;
+    text-align: center;
+}
+.ul1 li:hover{
+    color: #ff9900;
+}
+/*巨木
+*/
+.jumbotron{
+background: white;
+}
+.jumbotron h1{
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: #333333;
+}
+.jumbotron p{
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: #333333;
+}
+/*训练图片
+*/
+.train_img{
+ text-align: center;
+    margin-bottom: 200px;
+}
+.train_img img{
+    width: 80%;
+
+}
+.train_img p{
+    line-height: 50px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: #333333;
+}
+
+/*脚部*/
+

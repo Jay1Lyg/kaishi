@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>Hello Amaze UI</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  	<script type="text/javascript">
+	
+	window.onload= function(){
+	var jbtn = document.querySelectorAll(".jbtn"),			//减
+		zbtn = document.querySelectorAll(".zbtn"),			//加
+		num = document.querySelectorAll("#num"),			//数量
+		price = document.querySelectorAll(".price"),		//单价
+		Zprice = document.querySelectorAll(".zprice"),		//单物品总价
+		clear = document.querySelector("#clear"),			//清除购物车
+		b = document.querySelector("table"),				
+		body = document.querySelector("body"),
+		del = document.querySelectorAll(".del"),			//删除
+		tr = document.querySelectorAll("tr"),
+		zjprice = document.querySelector(".zjprice"),		//总价
+		numb = document.querySelector(".number"),			//总数
+		p0=0,p1,p2,p3=0,p4,p5,p6;
+	for (var i=0;i<jbtn.length;i++) {
+		p0 += parseInt(Zprice[i].innerText);
+		zjprice.innerHTML = p0;
+		p3 += parseInt(num[i].value);
+		numb.innerHTML = p3;
+	}
+	for (let i=0;i<jbtn.length;i++) {
+		jbtn[i].onclick = function(){
+			if (num[i].value <= 1) {
+				if(confirm("你要删除这件商品吗？")){
+					tr[i+1].remove(this);
+				}
+			} else{
+				num[i].value--;
+				p1 = parseInt(price[i].innerText);
+				p2 = parseInt(zjprice.innerText);
+				p4 = parseInt(numb.innerText);
+				p6 = parseInt(num[i].value)
+				Zprice[i].innerHTML = p1*num[i].value;
+				zjprice.innerHTML = p2-p1;
+				numb.innerHTML = p4-1;
+			}
+		}
+		zbtn[i].onclick = function(){
+			num[i].value++;
+			p1 = parseInt(price[i].innerText);
+			p2 = parseInt(zjprice.innerText);
+			p4 = parseInt(numb.innerText);
+			p6 = parseInt(num[i].value)
+			Zprice[i].innerHTML = p1*num[i].value;
+			zjprice.innerHTML = p2+p1;
+			numb.innerHTML = p4+1;
+		}
+		del[i].onclick = function(){
+			p5 = parseInt(Zprice[i].innerText);
+			p6 = parseInt(num[i].value)
+			p2 = parseInt(zjprice.innerText);
+			p4 = parseInt(numb.innerText);
+			zjprice.innerHTML = p2-p5;
+			numb.innerHTML = p4-p6;
+			tr[i+1].remove(this);
+		}
+		
+	}
+	clear.onclick = function(){
+		if(confirm("你要清空购物车吗？")){
+			b.remove(this);
+			body.innerHTML += "<h1>已清空</h>"
+		}
+	}
+}
+
+
+
+</script>
+</head>
+<body>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>产品编号</th>
+				<th>产品名字</th>
+				<th>购买数量</th>
+				<th>产品单价</th>
+				<th>产品总价</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1000</td>
+				<td>iPhone7</td>
+				<td>
+					<button class="jbtn btn btn-primary">-</button>
+					<input type="text" name="value" id="num" value="1" />
+					<button class="zbtn btn btn-primary">+</button>
+				</td>
+				<td class="price">6400</td>
+				<td class="zprice">6400</td>
+				<td class="del">
+					<button class="btn btn-danger">删除</button>
+				</td>
+			</tr>
+			<tr>
+				<td>2000</td>
+				<td>iPhone7plus</td>
+				<td>
+					<button class="jbtn btn btn-primary">-</button>
+					<input type="text" name="value" id="num" value="1" />
+					<button class="zbtn btn btn-primary">+</button>
+				</td>
+				<td class="price">7400</td>
+				<td class="zprice">7400</td>
+				<td class="del">
+					<button class="btn btn-danger">删除</button>
+				</td>
+			</tr>
+			<tr>
+				<td>3000</td>
+				<td>xiaomi7</td>
+				<td>
+					<button class="jbtn btn btn-primary">-</button>
+					<input type="text" name="value" id="num" value="1" />
+					<button class="zbtn btn btn-primary">+</button>
+				</td>
+				<td class="price">1000</td>
+				<td class="zprice">1000</td>
+				<td class="del">
+					<button class="btn btn-danger">删除</button>
+				</td>
+			</tr>
+			<tr>
+				<td>4000</td>
+				<td>诺基亚1300</td>
+				<td>
+					<button class="jbtn btn btn-primary">-</button>
+					<input type="text" name="value" id="num" value="1" />
+					<button class="zbtn btn btn-primary">+</button>
+				</td>
+				<td class="price">400</td>
+				<td class="zprice">400</td>
+				<td class="del">
+					<button class="btn btn-danger">删除</button>
+				</td>
+			</tr>
+			<tr>
+				<td>总价</td>
+				<td class="zjprice">3000</td>
+				<td>总数</td>
+				<td class="number">3</td>
+				<td></td>
+				<td>
+					<button class=" btn btn-danger" id="clear">清空购物车</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html>

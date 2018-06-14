@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="800" height="800" style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			ctx.lineWidth = 3
+			
+			ctx.moveTo(50,500);
+			ctx.quadraticCurveTo(200,50,350,500)
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(300,50)
+			ctx.quadraticCurveTo(400,500,800,50)
+			ctx.stroke();
+			
+			/*
+			ctx.quadraticCurveTo(200,50,350,500)
+				绘制二次曲线;
+					前两个参数:  控制点的坐标
+					后两个参数:  结束点的坐标
+			*/
+			
+		</script>
+	</body>
+</html>

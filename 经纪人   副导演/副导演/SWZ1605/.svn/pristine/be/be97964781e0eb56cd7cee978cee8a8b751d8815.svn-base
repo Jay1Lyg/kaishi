@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../css/api.css"/>
+    <link rel="stylesheet" href="../css/news_list.css" />
+</head>
+<body>
+	<script type="text/x-dot-template" id="new-tml">
+		
+		<div class="list">
+			<h3>{{= it.title}}</h3>
+			<small>回复：<span>{{= it.reply_count }}</span>时间：<span>{{= it.edit_time }}</span>来源：<span>{{= it.source }}</span></small>
+			<p class="digest">{{= it.content}}</p>
+		</div>
+		
+	</script>
+	<section id="news"></section>
+	
+	
+	<script src="../script/api.js"></script>
+	<script src="../script/doT.min.js"></script>
+	<script src="../script/news_content_frame.js"></script>
+</body>
+</html>

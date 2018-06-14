@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>演员管理</title>
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/weui.css" />
+    <link rel="stylesheet" href="css/Amanage.css" />
+    <style>
+        *{padding: 0;margin: 0;list-style: none}
+    </style>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="search">
+            <!--搜索内容-->
+            <div class="weui-search-bar" id="searchBar">
+                <form class="weui-search-bar__form">
+                    <div class="weui-search-bar__box">
+                        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                        <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                    </div>
+                    <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                        <i class="weui-icon-search"></i>
+                        <span>搜索</span>
+                    </label>
+                </form>
+                <a style="color: #4da2ad;font-size: 0.28rem;padding: 0.1rem">搜索</a>
+            </div>
+        </div>
+        <ul class="tab">
+            <li class="active">全部演员</li>
+            <li>男演员</li>
+            <li>女演员</li>
+        </ul>
+    </div>
+</header>
+<section>
+    <div class="all_actor">
+        <div class="active">
+            <!--全部-->
+                <!--参演经历-->
+                <div class="display_experience">
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <div class="actor_edit">
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="edit_delete">
+                            <ul>
+                                <li>编辑</li>
+                                <li>删除</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+        </div>
+        <div>
+            男
+        </div>
+        <div>
+            女
+        </div>
+    </div>
+</section>
+</body>
+<script>
+    var btns =$(".tab li"),
+        contents =$(".all_actor>div")
+    var t = new TabView(btns,contents);
+
+    edit($(".actor_edit"));
+
+    function edit(actor_edit) {
+        actor_edit.on("click",function () {
+
+            if($(this).next().is(":hidden")){
+                $(this).next().show();
+            }else{
+                $(this).next().hide();
+            }
+        })
+    }
+
+</script>
+</html>
+<!--<div class="position"><div class="actor_edit"><div class="photo_experience"><img src="image/img1.png" alt=""></div><div class="detail_experience"><ul><li><span>剧&#x3000&#x3000名：</span>《寡妇》</li><li><span>剧目类型：</span>电影</li><li><span>饰演角色：</span>nana</li><li><span>角色类型：</span>领携主演</li></ul></div></div><div class="edit_delete"><ul><li>编辑</li><li>删除</li></ul></div></div>-->

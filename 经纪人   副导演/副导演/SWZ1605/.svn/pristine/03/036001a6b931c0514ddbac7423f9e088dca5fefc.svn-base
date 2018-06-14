@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="css/api.css" />
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+<body class="display-box box-orient-v">
+	
+	<header>
+		思软科技
+	</header>
+	<section class="box-flex-1">
+		
+	</section>
+	
+	<script src="script/api.js"></script>
+	<script>
+		
+		var header = $api.dom('header');
+		var headerH = $api.offset(header).h;
+		
+		//注：只要是用到api.xxx的方法，就必须要放到apiready中
+		apiready = function(){
+			//获取到窗口的高度
+			var winHeight = api.winHeight;
+			api.openFrame({
+			    name: 'main',			//给frame起个名字，不要重复
+			    url: 'html/main.html',  //要嵌套页面的路径
+			    rect: {					//frame的位置与宽高
+			        x: 0,				//frame 的 x坐标
+			        y: headerH,			//frame 的 y坐标
+			        w: 'auto',			//frame 的宽度
+			        h: winHeight -  headerH				//frame的高度
+			    },
+			    bounces: false, 			//是否弹动
+			    bgColor: 'rgba(0,0,0,0)', //背景色
+			    vScrollBarEnabled: true, //垂直方向是否允许滚动
+			    hScrollBarEnabled: true 	//横向是否允许滚动
+			});
+		}
+		//在页面中嵌套一个frame
+		
+		/*
+			$api.dom(selector) 	-> querySelector   获取到匹配的首个元素
+			 
+			$api.offset(header)
+				获取元素的位置 & 宽高
+				{
+					l:left,
+					t:top,
+					w:width,
+					h:height
+				}
+				如$api.offset(header).h  就可以获取到header的高度
+		*/
+	</script>
+</body>
+</html>

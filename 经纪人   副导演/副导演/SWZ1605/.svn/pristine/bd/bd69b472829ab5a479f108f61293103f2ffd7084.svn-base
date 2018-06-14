@@ -1,0 +1,56 @@
+body{
+	background: #fafafa;
+}
+/*图标区*/
+.icon-bar{
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+.icon-bar li{
+	float: left;
+	width: 20%;
+	padding: 0.7em 0.5em;
+
+	text-align: center;
+	background: #fff;
+}
+.icon-bar li:active{
+	opacity: .5;
+}
+.icon-bar img{
+	margin-bottom: 0.3em;
+	width: 90%;height: auto;
+}
+.icon-bar p{
+	font-size: 0.9em;
+	color: #555;
+}
+/*列表*/
+.list-bar{
+	margin-top: 1em;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+}
+.list-bar li{
+	padding: 1em;
+	border-top: 1px solid #eee;
+}
+.list-bar li:active{
+	opacity: .7;
+}
+.list-bar img{
+	width: 5em;height: 5em;
+	margin-right: 1em;
+}
+.list-bar .title{
+	font-size: 1.4em;
+	font-weight: 600;
+	color: #323232;
+}
+.list-bar .text{
+	margin: 0.3em 0 0.5em;
+	color: #666;
+}
+.list-bar .small{
+	color: #aaa;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid #ccc;">
+			您的浏览器太旧
+		</canvas>
+		<script>
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			//设置canvas的宽高
+			
+			canvas.width = 800;
+			canvas.height = 800;
+			//将起点移动到100,100的位置
+			ctx.moveTo(100,100);
+			//下一个绘制点 400,500
+			ctx.lineTo(400,500);
+			ctx.lineTo(500,500);
+			ctx.lineTo(500,100)
+			
+			//绘制描边,  路径		只有绘制了,  上边的设置才能生效
+			ctx.stroke();
+			
+			
+			/*
+			canvas:
+				width:  300
+				hieght: 150
+				
+				canvas的宽高最好不用css去设置
+			
+			操作方法:
+				1. 获取到canvas元素
+				2. 指定2D场景
+				ctx.moveTo(起点x坐标,起点y坐标)
+				ctx.lineTo(下一个点x,下一个点y)
+				
+				ctx.stroke()	绘制描边
+			
+			*/
+			
+		</script>
+	</body>
+</html>

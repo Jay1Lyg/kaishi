@@ -1,0 +1,68 @@
+//
+   Created by Admin on 2017/8/11.
+
+doctype html
+html(lang='zh-cmn-Hans')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1,user-scalable=0')
+        title 通告详情
+        link(rel='stylesheet', href='./css/weui.css')
+        link(rel='stylesheet', href='./css/notice.css')
+    body
+        // banner start
+        .notice-banner
+            img.banner-img(src='./img/banner.png', alt='')
+            img.banner-icon(src='./img/矩形-1-拷贝.png', alt='')
+        // banner end
+        // container start
+        .notice-container
+            .weui-tab
+                .weui-navbar
+                    .weui-flex__item.container-tab
+                        p.tab-text 职位列表
+            .contain-page
+                .page-base.page-select
+                    .page-role
+                        .exp-tv
+                            i
+                            .title_h4
+                            .exptv-position
+            // container end
+            // footer start
+            // footer end
+            script(src='./js/zepto.min.js')
+            script(type='text/javascript', src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+            script(src='https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js')
+            script.
+                $.ajax({
+                    type : "get",
+                    url : 'http://localhost/WX/wx_positionList/5989204c7ea3957c08211026/59891dc44599b8e833de9223',
+                    dataType : "jsonp",
+                    async:false,
+                    success : function(data){
+                        console.log(data)
+                        var data=data;
+                        var str=$(".exptv-position").html();
+                        var str1=$(".title_h4").html();
+                        str1='<h4 class="exptv-title">'+data[0].production_name+'</h4>';
+                        $(".title_h4").html(str1);
+                        for(var i=0;i<data.length;i++){
+                            str+='<div class="exptv-info"> <div class="info-name"> <p>职位名称</p> <p>部门</p> <p>年龄段</p> <p>性别</p> <p>招募数量</p> <p>见组地址</p> </div> <div class="info-content"><a><span class="shen" style="position: absolute;right: 10%;color:#4da2ad;border: 1px solid #4da2ad;padding: 1px 3px;font-size: 14px">申请</span></a><span style="position: absolute;right: 10%;color:#ccc;border: 1px solid #ccc;padding: 1px 3px;font-size: 14px;display: none" class="alshen">已申请</span> <p>'+data[i].role_name+'</p> <p>'+data[i].roleCategory+'</p> <p>'+data[i].age+'</p> <p>'+data[i].role_name+'</p> <p>'+data[i].men_count+'</p> <p>'+data[i].address_name+'</p> </div> </div> <div class="exptv-detail"> <p>职位描述</p> <p>'+data[i].description+'</p> </div>'
+                        }
+                        $(".exptv-position").html(str)
+                    },
+                    error:function(){
+                        alert('fail');
+                    }
+                });
+                var shen=$(".shen");
+                var a=$(".exptv-position a")
+                console.log(a)
+                $(".exptv-position").on("click",".shen",function () {
+                    $(".alshen").css("display","block");
+                    $(".shen").css("display","none")
+                })
+                $(".exptv-position").on("click",".alshen",function () {
+                    alert("不能重复报名")
+                })

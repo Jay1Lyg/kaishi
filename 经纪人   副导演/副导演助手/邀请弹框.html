@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>角色信息</title>
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/weui.css" />
+    <link rel="stylesheet" href="css/weui3.css" />
+    <link rel="stylesheet" href="css/weui2.css" />
+    <link rel="stylesheet" href="css/alert.css" />
+    <style>
+        *{padding: 0;margin: 0;list-style: none}
+    </style>
+    <script type="text/javascript">
+        // document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 8 + "px";
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jqWeui.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+</head>
+<body>
+<section style="margin-bottom: 1rem">
+
+        <div class="notice_class">
+            <div class="notice_type" >
+                <p>领衔主演</p>
+                <p class="jiantou"><img src="img/sanyou.png" alt=""><img src="img/sanxia.png" alt=""></p>
+            </div>
+            <div class="detail_type ">
+                <div class="tabs">
+                    <ul class="tab">
+                        <li class="active">领衔主演</li>
+                        <li>主要演员</li>
+                        <li>客串演员</li>
+                        <li>其他演员</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <div class="active">
+                        <div class="weui-cells weui-cells_checkbox">
+                            <label class="weui-cell weui-check__label" for="s11">
+                                <div class="weui-cell__hd">
+                                    <input type="checkbox" class="weui-check" name="checkbox1"  />
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                                <div class="weui-cell__bd">
+                                    <p>standard is dealt for u.</p>
+                                </div>
+                            </label>
+                            <label class="weui-cell weui-check__label" for="s12">
+                                <div class="weui-cell__hd">
+                                    <input type="checkbox" name="checkbox1" class="weui-check" />
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                                <div class="weui-cell__bd">
+                                    <p>standard is dealicient for u.</p>
+                                </div>
+                            </label>
+                            <a href="javascript:void(0);" class="weui-cell weui-cell_link">
+                                <div class="weui-cell__bd">添加更多</div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <button>确定邀请</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</section>
+</body>
+<script>
+    toggle($(".notice_type"));
+    var btns =$(".tab li"),
+        contents =$(".section>div")
+    var t = new TabView(btns,contents);
+
+
+
+
+
+</script>
+</html>

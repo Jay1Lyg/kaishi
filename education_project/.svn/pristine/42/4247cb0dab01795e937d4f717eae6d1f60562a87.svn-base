@@ -1,0 +1,129 @@
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 首页
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/first_page.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/first_page.js')
+        // <script src="js/less.js"></script>
+    body.container
+        header
+            .top_logo
+                img(src='image/logo_option0.png', alt='')
+            div(style='border-top:1px solid black')
+                ul.nav.navbar-nav.ul2
+                    li.col-xs-2
+                        a(href='#') 关于领智
+                    li.col-xs-2.couse
+                        a 课程介绍
+                        ul.tab
+                            li
+                                a(href='/couse/bigdata') 大数据分析与应用
+                            li
+                                a(href='/couse/security') 网络与信息安全工程师
+                    li.col-xs-2
+                        a(href='/campuslist') 校区一览
+                    li.col-xs-2
+                        a(href='/teacher') 师资团队
+                    li.col-xs-2
+                        a(href='/message') 最新综合消息
+                    li.col-xs-2
+                        a(href='/contactus') 联系我们
+        section
+            #carousel-example-generic.carousel.slide(data-ride='carousel', style='position: relative')
+                // Indicators
+                ul.ul1
+                    li.year.yellow(data-target='#carousel-example-generic', data-slide-to='0') 1946
+                    li.year(data-target='#carousel-example-generic', data-slide-to='1') 1960
+                    li.year(data-target='#carousel-example-generic', data-slide-to='2') 1963
+                    li.year(data-target='#carousel-example-generic', data-slide-to='3') 1964
+                    li.year(data-target='#carousel-example-generic', data-slide-to='4') 1973
+                    li.year(data-target='#carousel-example-generic', data-slide-to='5') 1990
+                    li.year(data-target='#carousel-example-generic', data-slide-to='6') 1995
+                    li.year(data-target='#carousel-example-generic', data-slide-to='7') 1998
+                    li.year(data-target='#carousel-example-generic', data-slide-to='8') 2007
+                    li.year(data-target='#carousel-example-generic', data-slide-to='9') 2009
+                    li.year(data-target='#carousel-example-generic', data-slide-to='10') 2011
+                    li.year(data-target='#carousel-example-generic', data-slide-to='11') 2015
+                    li.year(data-target='#carousel-example-generic', data-slide-to='12') 2016
+                    li.year(data-target='#carousel-example-generic', data-slide-to='13') 2017
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                    .item.active
+                        img(width='100%', src='/image/banner1.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner1960.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner1963.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner1964.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner1973.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner1990.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner1995.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner1998.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner2007.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner2009.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner2011.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner2015.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner2016.jpg', alt='...')
+                    .item
+                        img(width='100%', src='/image/banner2017.jpg', alt='...')
+            .jumbotron
+                h1 关于我们
+                p
+                    | 中教领智（北京）教育科技有限公司是综合数据服务及教育信息化领域的新兴企业。公司拥有国际领先的“STEAM素质教育实验室解决方案”与自主研发的“智能深度学习高等教育实训实验室解决方案”。公司秉承“领异标新，智圆行方”的企业文化，拥有一支集海外归国人才与国内前沿学者相结合的高素质团队。目前，公司拥有教授（含正高级职称）3人、副教授7人、博士13人、硕士21人。合作伙伴遍及全球6个国家和地区，服务30余个国内外客户。
+                    | “领智学苑”隶属于中教领智教育科技有限公司，是IT职业教育线上+线下新型平台。致力于“让科技助力未来”，以实战为特色，为注重自我提升的IT从业者和在校学生提供高品质的职业教育。领智学苑IT职业培训涵盖前端，后段，移动全品类。数据挖掘、数据分析、机器学习、网络攻防模拟，信息安全等各学科依据职业需求设计课程，根据个人学习计划提供线下面授、线下小组协作、线上视频、图文、答疑、一对一辅导、推荐实习就业等服务。
+                    | 领智学苑是业界课程更新速度最快、涵盖范围最广、技术内容最新的IT职业教育机构。任课老师均来自于BAT等知名互联网公司以及国内外知名高校，并在全国7余所高校建立了“领智学苑IT培训基地”，连续3年实现了就业率94%的佳绩。
+            .train_img
+                img(src='image/zhong.jpg', alt='')
+                p
+                    | 2017-2020年计划在国内20所高校设立领智学苑培训基地
+                    | 每年培养超过4000名大数据与信息安全工程师
+        footer
+            div
+                ul.row.ul3
+                    li.col-xs-1.col-xs-offset-2
+                        a(href='')
+                            img(src='/image/1.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/2.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/3.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/4.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/5.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/6.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/7.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/8.png', alt='')
+                ul.row.ul4
+                    li.col-xs-2.col-xs-offset-1 领智教育总部
+                    li.col-xs-3 地址：北京市海淀区清华东路35号
+                    li.col-xs-2 联系电话：010-62336169
+                    li.col-xs-3 报名邮箱：leadingwisdom@aliyun.com

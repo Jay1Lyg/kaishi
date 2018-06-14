@@ -1,0 +1,59 @@
+.hot{
+	width: 6rem;
+	height: 6rem;
+	line-height: 6rem;
+	text-align: center;
+	font-size: 1.5rem;
+	color:#fff;
+	background: #f44336;
+}
+
+header ul{
+	width: 6rem;
+}
+header li{
+	width: 3rem;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	font-size: 1rem;
+	color:#fff;
+}
+.business{
+	background: #ff9800;
+}
+
+.military{
+	background: #795548;
+}
+
+.car{
+	background: #2196f3;
+}
+
+.joke{
+	background: #ffc107;
+}
+
+footer div{
+	width: 4rem;
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+	font-size: 1rem;
+	color:#fff;
+}
+.entertainment{
+	background: #3f51b5;
+}
+
+.pe{
+	background: #ff5722;
+}
+
+.technology{
+	background: #009688;
+}
+.hot:active,header li:active,footer div:active{
+	opacity: .5;
+}

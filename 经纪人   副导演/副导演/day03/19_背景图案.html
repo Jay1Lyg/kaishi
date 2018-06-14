@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="800" height="800" style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			var image = new Image();
+			image.src = "img/chengxin.png";
+			image.onload = function(){
+				//1. 先绘制图形
+				ctx.rect(50,50,500,400);
+				
+				//2. 创建背景图片
+				//一参: 是个图片元素
+				//二参: 是否重复  
+				var pattern = ctx.createPattern(image,'repeat')
+				
+				//3. 将背景图案  赋值给  fillStyle
+				ctx.fillStyle = pattern
+				//4. 绘制
+				ctx.fill();
+				
+			}
+			
+			ctx.fill();
+			
+			
+			
+		</script>
+	</body>
+</html>

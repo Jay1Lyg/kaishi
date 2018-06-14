@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="800" height="800" style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			ctx.lineWidth = 5;
+//			ctx.moveTo(100,50);
+//			ctx.lineTo(300,50)
+//			
+//			ctx.arcTo(350,50,350,100,50)
+//			ctx.lineTo(350,200)
+//			ctx.arcTo(350,250,300,250,50)
+//			ctx.lineTo(100,250)
+//			ctx.arcTo(50,250,50,200,50)
+//			ctx.lineTo(50,100)
+//			ctx.arcTo(50,50,100,50,50)
+			
+			function drawArcRect(x,y,w,h,r){
+				ctx.moveTo(x,y);
+				ctx.lineTo(x+w,y)
+				
+				ctx.arcTo(x+w+r,y,x+w+r,y+r,r)
+				ctx.lineTo(x+w+r,y+h)
+				ctx.arcTo(x+w+r,y+h+r,x+w,y+h+r,r)
+				ctx.lineTo(x,y+h+r)
+				ctx.arcTo(x-r,y+h+r,x-r,y+h,r)
+				ctx.lineTo(x-r,y+r)
+				ctx.arcTo(x-r,y,x,y,r)
+			}
+			
+			drawArcRect(100,50,200,100,50)
+			ctx.stroke();
+			
+			/*
+			canvas 可以2d 也可以3d
+					位图
+					适用场景:
+						游戏
+						图表:	echarts, ichartjs, Highcharts...
+			*/
+			
+			
+		</script>
+	</body>
+</html>

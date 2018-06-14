@@ -1,0 +1,38 @@
+{
+    "actor": [{
+            "name": "赵予熙",
+            "position": "演员 模特",
+            "img_url": "./img/演员1.png"
+        },
+        {
+            "name": "Janny",
+            "position": "模特",
+            "img_url": "./img/演员3.png"
+        },
+        {
+            "name": "Danny",
+            "position": "演员",
+            "img_url": "./img/演员4.png"
+        }, 
+        {
+            "name": "赵予熙",
+            "position": "演员 模特",
+            "img_url": "./img/演员1.png"
+        },
+        {
+            "name": "Janny",
+            "position": "模特",
+            "img_url": "./img/演员3.png"
+        },
+        {
+            "name": "Danny",
+            "position": "演员",
+            "img_url": "./img/演员4.png"
+        },
+        {
+            "name": "Danny",
+            "position": "演员",
+            "img_url": "./img/演员4.png"
+        }
+    ]
+}

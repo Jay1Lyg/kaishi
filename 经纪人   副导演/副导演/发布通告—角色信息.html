@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>发布通告</title>
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/weui.css" />
+    <link rel="stylesheet" href="css/application.css" />
+    <style>
+        *{padding: 0;margin: 0;list-style: none}
+    </style>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+</head>
+<body>
+<header>
+    <div class="newactor_banner">
+        <img src="image/img1.png" alt="">
+        <div>
+            <ul class="tab">
+                <li class="active">全部申请</li>
+                <li>已通过</li>
+                <li>未通过</li>
+            </ul>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="active">
+        <div class="notice_class">
+            <div class="notice_type" >
+
+                <p>电视电影</p>
+                <p class="jiantou"><img src="image/sanyou.png" alt=""><img src="image/sanxia.png" alt=""></p>
+            </div>
+            <div class="detail_type">
+                <div>
+                    <div class="display_experience">
+                        <div>
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="notice_class">
+            <div class="notice_type" >
+
+                <p>电视电影</p>
+                <p class="jiantou"><img src="image/sanyou.png" alt=""><img src="image/sanxia.png" alt=""></p>
+
+            </div>
+            <div class="detail_type">
+                <div>
+                    <div class="display_experience">
+                        <div>
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧&#x3000&#x3000名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="photo_experience">
+                                <img src="image/img1.png" alt="">
+                            </div>
+                            <div class="detail_experience">
+                                <ul>
+                                    <li><span>剧名：</span>《寡妇》</li>
+                                    <li><span>剧目类型：</span>电影</li>
+                                    <li><span>饰演角色：</span>nana</li>
+                                    <li><span>角色类型：</span>领携主演</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--========================已通过====================-->
+    <div>
+
+    </div>
+<!-- ++++++++++++++++++++++未通过---------------------->
+    <div>
+        文件还来不及
+    </div>
+    
+</section>
+</body>
+<script>
+    toggle($(".notice_type"));
+    var btns =$(".tab li"),
+        contents =$("section>div")
+    var t = new TabView(btns,contents);
+</script>
+</html>

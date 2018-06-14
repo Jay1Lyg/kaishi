@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="600" height="600"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			ctx.lineWidth = 5
+			
+			//ctx.arc(300,300,140,0,0.5*Math.PI,false);
+			ctx.arc(300,300,140,0,2*Math.PI,false);
+			ctx.stroke()
+			
+			/*
+			//ctx.arc(x,y,radius,startAngle,endAngle,是否是逆时针)
+			
+			一个完整的圆弧是  2π  2*Math.PI
+			
+			五参:
+				true:	逆时针
+				false:  顺时针
+			*/
+		</script>
+	</body>
+</html>

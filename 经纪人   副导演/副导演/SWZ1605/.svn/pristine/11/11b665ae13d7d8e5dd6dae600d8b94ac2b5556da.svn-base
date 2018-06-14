@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="css/api.css" />
+</head>
+<body>
+	<!--<button onclick="api.closeWin()">返回上一页</button>
+	Hello I'm STUDENT~~~~-->
+	<script src="../script/api.js"></script>
+	<script>
+		apiready = function(){
+			api.openSlidLayout({
+			    type: 'left', 			//左、右滑，安卓暂只支持left
+			    fixedPane: { 			//固定页设置
+			        name: 'fixed',
+			        url: 'fixed.html',
+			        bgColor: '#fff',
+			        bounces: true,
+			        vScrollBarEnabled: true,
+			        hScrollBarEnabled: false
+			    },
+			    slidPane: { 			//滑动页设置
+			        name: 'slid',
+			        url: 'slid.html',
+			        bgColor: '#fff',
+			        bounces: true,
+			        vScrollBarEnabled: true,
+			        hScrollBarEnabled: false
+			    }
+			},function(ret,err){});
+		}
+	</script>
+</body>
+</html>

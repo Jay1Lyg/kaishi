@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;}
+        li{
+            float: left;
+            box-sizing: border-box;
+            width: 33.333%;text-align: center;
+            height: 44px;line-height: 44px;
+            margin-left: -1px;
+            border: 1px solid #ccc;
+        }
+        li.active{
+            color: #fff;
+            background: #FF0000;
+            border: 1px solid #f00;
+        }
+        p{
+            display: none;
+            height: 400px;line-height: 400px;
+            font-size: 3em;
+            text-align: center;
+            color: #000;
+        }
+        p.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="active">按钮1</li>
+    <li>按钮2</li>
+    <li>按钮3</li>
+</ul>
+<div>
+    <p class="active">内容1</p>
+    <p>内容2</p>
+    <p>内容3</p>
+</div>
+<div>
+    <div class="div1" style="height: 50px;width: 100%;border: 1px solid black;color: #4da2ad;">
+                p;iodf;aidldj;ijh;i
+    </div>
+    <div class="div2" style="display: none">
+        jlkdvhjsvbklkblkvjhlkjbl;kjbljkgbp
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+<div>
+    <div class="div1" style="height: 50px;width: 100%;border: 1px solid black">
+        p;iodf;aidldj;ijh;i
+    </div>
+    <div class="div2" style="display: none">
+    </div>
+    <input type="checkbox" value="1" name="checkbox">聚会
+    <input type="checkbox" value="2" name="checkbox">聚会
+    <input type="checkbox">聚会
+    <input type="checkbox">聚会
+    <input type="checkbox">聚会
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <button onclick="btn()">jhgbvklsjhb</button>
+</div>
+<div id="main" style="width: 600px;height:400px;float: left" class="chart"></div>
+<div id="main1" style="width: 600px;height:400px;float: left" class="chart"></div>
+<p style="float: left">sjflkasjfbhlKJ</p>
+
+</div>
+
+
+<hr>
+<div style="clear: both">
+    <input type="range" style="width: 100%">
+</div>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/echarts.min.js"></script>
+
+<script src="js/tab.js"></script>
+<script>
+
+//    var btns =$("ul li"),
+//        contents =$("div p")
+
+
+//    var t = new TabView(btns,contents);
+var pust=[];
+function toggle(btn){
+    btn.click(function () {
+        $(this).next().toggle();
+    })
+}
+
+toggle($(".div1"))
+
+//获取复选框value
+function btn() {
+    $('input[name="checkbox"]:checked').each(function () {
+         pust.push($(this).val())
+    });
+    console.log(pust)
+}
+
+var myChart = echarts.init(document.getElementById('main'));
+//app.title = '极坐标系下的堆叠柱状图';
+
+var dataStyle = {
+    normal: {
+        label: {show:false},
+        labelLine: {show:false}
+    }
+};
+var placeHolderStyle = {
+    normal : {
+        color: 'rgba(0,0,0,0)',
+        label: {show:false},
+        labelLine: {show:false}
+    },
+    emphasis : {
+        color: 'rgba(0,0,0,0)'
+    }
+};
+var x=99;
+option = {
+    title: {
+        text: '总匹配度'+x+'%',
+        subtext: '来自紫螺科技数据',
+        sublink: 'https://www.baidu.com',
+        x: 'center',
+        y: 'center',
+        itemGap: 20,
+        textStyle : {
+            color : 'rgba(30,144,255,0.8)',
+            fontFamily : '微软雅黑',
+            fontSize : 18,
+            fontWeight : 'bolder',
+        }
+    },
+    tooltip : {
+        show: true,
+        formatter: "{a} <br/>{b}"
+    },
+    color:[
+        '#4da2ad','#adebf3','#cee7ea'
+    ],
+    legend: {
+        orient : 'vertical',
+        x : document.getElementById('main').offsetWidth/1.7,
+        y : 0,
+        itemGap:12,
+        data:['基本信息匹配度'+x+'%','29%的人表示生活压力很大','3%的人表示“我姓曾”']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    series : [
+        {
+            name:'基本信息',
+            type:'pie',
+            clockWise:false,
+            radius : [100, 125],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:x,
+                    name:'基本信息匹配度'+x+'%',
+                },
+                {
+                    value:100-x,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        },
+        {
+            name:'2',
+            type:'pie',
+            clockWise:false,
+            radius : [75, 100],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:29,
+                    name:'29%的人表示生活压力很大'
+                },
+                {
+                    value:71,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        },
+        {
+            name:'3',
+            type:'pie',
+            clockWise:false,
+            radius : [50, 75],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:3,
+                    name:'3%的人表示“我姓曾”'
+                },
+                {
+                    value:97,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        }
+    ]
+};
+
+myChart.setOption(option);
+var myChart1 = echarts.init(document.getElementById('main1'));
+//app.title = '极坐标系下的堆叠柱状图';
+
+
+
+option = {
+    title: {
+        text: '演员匹配度',
+        subtext: 'From ExcelHome',
+        sublink: 'http://e.weibo.com/1341556070/AhQXtjbqh',
+        x: 'center',
+        y: 'center',
+        itemGap: 20,
+        textStyle : {
+            color : 'rgba(30,144,255,0.8)',
+            fontFamily : '微软雅黑',
+            fontSize : 35,
+            fontWeight : 'bolder'
+        }
+    },
+    tooltip : {
+        show: true,
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'vertical',
+        x : document.getElementById('main').offsetWidth / 2,
+        y : 45,
+        itemGap:12,
+        data:[x+'%的人表示过的不错','29%的人表示生活压力很大','3%的人表示“我姓曾”']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    series : [
+        {
+            name:'基本信息匹配度',
+            type:'pie',
+            clockWise:false,
+            radius : [125, 150],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:x,
+
+                },
+                {
+                    value:100-x,
+                    name:'不匹配度',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        },
+        {
+            name:'2',
+            type:'pie',
+            clockWise:false,
+            radius : [100, 125],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:29,
+                    name:'29%的人表示生活压力很大'
+                },
+                {
+                    value:71,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        },
+        {
+            name:'3',
+            type:'pie',
+            clockWise:false,
+            radius : [75, 100],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:3,
+                    name:'3%的人表示“我姓曾”'
+                },
+                {
+                    value:97,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        }
+    ]
+};
+
+myChart1.setOption(option);
+// 使用刚指定的配置项和数据显示图表。
+
+
+</script>
+</body>
+</html>

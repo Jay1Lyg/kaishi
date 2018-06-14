@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html{font-size:62.5%;}
+        
+    </style>
+</head>
+<script>
+    function ShowFileName(){
+        var file;
+        for (var i = 0;document.getElementById("file").files.length;i++) {
+            file = document.getElementById("file").files[i];
+            alert(file.name);
+        }
+    }
+
+</script>
+<body>
+<input type="file" id="file" multiple="multiple" size="200" />
+<input type="button" onclick="ShowFileName();"  value="文件上传" />
+
+<div id="load"></div>
+
+
+
+</body>
+<script src="jquery.min.js"></script>
+<script>
+var url='http://www.901vehicle.cn:8080/htmlHelper/views/1513682961196.html';
+$("#load").load(url)
+
+</script>
+<!--<script>-->
+    <!--console.log(window.screen.width)-->
+    <!--console.log(window.location.search)-->
+    <!--var url='http://www.2345.com';-->
+   <!--$(".load").load(url)-->
+<!--</script>-->
+</body>
+</html>  

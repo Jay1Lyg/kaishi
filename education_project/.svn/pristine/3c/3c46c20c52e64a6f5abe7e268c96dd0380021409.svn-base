@@ -1,0 +1,157 @@
+//
+   Created by Admin on 2017/8/3.
+
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 信息安全
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/couse.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/first_page.js')
+        // <script src="js/less.js"></script>
+    body.container(style='padding:0')
+        header
+            .top_logo
+                img(src='/image/logo_option0.png', alt='')
+            div(style='border-top:1px solid black')
+                ul.nav.navbar-nav.ul2
+                    li.col-xs-2
+                        a(href='/') 关于领智
+                    li.col-xs-2.couse
+                        a 课程介绍
+                        ul.tab
+                            li
+                                a(href='/couse/bigdata') 大数据分析与应用
+                            li
+                                a(href='/couse/security') 网络与信息安全工程师
+                    li.col-xs-2
+                        a(href='/campuslist') 校区一览
+                    li.col-xs-2
+                        a(href='/teacher') 师资团队
+                    li.col-xs-2
+                        a(href='/message') 综合消息
+                    li.col-xs-2
+                        a(href='/contactus') 联系我们
+        section
+            div
+                img(width='100%', src='/image/saveco.jpg', alt='')
+            .jumbotron.jum_white
+                h1 “领智学苑”网络与信息安全工程师培养计划
+                h2 项目背景
+                p
+                    | 随着互联网发展和IT技术的普及，网络和IT已经日渐深入到日常生活和工作当中，社会信息化和信息网络化，突破了应用信息在时间和空间上的障碍，使信息的价值不断提高。但是与此同时，网页篡改、计算机病毒、系统非法入侵、数据泄密、网站欺骗、服务瘫痪、漏洞非法利用等信息安全事件时有发生。
+                    br
+                    |             面对国家和社会的需求，领智学苑联合工信部电子教育与考试中心实施“网络信息安全工程师高级职业培训(Network Security Advanced Career Education)”（简称NSACE）项目。其目标就是培养“德才兼备、攻防兼备”信息安全工程师，能够在各级行政、企事业单位、网络公司、信息中心、互联网接入单位中从事信息安全服务、运维、管理工作。
+                    br
+                    |             NSACE项目总体目标是培养“德才兼备、攻防兼备”信息安全工程师，能够在各级行政、企事业单位、网络公司、信息中心、互联网接入单位中从事信息安全服务、运维、管理工作。既要满足当前的信息安全工作岗位要求，又能使学员具备职业发展的潜力。打造具有“先进性、前瞻性、实用性、可操作性”职业教材，引领学员职业成长。
+                h2 课程详解
+                p NSACE项目各级培训目标分别描述如下：
+                p
+                    | 1．初级目标 (LEVEL-1)
+                    br
+                    |             在本级别中，学员经过训练，能够担负起小型网络信息安全工作。对网络信息安全有较为完整的认识，掌握电脑安全防护、网站安全、电子邮件安全、Internet网络安全部署、操作系统安全配置、恶意代码防护、常用软件安全设置、防火墙的应用等技能。
+                    br
+                    |             2．中级目标 (LEVEL-2)
+                    br
+                    |             在本级别中，学员得到充分专业训练，能完善和优化企业信息安全制度和流程。信息安全工作符合特定的规范要求，能够对系统中安全措施的实施进行了跟踪和验证，能够建立起立体式、纵深的安全防护系统，部署安全监控机制，对未知的安全威胁能够进行预警和追踪。
+                    br
+                    |             3．高级目标 (LEVEL-3)
+                    br
+                    |             在本级别中，学员能够针对安全策略、操作规程、规章制度和安全措施做到程序化、周期化的评估、改善和提升，能够组织建立本单位的信息安全体系。信息安全管理能够结合本单位的具体情况，制定合适的管理制度和流程，并能提出信息安全管理理念，推广到本单位中具体管理活动中。在技术能力上，对本单位的系统中安全措施能够总体上把关，掌握防护系统的脆弱性分析方法，能够提出安全防护系统的改进建议。熟悉信息安全行业标准和产品特性，熟悉信息安全技术发展动向，针对本单位信息安全需求，能够选择合适安全技术和产品。
+            .jumbotron.jum_hui
+                h1 项目优势
+                .hui_div
+                    h2 国家战略
+                    p
+                        | 网络空间安全已上升到国家战略,《网络安全法》2017年6月1日实施。习总书记提出，没有网络安全就没有国家安全，网络空间已成为国家继陆、海、空、天四个疆域之后的第五疆域。
+                .hui_div
+                    h2 好就业
+                    p
+                        | 当前我国重要行业信息系统和信息基础设施需要各类网络空间安全人才70万，预计到2020年需要各类网络空间人才约140万人,而目前每年高校信息安全相关专业毕业生不足3万人，市场缺口很大，供不应求。
+                .hui_div
+                    h2 薪资高
+                    p
+                        | 信息安全行业薪酬高，远高于其他专业。以北京为例，普遍薪资平均年薪接近10万，而拥有3-5年从业经验的安全人员平均年薪则在30-50万。信息安全行业，属于不折不扣的薪资快速增长行业。
+                .hui_div
+                    h2 全实战
+                    p 针对网络攻防实战研发的“网络攻防训练与实战”产品。教学过程中，通过攻防演练系统提供支持，实现竞赛化教学评价。场景真实、激发兴趣、完美促进学生消化攻防体系课程。
+            .jumbotron.jum_hui2
+                h1 就业职位
+                p 网络安全工程师的就业职位很广泛，总结下来主要有网络安全工程师、网络安全分析师、数据恢复工程师、网络构架工程师、网络集成工程师、网络安全编程工程师。
+                .hui_divimg
+                    img(width='100%', src='/image/save1.jpg', alt='')
+                .hui_divimg.divimg
+                    img(width='100%', src='/image/save2.jpg', alt='')
+                div(style='clear: both')
+            .jumbotron.jum_hui1(style='clear: both;margin-top: 20px')
+                h1 培养模式
+                .hui_div(style='padding:10% 10%')
+                    h2 基础+提高班
+                    p 1> 4个月封闭式强化学习+实训；
+                    p
+                        | 2> 6-8个月的企业实习，实习期表现优异可以签署就业协议。
+                        | 提高班
+                    h2 提高班
+                    p 1> 2个月封闭式强化学习+实训；
+                    p 2> 6-8个月的企业实习，实习期表现优异可以签署就业协议。
+            .jumbotron.jum_hui2
+                h1 培养目标
+                .hui_div
+                    h2 基础+提高班
+                    p 在校大二到大四在读学生，有志从事数据挖掘、数据分析或机器学习领域工作；
+                .hui_div.divhui
+                    h2 提高班
+                    p 在校大四在读学生或从业2年以内的大数据或IT从业者，有志从事数据挖掘、数据分析或机器学习领域工作。
+            .jumbotron.jum_white(style='padding-bottom: 10px; clear: both')
+                h2 领智学苑大数据工程师培养计划信心承诺
+                p 1、凡参加领智学苑大数据工程师培养计划的学生，如通过所有阶段的考核，均可获得工信部“信息与网络安全”职业资格证书。
+                p 2、凡参加领智学苑大数据工程师培养计划的学生，如通过所有阶段的考核，可获得三次实   习推荐机会，实习期表现优异可以签署就业协议。
+            .jumbotron.jum_white(style='padding-top: 20px ;clear: both;margin-bottom: 100px')
+                h2 信息与网络安全课程大纲图谱
+                span 说明:以下的技术点在我们本套课程中，全部包含。
+                div(style='text-align: center;margin-top: 10px')
+                    img(width='80%', src='/image/save.png', alt='')
+            a(href='/signup')
+                div(style='float: right;text-align: center;margin-right:10%')
+                    img(src='/image/baoming.png', alt='',width='50%')
+                    p(style='line-height:20px') 我要报名
+            div(style='clear: both')
+        .footer
+            div
+                ul.row.ul3
+                    li.col-xs-1.col-xs-offset-2
+                        a(href='')
+                            img(src='/image/1.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/2.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/3.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/4.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/5.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/6.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/7.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/8.png', alt='')
+                ul.row.ul4
+                    li.col-xs-2.col-xs-offset-1 领智教育总部
+                    li.col-xs-3 地址：北京市海淀区清华东路35号
+                    li.col-xs-2 联系电话：010-62336169
+                    li.col-xs-3 报名邮箱：leadingwisdom@aliyun.com

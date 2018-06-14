@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			var arr = ['p_0.jpg','p_1.jpg'];
+			var imgSrc = arr[Math.floor(Math.random()*2)];
+			var radius = 20;
+			var isMouseDown = false;
+			
+			canvas.style.background = "url(img/"+imgSrc+") left top no-repeat"
+			
+			var img = new Image();
+			img.src = "img/"+imgSrc;
+			img.onload = function(){
+				canvas.width = this.width;
+				canvas.height = this.height;
+				
+				//绘制蒙版
+				ctx.fillStyle = "#ccc";
+				ctx.rect(0,0,canvas.width,canvas.height);
+				ctx.fill();
+				
+				//用全局组合实现剪切
+				ctx.globalCompositeOperation = "destination-out"
+				
+				canvas.onmousedown = function(){
+					isMouseDown = true;
+					return false;
+				}
+				
+				canvas.onmousemove = function(e){
+					var e = e || window.event;
+					if(isMouseDown){
+						var point = windowToCanvas(e);
+						//console.log(point.x,point.y)
+						//画圆
+						ctx.beginPath();
+						ctx.fillStyle = "#0000FF"
+						ctx.arc(point.x,point.y,radius,0,2*Math.PI,false);
+						ctx.fill()
+					}
+					return false;
+				}
+				document.onmouseup = function(){
+					isMouseDown = false;
+					return false;
+				}
+			}
+			
+			//将相对于window的坐标转换成相对于canvas左上角的坐标
+			function windowToCanvas(e){
+				var rect = canvas.getBoundingClientRect();
+				return {
+					x: e.clientX - rect.left,
+					y: e.clientY - rect.top
+				}
+				
+			}
+			/*
+			思路:
+				1. 背景(死的)添加给canvas, canvas.style.background
+				2. 让背景变活 ,  让路径用随机数产生	
+					路径添加到数组中,随机产生数组的下标, 以此得到随机的路径
+				3. 添加蒙版	绘制矩形
+				4. 先画圆 , 鼠标移动的时候画圆
+				5. 实现裁剪 , 用全局组合
+				6. 解决遗留问题
+					a. 鼠标按下去,才实现裁切.  
+						加个开关,只要开关为开才画圆裁切
+						开关什么时候开/关?
+							鼠标按下去  -> 开
+							鼠标抬起来 -> 关
+					b. 按住鼠标移出canvas时,再进来,开关并没有关闭
+						将mouseup事件  添加到document身上,不管在哪儿只要鼠标抬起来就关闭开关
+			*/
+			
+		</script>
+	</body>
+</html>

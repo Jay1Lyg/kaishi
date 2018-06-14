@@ -1,0 +1,91 @@
+﻿doctype html
+html(lang='zh-cmn-Hans')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1,user-scalable=0')
+        title 搜索
+        link(rel='stylesheet', href='css/weui.css')
+        link(rel='stylesheet', href='css/myNotice.css')
+        link(rel='stylesheet', href='css/common.css')
+        link(rel='stylesheet', href='css/jqueryWeui.css')
+        // <script src="js/zepto.min.js"></script>
+        script(src='js/jquery.min.js')
+        script(src='js/detail.js')
+        script(src='js/jqWeui.js')
+        script(src='js/template-web.js')
+        script(type='text/javascript', src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+    body.weui-pull-to-refresh(ontouchstart='')
+        .weui-pull-to-refresh__layer
+            .weui-pull-to-refresh__arrow
+            .weui-pull-to-refresh__preloader
+            .down 下拉刷新
+            .up 释放刷新
+            .refresh 正在刷新
+        div
+        #searchBar.weui-search-bar
+            .weui-cell.weui-cell_select.weui-cell_select-after(style='height: 30px')
+                .weui-cell__bd(style='height: 30px')
+                    select.weui-select.option(name='select2', style='margin-top: -8px')
+                        option(value='2', style='text-align: right') 职位
+                        option(value='1', style='text-align: right') 项目
+            form.weui-search-bar__form
+                .weui-search-bar__box
+                    i.weui-icon-search
+                    input#searchInput.weui-search-bar__input(type='search', placeholder='搜索', required='')
+                    a#searchClear.weui-icon-clear(href='javascript:')
+                label#searchText.weui-search-bar__label
+                    i.weui-icon-search
+                    span 搜索
+            a.weui-search-bar__cancel-btn(onclick='a()') 搜索
+        .notice-more
+            .notice-small
+        .weui-loadmore(style='clear: both;display: none')
+            i.weui-loading
+            span.weui-loadmore__tips 正在加载
+        script.
+            $(document.body).pullToRefresh().on("pull-to-refresh",function () {
+                setTimeout(function () {
+                    $(document.body).pullToRefreshDone();
+                },2000)
+            });
+            function a() {
+                $(".weui-loadmore").css("display","block")
+                var name=$("#searchInput").val();
+                var index=$(".option").val();
+                var page=1;
+                var url="http://www.kaishiapp.com/WX/wx_allfuzzyquerry/";
+                console.log(index);
+                console.log(name);
+                if(name){
+                    $.ajax({
+                        type : "get",
+                        url : url+index+"/"+name+"/"+page,
+                        dataType : "jsonp",
+                        // jsonp: "jsonpCallback",
+                        success : function(data){
+                            var All=data;
+                            console.log(All)
+                            var str = $('.notice-small').html();
+                            for(var i=0;i<All.length;i++){
+                                str += '<a href="http:www.//kaishiapp.com/WX/wx_moreposition/'+All[i].id+'/'+All[i].author_id+'"> <div class="notice-left"> <img src="'+All[i].production_imagesURL+'" alt=""> </div> <div class="notice-right"> <p> <span>'+All[i].category+'</span>'+All[i].rolename+'</p> <div> <img src="img/定位.png" alt=""> <span class="spanMa"> '+All[i].address_name+'</span> <img src="img/倒计时.png" alt=""> <span>截止日期：'+All[i].expired_date+'</span> </div> <div> <img src="img/报名.png" alt=""> <span>'+All[i].men_count+'人报名</span> </div> <div class="notice-crew"> <span>《'+All[i].projectname+'》</span>剧组 </div> </div> <div class="nullWhite"></div> </a>'
+                            }
+                            if(All.length<=4){
+                                $(".weui-loadmore").css("display","none");
+                            }
+                            if(All.length!=0){
+                                $('.notice-small').html(str);
+                            }else {
+                                alert("数据加载完了");
+                                $(".weui-loadmore").css("display","none");
+                                return false
+                            }
+                        },
+                        error:function(){
+                            alert('fail');
+                        }
+                    });
+                }else{
+                    $.toast("请输入搜索内容","text");
+                    $(".weui-loadmore").css("display","none")
+                }
+            }

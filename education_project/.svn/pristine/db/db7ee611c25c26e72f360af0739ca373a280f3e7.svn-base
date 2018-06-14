@@ -1,0 +1,139 @@
+//
+   Created by Admin on 2017/8/3.
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 大数据分析与应用
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/couse.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/first_page.js')
+        // <script src="js/less.js"></script>
+    body.container(style='padding:0')
+        header
+            .top_logo
+                img(src='/image/logo_option0.png', alt='')
+            div(style='border-top:1px solid black')
+                ul.nav.navbar-nav.ul2
+                    li.col-xs-2
+                        a(href='/') 关于领智
+                    li.col-xs-2.couse
+                        a 课程介绍
+                        ul.tab
+                            li
+                                a(href='/couse/bigdata') 大数据分析与应用
+                            li
+                                a(href='/couse/security') 网络与信息安全工程师
+                    li.col-xs-2
+                        a(href='/campuslist') 校区一览
+                    li.col-xs-2
+                        a(href='/teacher') 师资团队
+                    li.col-xs-2
+                        a(href='/message') 综合消息
+                    li.col-xs-2
+                        a(href='/contactus') 联系我们
+        section
+            div
+                img(width='100%', src='/image/bigban.jpg', alt='')
+            .jumbotron.jum_white
+                h1 一、大数据分析与应用工程师培养计划
+                h2 项目背景
+                p
+                    | 据2016年《大数据人才报告》显示，目前全国大数据人才仅有46万，预计在未来3到5年人才缺口将达到350万之多，而高校作为培养社会所需人才的重要基地，毫无疑问的担负起填补未来大数据人才缺口的重任，因此，培养大数据应用人才成为当今高校人才培养目标的重中之重。 如何才能保质保量的完成大数据人才培养目标呢？基于社会对大数据人才培养的需求，中华人民共和国工业和信息化部人才交流中心、北京邮电大学联合中教领智（北京）教育科技有限公司，共同推出了“领智学苑”大数据分析与应用工程师培养计划。该培养计划立足于当前大数据的时代背景，联合阿里云共同打造集教学、实验、培训于一体的大数据实验与实训平台，集成业界最前沿的大数据应用，提供简单易用的管理功能，并针对教学实训的场景量身定制了实验开发调试环境、实验运行管理以及教学管理等功能，同时结合一线的实战项目，提供多行业多门类具有超强实践性的教学课程和实验课程，将实际企业大数据应用项目引进课堂，真正实现学生走出校门企业即可用的人才培养目标。
+                    br
+                    |             大数据领域三个大的技术方向:方向1、Hadoop 大数据开发方向 ; 方向2、数据挖掘、数据分析&机器学习方向; 方向3、大数据运维 & 云计算方向。精通任何方向之一者，均会前途无量，而需要说明的，三个方向中，数据挖掘、数据分析&机器学习是大数据催生新兴职业数据分析师成IT界翘楚。随着大数据在国内的发展，大数据相关人才却出现了供不应求的状况，大数据分析师更是被媒体称为“未来最具发展潜力的职业之一”。
+                h2 培养目标
+                p
+                    | 大数据分析与应用工程师培养计划致力于培养擅长大数据技术、懂得将数据与业务更好结合、达到应用目的的实用型高端人才，通过企业级案例分析和实际项目的锻炼，培养学生处理复杂数据流、整合趋势报告、处理自然语言的能力。
+            .jumbotron.jum_hui
+                h1 项目特色
+                .hui_div
+                    h2 特色一、专业/热门/前沿课程体系
+                    p 数据挖掘/数据分析/数据仓库/商业智能/大数据技术/人工智能/机器学习/深度学习/项目管理/系统架构 一个都不能少!
+                .hui_div
+                    h2 特色二、全面就业技能实训
+                    p 0 基础入门，4 大阶段，26 门课程，2000+ 学时，8 大软技能，16 大硬技能，各大行业经典案例，项目实战
+                .hui_div
+                    h2 特色三、全程干货，实操为王
+                    p 我们不仅仅在于数据挖掘/数据分析，算法理论上深入讲解，更是贯穿大量实战案例与企业常用工具配合使用，让学生成为一个实战型人才，入职企业就能快速上手工作。
+                .hui_div
+                    h2 特色四、适合不同层次学员学习
+                    p 无论是刚毕业或在校大学生，还是已经从事相关专业工作，都可以选择学习本套课程，为您未来的更好的就业或晋级加薪充电加油。
+            .jumbotron.jum_hui1
+                h1 培养模式
+                .hui_div
+                    h2 基础+提高班
+                    p 1> 4个月封闭式强化学习+实训；
+                    p
+                        | 2> 6-8个月的企业实习，实习期表现优异可以签署就业协议。
+                        | 提高班
+                    h2 提高班
+                    p 1> 2个月封闭式强化学习+实训；
+                    p 2> 6-8个月的企业实习，实习期表现优异可以签署就业协议。
+            .jumbotron.jum_hui2
+                h1 培养目标
+                .hui_div(style='padding:10% 10%')
+                    h2 基础+提高班
+                    p 在校大二到大四在读学生，有志从事数据挖掘、数据分析或机器学习领域工作；
+                .hui_div(style='padding:10% 10%')
+                    h2 提高班
+                    p 在校大四在读学生或从业2年以内的大数据或IT从业者，有志从事数据挖掘、数据分析或机器学习领域工作。
+            .jumbotron.jum_white(style='padding-bottom: 10px; clear: both')
+                h2 领智学苑大数据工程师培养计划信心承诺
+                p 1、凡参加领智学苑大数据工程师培养计划的学生，如通过所有阶段的考核，均可获得工信部“信息与网络安全”职业资格证书。
+                p 2、凡参加领智学苑大数据工程师培养计划的学生，如通过所有阶段的考核，可获得三次实   习推荐机会，实习期表现优异可以签署就业协议。
+            .jumbotron.jum_white
+                h2 就业薪资
+                p
+                    | 大数据催生数据分析师薪酬比同等级职位高 20% 有媒体报道，在美国，大数据分析师平均每年薪酬高达 17.5 万美元，而国内顶尖互联网公司，大数据分析师的薪酬可能要比同一个级别的其他职位高 20%至 30%，且颇受企业重视。
+                div
+                    img(width='80%', src='/image/big1.jpg', alt='')
+                div
+                    img(style='float: right;margin-top: 20px', width='80%', src='/image/big2.jpg', alt='')
+            .jumbotron.jum_white(style='padding-top: 20px ;clear: both;margin-bottom: 100px')
+                h2 大数据挖掘分析师技术图谱
+                span 说明:以下的技术点在我们本套课程中，全部包含。
+                div(style='text-align: center;margin-top: 10px')
+                    img(width='80%', src='/image/bigco.jpg', alt='')
+            div(style='float: right;text-align: center')
+                img(src='image/lingma.png', alt='')
+                p 我要报名
+            div(style='clear: both')
+        .footer
+            div
+                ul.row.ul3
+                    li.col-xs-1.col-xs-offset-2
+                        a(href='')
+                            img(src='/image/1.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/2.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/3.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/4.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/5.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/6.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/7.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/8.png', alt='')
+                ul.row.ul4
+                    li.col-xs-2.col-xs-offset-1 领智教育总部
+                    li.col-xs-3 地址：北京市海淀区清华东路35号
+                    li.col-xs-2 联系电话：010-62336169
+                    li.col-xs-3 报名邮箱：leadingwisdom@aliyun.com

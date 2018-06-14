@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>演员详情</title>
+    <!--<link rel="stylesheet" href="css/reset.css">-->
+    <!--<link rel="stylesheet" href="css/jqueryWeui.css">-->
+    <link rel="stylesheet" href="css/weui.css" />
+    <link rel="stylesheet" href="css/actor_edti.css" />
+    <link rel="stylesheet" href="css/zoomify.css" />
+    <style>
+        *{padding: 0;margin: 0;list-style: none}
+        .newactor_banner>div.fixed_tel{
+            width: 35%;
+            height: 40px;
+            /*border: 1px solid red;*/
+            position: fixed;
+            right: -7%;
+            top:12%;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.3);
+
+        }
+        .newactor_banner>div.fixed_tel span{
+            color: white;
+            font-size: 14px;
+            position: fixed;
+            right: 3%;
+            line-height: 40px;
+        }
+        .newactor_banner>div.fixed_tel img{
+            width: 20px;
+            height: 20px;
+            position: fixed;
+            right: 20%;
+            top:13.3%;
+        }
+        .agree_actor1{
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            bottom: 0;
+            /*right: 5px;*/
+            /*left: 5px;*/
+            z-index: 100;
+            background: rgba(242, 242, 242, 1);
+
+
+
+        }
+        .agree_actor1 button{
+            margin-top: 10px;
+            width: 30%;
+            height: 45px;
+            float: left;
+            margin-left: 10px;
+            background: #4da2ad;
+            color: white;
+            border: none;
+            bottom: 0;
+            border-radius: 5px;
+        }
+
+        /*电话弹窗*/
+        .delog_tel{
+            display: none;
+            width: 60%;
+            position: fixed;
+            left: 20%;
+            top: 40%;
+            z-index: 201;
+            background: white;
+            border-radius: 5px;
+
+        }
+        .delog_tel p{
+            font-size: 14px;
+            margin: 10px 10px;
+            clear: both;
+        }
+        .delog_tel p>a{
+            font-size: 14px;
+            color: #333;
+        }
+
+
+
+
+
+
+        .ovfHiden{overflow: hidden;height: 100%;}
+    </style>
+    <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-weui.js"></script>-->
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+</head>
+<body>
+<header>
+    <div class="newactor_banner">
+        <img src="img/banner.png" alt="">
+        <div class="fixed_tel">
+            <img src="img/tel.png" alt="">
+            <span>联系剧组</span>
+        </div>
+        <div>
+            <ul class="tab">
+                <li class="active">基本资料</li>
+                <li>参演经历</li>
+                <li>照片视频</li>
+                <li>接戏标准</li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--同意按钮---------------->
+<div class="agree_actor1">
+    <button>拒绝申请</button>
+    <button style="visibility:hidden">添加到备选方案</button>
+    <button>同意申请</button>
+</div>
+<section style="margin-bottom: 65px">
+    <!--基本资料-->
+    <div class="information active">
+        <!--资料-->
+        <!--基本资料-->
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input"> 艺名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color name" type="text"  placeholder="请输入艺名">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input">真实姓名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="请输入真实姓名">
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label  common-input"> 性别</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="性别">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="" class="weui-label common-input"> 出生年月</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input  font "  type="date" value="">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="" class="weui-label common-input"> 三围</label></div>
+                <div class=" measurements">
+                    <input class="weui-input "  type="type" value="" placeholder="bust">
+                    <input class="weui-input "  type="type" value="" placeholder="waist">
+                    <input class="weui-input "  type="type" value="" placeholder="hip">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input" > 身高 cm</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="number" pattern="[0-9]*" placeholder="请输入身高">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input" >体重 kg</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="number"  pattern="[0-9]*" placeholder="请输入体重">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input" >毕业院校</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="number"  pattern="[0-9]*" placeholder="请输入毕业院校">
+                </div>
+            </div>
+            <div class="weui-cell add-college" >
+                <div class="weui-cell__hd"><label class="weui-label common-input"> 技能特长</label></div>
+                <div class="weui-cell__bd">
+                    <span>不限</span>
+
+                </div>
+            </div>
+            <div class="weui-cell add-college" >
+                <div class="weui-cell__hd"><label class="weui-label common-input"> 特征</label></div>
+                <div class="weui-cell__bd specialty">
+                    <span>不限</span>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <!--参演经历-->
+    <div class="experience">
+        <!--参演经历-->
+        <div class="display_experience">
+            <div>
+                <div class="photo_experience">
+                    <img src="img/img1.png" alt="">
+                </div>
+                <div class="detail_experience">
+
+                    <ul>
+                        <li><span>剧&#x3000名：</span>《寡妇》</li>
+                        <li><span>剧目类型：</span>电影</li>
+                        <li><span>饰演角色：</span>nana</li>
+                        <li><span>角色类型：</span>领携主演</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <!--照片视屏-->
+    <div class="photos">
+        <!--照片视屏-->
+        <div class="casting">
+            <h4 class="h4">照片</h4>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>正面卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>左侧45度卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>右侧45度卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/banner.png" alt="">
+                </div>
+                <p>右侧90度卡腰</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>左侧90度卡腰</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>正面卡腰</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>正面全身</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>露额头正面卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="img/img1.png" alt="">
+                </div>
+                <p>生活照</p>
+            </div>
+
+        </div>
+        <div class="url">
+            <h4 class="h4">视频</h4>
+            <div>
+                <p>url：<input type="text"></p>
+            </div>
+        </div>
+
+    </div>
+    <!--接戏标准-->
+    <div class="standard">
+        <!--接戏标准-->
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell" >
+                <div class="weui-cell__hd"><label class="weui-label common-input">剧目类型</label></div>
+                <div class="weui-cell__bd specialty">
+                    <span>不限</span>
+
+                </div>
+            </div>
+            <div class="weui-cell" >
+                <div class="weui-cell__hd"><label class="weui-label common-input">角色类别</label></div>
+                <div class="weui-cell__bd specialty">
+                    <span>不限</span>
+
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label  common-input"> 片酬：</label>
+                    <p class="no">(对外不公布)</p>
+                </div>
+                <div class="weui-cell__bd" >
+                    <input class="weui-input font-color" type="number"  pattern="[0-9]*" placeholder="请输入体重">
+                </div>
+            </div>
+            <div class="weui-cell" >
+                <div class="weui-cell__hd"><label class="weui-label common-input">档期：</label></div>
+                <div class="weui-cell__bd specialty">
+                    <input class="weui-input font-color" type="number"  pattern="[0-9]*" placeholder="请输入体重">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<div class="delog_tel">
+    <span style="color: #4da2ad;font-size: 14px;float: right;margin: 5px;">取消</span>
+    <p style="border-bottom: 1px solid #999"><a href="18334680915">18334680915</a></p>
+    <p>见组地址：北京市东城区</p>
+</div>
+<div class="overlay1" ></div>
+<script src="js/zoomify.js"></script>
+<script>
+    $('.casting img').zoomify();
+    $('.newactor_banner>img').zoomify();
+
+    //    基本资料
+var btns =$(".tab li"),
+    contents =$("section>div")
+var t = new TabView(btns,contents);
+
+$(".fixed_tel").click(function(){
+    $(".delog_tel").css("display","block");
+    $(".overlay1").css("display","block");
+    $('html,body').addClass('ovfHiden');
+    $(".overlay1").css({ "width": $(document).width(), "height": $(document).height() });
+})
+$(".delog_tel>span").click(function(){
+    $(".delog_tel").css("display","none");
+    $(".overlay1").css("display","none");
+    $('html,body').removeClass('ovfHiden');
+})
+</script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../css/api.css"/>
+    <link rel="stylesheet" href="../css/iconfont.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/news_list.css" />
+</head>
+<body>
+	<script type="text/x-dot-template" id="new-tml">
+		
+		{{ for(var i=0;i<it.length;i++){ }}
+			<div class="list">
+				<h3 class="ellipsis-2">网易娱乐2月28日报道浙江卫视《我们十七岁》在上周迎来了六位神奇动物的加盟。明艳动人的鹦鹉、老成稳重的小乌龟、腼腆温柔的小狗多多，机灵可爱的大眼萌小奶猴、贵气</h3>
+				<small>回复：<span>123</span>时间：<span>2017-12-5</span>来源：<span>网易新闻</span></small>
+				<img src="../image/banner_3.jpg" alt="" />
+				<p class="digest ellipsis-3">网易娱乐2月28日报道浙江卫视《我们十七岁》在上周迎来了六位神奇动物的加盟。明艳动人的鹦鹉、老成稳重的小乌龟、腼腆温柔的小狗多多，机灵可爱的大眼萌小奶猴、贵气</p>
+			</div>
+		{{ } }}
+		
+	</script>
+	<section id="news"></section>
+</body>
+<script src="../script/api.js"></script>
+<script src="../script/doT.min.js"></script>
+<script src="../script/news_list_frame.js"></script>
+</html>

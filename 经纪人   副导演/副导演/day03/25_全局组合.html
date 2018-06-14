@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="600" height="600" style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			//a
+			ctx.fillStyle = "#f00"
+			ctx.rect(0,0,200,150)
+			ctx.fill();
+			
+			//只留下在a这个范围内的内容
+			//ctx.globalCompositeOperation = "source-atop"
+			
+			//显示b在a上边的部分
+			//ctx.globalCompositeOperation = "source-in"
+			
+			//显示b在a外边的部分
+			//ctx.globalCompositeOperation = "source-out"
+			
+			//并集  b在a上
+			//ctx.globalCompositeOperation = "source-over"
+			
+			//显示b范围中的内容,并把a放到了b上面
+			//ctx.globalCompositeOperation = "destination-atop"
+			
+			//显示a在b上边的部分
+			//ctx.globalCompositeOperation = "destination-in"
+			
+			//只留下a在b外的内容
+			//ctx.globalCompositeOperation = "destination-out"
+			
+			//并集  a在b上
+			//ctx.globalCompositeOperation = "destination-over"
+			
+			//交集部分有颜色叠加
+			//ctx.globalCompositeOperation = "lighter"
+			
+			//a在b上
+			//ctx.globalCompositeOperation = "darker"
+			
+			//a+b - (a与b的交集)
+			//ctx.globalCompositeOperation = "xor"
+			
+			//b
+			//ctx.globalCompositeOperation = "copy"
+			
+			//b
+			ctx.beginPath()
+			ctx.fillStyle = "#f0f"
+			ctx.arc(200,150,80,0,2*Math.PI,false)
+			ctx.fill()
+		</script>
+	</body>
+</html>

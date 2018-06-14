@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="SM.js"></script>
+<div class="ge_pic_icon_Infor">
+    <img src="images/moren.jpg"/>
+</div>
+<div class="Infor_file">
+    <input type="file" name="uploadPicture" id="file" value="" title="上传照片" onchange="getPhoto(this)"/>
+</div>
+<script type="text/javascript">
+    var imgurl = "";
+    function getPhoto(node) {
+        var imgURL = "";
+        try{
+            var file = null;
+            if(node.files && node.files[0] ){
+                file = node.files[0];
+            }else if(node.files && node.files.item(0)) {
+                file = node.files.item(0);
+            }
+            //Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+            try{
+                imgURL =  file.getAsDataURL();
+            }catch(e){
+                imgRUL = window.URL.createObjectURL(file);
+            }
+        }catch(e){
+            if (node.files && node.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    imgURL = e.target.result;
+                };
+                reader.readAsDataURL(node.files[0]);
+            }
+        }
+        creatImg(imgRUL);
+        return imgURL;
+    }
+
+    function creatImg(imgRUL){
+        var textHtml = "<img src='"+imgRUL+"' width='100%'/>";
+        $(".ge_pic_icon_Infor").html(textHtml);
+        console.log($(".ge_pic_icon_Infor img").attr("src"))
+        function getBase64(url){
+            //通过构造函数来创建的 img 实例，在赋予 src 值后就会立刻下载图片，相比 createElement() 创建 <img> 省去了 append()，也就避免了文档冗余和污染
+            var Img = new Image(),
+                dataURL='';
+            Img.src=url;
+            Img.onload=function(){ //要先确保图片完整获取到，这是个异步事件
+                var canvas = document.createElement("canvas"), //创建canvas元素
+                    width=Img.width, //确保canvas的尺寸和图片一样
+                    height=Img.height;
+                canvas.width=width;
+                canvas.height=height;
+                canvas.getContext("2d").drawImage(Img,0,0,width,height); //将图片绘制到canvas中
+                dataURL=canvas.toDataURL('image/jpeg'); //转换图片为dataURL
+                console.log(dataURL)
+            };
+        }
+        var url=$(".ge_pic_icon_Infor img").attr("src");
+
+        getBase64(url)
+
+
+
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

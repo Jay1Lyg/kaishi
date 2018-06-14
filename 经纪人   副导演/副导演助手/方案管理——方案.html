@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>角色信息</title>
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/weui2.css"/>
+    <link rel="stylesheet" href="css/actor_edit_echart.css"/>
+    <link rel="stylesheet" href="css/noticeJob.css"/>
+    <link rel="stylesheet" href="css/program.css"/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none
+        }
+
+        body {
+            background: white
+        }
+    </style>
+    <script type="text/javascript">
+        // document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 8 + "px";
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="js/jqWeui.js"></script>-->
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+</head>
+<body>
+
+<header id="header">
+    <div style="text-align: center">
+        <p>方案</p>
+    </div>
+</header>
+
+<div class="program">
+    <div class="slider">
+        <div class="one_slider">40%</div>
+        <div class="two_slider">30%</div>
+        <div class="three_slider">20%</div>
+        <div class="four_slider">10%</div>
+    </div>
+    <div class="bai">
+        <ul>
+            <li>0%</li>
+            <li>10%</li>
+            <li>20%</li>
+            <li>30%</li>
+            <li>40%</li>
+            <li>50%</li>
+            <li>60%</li>
+            <li>70%</li>
+            <li>80%</li>
+            <li>90%</li>
+            <li>100%</li>
+        </ul>
+    </div>
+    <div style="clear: both"></div>
+    <div class="slide_info">
+        <ul>
+            <li>
+                <span class="one_kuai"></span>领衔主演
+            </li>
+            <li>
+                <span class="two_kuai"></span>主要演员
+            </li>
+            <li>
+                <span class="three_kuai"></span>客串演员
+            </li>
+            <li>
+                <span class="four_kuai"></span>其他演员
+            </li>
+        </ul>
+    </div>
+</div>
+<div style="clear: both"></div>
+<div class="notice_class">
+    <div class="notice_type">
+        <p>主要演员</p>
+        <p class="jiantou"><img src="img/sanyou.png" alt=""><img src="img/sanxia.png" alt=""></p>
+
+    </div>
+    <div>
+        <div>
+            <div class="information_actor">
+                <ul>
+                    <li>职位名称：男一号</li>
+                    <li>性别：男</li>
+                    <li>年龄段：青年</li>
+                    <li>身高(cm)：1</li>
+
+                </ul>
+                <p class="all_info">查看全部信息</p>
+                <div class="information_actornone">
+                    <ul>
+                        <li>体型：偏廋</li>
+                        <li>招募数量：1</li>
+                        <li>技能特长：1</li>
+                        <li>特征：1</li>
+                    </ul>
+
+                    <div>
+                        <p>人物小传</p>
+                        <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
+                    </div>
+                    <p class="put_away">收起</p>
+                </div>
+
+            </div>
+            <div>
+                <div class="beixuan">
+                    <div>
+                        <div class="weui_cell slidelefts">
+                            <div class="weui_cell_bd weui_cell_primary ">
+                                <div>
+                                    <div class="recommend_edit" style="height: 132px">
+                                        <div>
+                                            <img src="img/img1.png" alt="" class="chart">
+                                        </div>
+                                        <div>
+                                            <p style="font-size: 14px">与旗下演员<span>刘德华</span>匹配度较高</p>
+                                            <!--<div id="main" style="width: 100px;height:100px;float: left;"></div>-->
+                                            <ul class="pipei">
+                                                <li>基本信息：</li>
+                                                <li>特征角色：</li>
+                                                <li>片酬需求：</li>
+                                                <li>档期匹配：</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="slideleft">
+                                <span class="bg-green f-white">删除</span>
+                            </div>
+                        </div>
+                        <div class="weui_cell slidelefts">
+                            <div class="weui_cell_bd weui_cell_primary ">
+                                <div>
+                                    <div class="recommend_edit" style="height: 132px">
+                                        <div>
+                                            <img src="img/img1.png" alt="" class="chart">
+                                        </div>
+                                        <div>
+                                            <p style="font-size: 14px">与旗下演员<span>刘德华</span>匹配度较高</p>
+                                            <!--<div id="main" style="width: 100px;height:100px;float: left;"></div>-->
+                                            <ul class="pipei">
+                                                <li>基本信息：</li>
+                                                <li>特征角色：</li>
+                                                <li>片酬需求：</li>
+                                                <li>档期匹配：</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="slideleft">
+                                <span class="bg-green f-white">删除</span>
+                            </div>
+                        </div>
+
+                        <div class="more_actor">
+                            <p class="button1"><span class="weui-badge" style="margin-left: 5px;background: #4da2ad">8</span>备选演员
+                            </p>
+                            <p class="button2">更多推荐<span class="weui-badge"
+                                                         style="margin-left: 5px;background: white;color: #4da2ad">8</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <p style="width: 100%;height: 0.2rem;background:#f2f2f2;clear: both;"></p>
+        </div>
+    </div>
+
+
+
+
+    <div class="notice_type">
+        <p>主要演员</p>
+        <p class="jiantou"><img src="img/sanyou.png" alt=""><img src="img/sanxia.png" alt=""></p>
+
+    </div>
+    <div class="detail_type">
+        <div >
+            <div class="information_actor">
+                <ul>
+                    <li>职位名称：男一号</li>
+                    <li>性别：男</li>
+                    <li>年龄段：青年</li>
+                    <li>身高(cm)：1</li>
+
+                </ul>
+                <p class="all_info">查看全部信息</p>
+                <div class="information_actornone">
+                    <ul>
+                        <li>体型：偏廋</li>
+                        <li>招募数量：1</li>
+                        <li>技能特长：1</li>
+                        <li>特征：1</li>
+                    </ul>
+
+                    <div>
+                        <p>人物小传</p>
+                        <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
+                    </div>
+                    <p class="put_away">收起</p>
+                </div>
+
+            </div>
+            <div class="beixuan">
+                <div class="weui_cell slidelefts">
+                    <div class="weui_cell_bd weui_cell_primary ">
+                        <div>
+                            <div class="recommend_edit" style="height: 132px">
+                                <div>
+                                    <img src="img/img1.png" alt="" class="chart">
+                                </div>
+                                <div>
+                                    <p style="font-size: 14px">与旗下演员<span>刘德华</span>匹配度较高</p>
+                                    <!--<div id="main" style="width: 100px;height:100px;float: left;"></div>-->
+                                    <ul class="pipei">
+                                        <li>基本信息：</li>
+                                        <li>特征角色：</li>
+                                        <li>片酬需求：</li>
+                                        <li>档期匹配：</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="slideleft">
+                        <span class="bg-green f-white">删除</span>
+                    </div>
+                </div>
+                <div class="weui_cell slidelefts">
+                    <div class="weui_cell_bd weui_cell_primary ">
+                        <div>
+                            <div class="recommend_edit" style="height: 132px">
+                                <div>
+                                    <img src="img/img1.png" alt="" class="chart">
+                                </div>
+                                <div>
+                                    <p style="font-size: 14px">与旗下演员<span>刘德华</span>匹配度较高</p>
+                                    <!--<div id="main" style="width: 100px;height:100px;float: left;"></div>-->
+                                    <ul class="pipei">
+                                        <li>基本信息：</li>
+                                        <li>特征角色：</li>
+                                        <li>片酬需求：</li>
+                                        <li>档期匹配：</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="slideleft">
+                        <span class="bg-green f-white">删除</span>
+                    </div>
+                </div>
+
+                <div class="more_actor">
+                    <p class="button1"><span class="weui-badge" style="margin-left: 5px;background: #4da2ad">8</span>备选演员
+                    </p>
+                    <p class="button2">更多推荐<span class="weui-badge"
+                                                 style="margin-left: 5px;background: white;color: #4da2ad">8</span></p>
+                </div>
+            </div>
+            <p style="width: 100%;height: 0.2rem;background:#f2f2f2;clear: both;"></p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    toggle($(".notice_type"));
+    $(".detail_type").on("click", ".all_info", function () {
+        $(this).hide();
+        $(this).next(".information_actornone").show()
+    });
+    $(".detail_type").on("click", ".put_away", function () {
+        $(this).parent(".information_actornone").prev(".all_info").show();
+        $(this).parent(".information_actornone").hide();
+    });
+    window.slideleft = (function ($) {
+        var listItem = $(".weui_cell_bd"), listOpts = $(".slideleft");
+        var onthel = false, isScroll = false, initX = 0, initY = 0, endX = 0, endY = 0, moveX = 0, expandLi = null;
+        var slideMaxWid = listOpts.width();
+        var handleSlide = (function () {
+            listItem.on("touchstart", function (e) {
+                if (expandLi) {
+                    if (expandLi.parent().index() !== $(this).parent().index()) {
+                        if (Math.abs(endY - initY) < Math.abs(endX - initX)) {
+                            e.preventDefault()
+                        }
+                        expandLi.css("-webkit-transform", "translateX(" + 0 + "px)")
+                    }
+                }
+                initX = e.targetTouches[0].pageX;
+                initY = e.targetTouches[0].pageY;
+                moveX = $(this).offset().left;
+                $(this).on("touchmove", function (e) {
+                    var curY = e.targetTouches[0].pageY;
+                    var curX = e.targetTouches[0].pageX;
+                    var X = curX - initX;
+                    $(this).removeClass("animated");
+                    if (Math.abs(endY - initY) < Math.abs(endX - initX)) {
+                        e.preventDefault();
+                        if (moveX == 0) {
+                            if (X > 0) {
+                                $(this).css("-webkit-transform", "translateX(" + 0 + "px)")
+                            } else {
+                                if (X < 0) {
+                                    if (X < -slideMaxWid) {
+                                        X = -slideMaxWid
+                                    }
+                                    $(this).css("-webkit-transform", "translateX(" + X + "px)")
+                                }
+                            }
+                        } else {
+                            if (moveX < 0) {
+                                onthel = true;
+                                if (X > 0) {
+                                    if (X - slideMaxWid > 0) {
+                                        $(this).css("-webkit-transform", "translateX(" + 0 + "px)")
+                                    } else {
+                                        $(this).css("-webkit-transform", "translateX(" + (X - slideMaxWid) + "px)")
+                                    }
+                                } else {
+                                    $(this).addClass("animated");
+                                    $(this).css("-webkit-transform", "translateX(" + 0 + "px)")
+                                }
+                            }
+                        }
+                    } else {
+                        isScroll = true
+                    }
+                })
+            });
+            listItem.on("touchend", function (e) {
+                endX = e.changedTouches[0].pageX;
+                endY = e.changedTouches[0].pageY;
+                var X = endX - initX;
+                $(this).addClass("animated");
+                if (X > -20 || onthel || isScroll) {
+                    $(this).css("-webkit-transform", "translateX(" + 0 + "px)");
+                    onthel = false;
+                    isScroll = false
+                } else {
+                    $(this).css("-webkit-transform", "translateX(" + (-slideMaxWid) + "px)");
+                    expandLi = $(this)
+                }
+            })
+        })()
+    })(Zepto);
+    function echo(stringA, stringB) {
+        var hello = "你好";
+        alert("hello world")
+    };
+
+</script>
+</html>

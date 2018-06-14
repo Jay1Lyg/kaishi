@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>通告详情</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/myNotice.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <!--<script src="js/zepto.min.js"></script>-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/detail.js"></script>
+    <script src="js/jqWeui.js"></script>
+    <script src="js/template-web.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $(function () {
+//            下拉刷新
+            $(document.body).pullToRefresh().on("pull-to-refresh",function () {
+                setTimeout(function () {
+                    $(document.body).pullToRefreshDone();
+                    ajaxEs ();
+                },2000)
+            });
+
+//            滚动加载
+            var j=0;
+            var loading = false;  //状态标记
+            $(document.body).infinite().on("infinite", function(e) {
+                if(loading) return;
+                loading = true;
+                setTimeout(function() {
+                    console.log($(".notice-small").length);
+//                    console.log(j)
+                        ajaxAdd (j);
+                    loading = false;
+
+                }, 1000);
+
+            });
+
+            $(".notice-tab").on("click",function(e){
+                console.log("kk");
+                if(!$(".notice-tab").hasClass("active")) {
+                    $(".notice-tab").removeClass("active");
+                    $(this).addClass("active");
+                    var $index = $(this).index();
+                    $(".notice-tab .imgIng").eq($index).addClass("disNone");
+                    $(".notice-tab .imgEd").eq($index).removeClass("disNone");
+                    $(".tabDown>div").removeClass("actives");
+                    $(".tabDown>div").eq($index).addClass("actives");
+                    e.stopPropagation()
+                }
+            });
+            $.ajax({
+                type : "get",
+                url : "http://www.kaishiapp.com/WX/wx_allproductiontypes/1/null",
+                dataType : "jsonp",
+                // jsonp: "jsonpCallback",
+                success : function(data){
+
+                    var dataOne=data;
+                    console.log(data);
+                    var str = $('.btnOne').html()
+                    for(var i=0;i<dataOne.length;i++){
+                        str += '<li class="btn" id="'+data[i].id+'">'+data[i].name+'</li>'
+                    }
+                    $('.btnOne').html(str)
+                },
+                error:function(){
+                    alert('fail');
+                }
+            });
+            $.ajax({
+                type : "get",
+                url : "http://www.kaishiapp.com/WX/wx_allrolecategories/1/null",
+                dataType : "jsonp",
+                // jsonp: "jsonpCallback",
+                success : function(data){
+                    var dataTwo=data;
+                    console.log(data);
+                    var str = $('.btnTwo').html();
+                    for(var i=0;i<dataTwo.length;i++){
+                        str += '<li class="btn" id="'+data[i].id+'">'+data[i].name+'</li>'
+                    }
+                    $('.btnTwo').html(str)
+                },
+                error:function(){
+                    alert('fail');
+                }
+            });
+
+            // 全部
+            var productiontype="null",
+                rolecategory="null",
+                area="null",
+                isregistered="null",
+                name="null",
+
+                time=new Date();
+
+            var url="http://www.kaishiapp.com/WX/wx_allpositions/";
+            function ajaxEs (page) {
+                $.ajax({
+                    type : "get",
+                    url : url+ productiontype +"/"+rolecategory+"/"+area+"/"+isregistered+"/"+page+"/"+name+"/"+appid+"/"+openid+"/"+time,
+                    dataType : "jsonp",
+                    // jsonp: "jsonpCallback",
+                    async:false,
+                    success : function(data){
+                        console.log(data)
+                        var All=data;
+                        var html = template('artTemplate', {
+                            notices: All});
+                        $('.notice-small').html(html);
+                        j=2;
+
+                    },
+                    error:function(){
+                        alert('fail');
+                    }
+                });
+
+            }
+            ajaxEs (1);
+
+//            滚动刷新
+            function ajaxAdd (page) {
+                $.ajax({
+                    type : "get",
+                    url : url+ productiontype +"/"+rolecategory+"/"+area+"/"+isregistered+"/"+page+"/"+name+"/"+time,
+                    dataType : "jsonp",
+                    async:false,
+                    // jsonp: "jsonpCallback",
+                    success : function(data){
+//                        console.log(data.length);
+                         All=data;
+                        var str = $('.notice-small').html();
+                        for(var i=0;i<All.length;i++){
+                            str += '<a href="http:www.//kaishiapp.com/WX/wx_moreposition/'+All[i].id+'/'+All[i].author_id+'"> <div class="notice-left"> <img src="'+All[i].production_image+'" alt=""> </div> <div class="notice-right"> <p> <span>'+All[i].production_category+'</span>'+All[i].role_name+'</p> <div> <img src="img/定位.png" alt=""> <span class="spanMa"> '+All[i].address_name+'</span> <img src="img/倒计时.png" alt=""> <span>截止日期：'+All[i].expired_date+'</span> </div> <div> <img src="img/报名.png" alt=""> <span>'+All[i].men_count+'</span> </div> <div class="notice-crew"> <span>《'+All[i].crews_name+'》</span>剧组 </div> </div> <div class="nullWhite"></div> </a>'
+                        }
+                        if(data.length!=0){
+                            $('.notice-small').html(str);
+                        }else {
+//                            alert("数据加载完了");
+                            $(".weui-loadmore").css("display","none")
+                            return false
+                        }
+                },
+                    error:function(){
+                        alert('fail');
+                    }
+                });
+                j++;
+            }
+
+            //项目类别
+            $(".btnOne").on("click","li",function () {
+                productiontype=$(this).attr("id");
+                console.log(productiontype);
+                ajaxEs ()
+            });
+            //人员需求
+            $(".btnTwo").on("click","li",function () {
+                rolecategory=$(this).attr("id");
+                console.log(rolecategory);
+                ajaxEs ()
+            });
+// 认证
+            $(".btnThree").on("click","li",function () {
+                isregistered=$(this).attr("id");
+                console.log(isregistered);
+                ajaxEs ()
+
+
+            });
+            $(document).click(function() {
+                if($(".notice-tab").hasClass("active")){
+                    $(".imgEd").addClass("disNone");
+                    $(".imgIng").removeClass("disNone");
+                    $(".notice-tab").removeClass("active");
+                    $(".tabDown>div").removeClass("actives")
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body ontouchstart class="weui-pull-to-refresh">
+<div class="weui-pull-to-refresh__layer">
+    <div class="weui-pull-to-refresh__arrow"></div>
+    <div class="weui-pull-to-refresh__preloader"></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+</div>
+<header id="header">
+    <div>
+        <!--<img src="img/矩形-1-拷贝.png" alt="">-->
+        <p>通告</p>
+
+    </div>
+</header>
+
+<section>
+    <div class="banner-1">
+        <img src="img/图层-4.png" alt="">
+    </div>
+    <div class="weui-flex tabUp">
+        <div class="weui-flex__item notice-tab"><span>项目类别</span><img class="imgIng" src="img/三角black.png" alt=""><img class="imgEd disNone" src="img/三角-上blue.png" alt=""></div>
+        <div class="weui-flex__item notice-tab"><span>人员需求</span><img class="imgIng" src="img/三角black.png" alt=""><img class="imgEd disNone" src="img/三角-上blue.png" alt=""></div>
+        <div class="weui-flex__item notice-tab"><span>官方认证</span><img class="imgIng" src="img/三角black.png" alt=""><img class="imgEd disNone" src="img/三角-上blue.png" alt=""></div>
+    </div>
+    <div class="tabDown" >
+        <div >
+            <ul class="btn btnOne" >
+
+            </ul>
+        </div>
+        <div >
+            <ul class="btn btnTwo">
+
+            </ul>
+
+        </div>
+        <div >
+            <ul class="btn btnThree" >
+                <li id="null">全部</li>
+                <li id="true">已认证</li>
+                <li id="false">未认证</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="notice-more">
+        <div class="notice-small">
+
+        </div>
+    </div>
+
+</section>
+
+<script type="text/html" id="artTemplate">
+    {{ each notices $value i }}
+    <a href="http://kaishiapp.com/WX/wx_moreposition/{{$value.id}}/{{$value.author_id}}" id="btnOne">
+            <div class="notice-left">
+                <img src="{{ $value.production_image }}" alt="">
+                </div>
+                <div class="notice-right">
+                <p>
+                <span>{{ $value.production_category }}</span>
+                    {{ $value.role_name }}
+            </p>
+            <div>
+            <img src="img/定位.png" alt="">
+                <span class="spanMa">{{ $value.address_name }}</span>
+                <img src="img/倒计时.png" alt="">
+                <span>截止日期：{{ $value.expired_date }}</span>
+                </div>
+                <div>
+                <img src="img/报名.png" alt="">
+                <span>{{ $value.men_count }}</span>
+                </div>
+                <div class="notice-crew">
+                <span>《{{ $value.crews_name }}》</span>剧组
+            </div>
+            </div>
+            <div class="nullWhite"></div>
+        </a>
+    {{/each}}
+</script>
+<div class="weui-loadmore" style="clear: both">
+    <i class="weui-loading"></i>
+    <span class="weui-loadmore__tips">正在加载</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+*{padding: 0;margin: 0;list-style: none;font-size: 62.5%}
+body{
+	padding: 0.24rem;
+	background: rgb(235,235,235);
+}
+
+section,header{
+	background: white;
+}
+.tab_div{
+	width: 100%;
+	height: 1.68rem;
+	/*border: 1px solid black;*/
+}
+.tab_div>ul{
+	width: 100%;
+}
+.tab_div>ul li{
+	float: left;
+	width: 50%;
+	height: 1.68rem;
+	line-height: 1.68rem;
+	text-align: center;
+	font-size: 0.28rem;
+}
+.tab_div>ul li.active{
+	background: rgb(239,117,40);
+	color: white;
+}
+section>div{
+	display: none;
+	padding: 0.2rem;
+}
+section>div.active{
+	display: block;
+}
+.radio>ul{
+	width: 100%;
+}
+.radio>p{
+	color: #333;
+	font-size: 0.28rem;
+}
+.radio>ul li{
+	float: left;
+	width: 25%;
+	font-size: 0.28rem;
+	color: #666;
+	margin-bottom: 0.18rem;
+}
+.checkbox{
+	clear: both;
+}
+.checkbox>p{
+	color: #333;
+	font-size: 0.28rem;
+}
+.checkbox>ul{
+	width: 100%;
+}
+.checkbox>ul li{
+	float: left;
+	width: 25%;
+	font-size: 0.28rem;
+	color: #666;
+	margin-bottom: 0.18rem;
+}
+.clearfix{
+	clear: both;
+}
+.need_datel{
+	border: 1px solid #999;
+	width: 100%;
+	height: 1.5rem;
+	margin-bottom: 0.2rem;
+}
+.need_datel input{
+
+	outline:none;
+	border: none;
+	width: 85%;
+	height: 100%;
+	padding-left: 0.2rem;
+}
+.need_datel span{
+	font-size: 0.28rem;
+	color: #333;
+}
+.btn{
+	width: 100%;
+}
+.btn button{
+	width: 100%;
+	border: none;
+	background: rgb(239,117,40);
+	color: white;
+	height: 1.6rem;
+	border-radius: 0.5rem;
+}
+.btn p{
+	color: red;
+	font-size: 0.26rem;
+}
+.info>p{
+	font-size: 0.28rem;
+}
+h4>span{
+	text-align: center;font-size: 0.28rem;color: rgb(239,117,40);
+	border: 1px solid rgb(239,117,40);
+	padding: 0.1rem 0.2
+	rem;
+
+}
+ h4>img{
+	 vertical-align:middle
+ }
+
+
+

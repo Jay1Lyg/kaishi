@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>通告详情</title>
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/weui.css" />
+    <link rel="stylesheet" href="css/actor_chert.css" />
+    <style>
+        *{padding: 0;margin: 0;list-style: none}
+    </style>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+
+</head>
+<body>
+<header>
+
+<section>
+    <div class="number_div" style="display: block">
+        <div id="0.9" class="recommend_edit" style="height: 132px">
+            <div>
+                <img src="image/img1.png" alt="" class="chart">
+            </div>
+            <div>
+                <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+                <div id="main" style="width: 100px;height:100px;float: left;"></div>
+                <ul class="pipei">
+                    <li><span class="one"></span>基本信息：</li>
+                    <li><span class="two"></span>特征角色：</li>
+                    <li><span class="three"></span>片酬需求：</li>
+                    <li><span class="four"></span>档期匹配：</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+        <div id="0.9" class="recommend_edit" style="height: 132px">
+            <div>
+                <img src="image/img1.png" alt="" class="chart">
+            </div>
+            <div>
+                <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+                <div id="main" style="width: 100px;height:100px;float: left;"></div>
+                <ul class="pipei">
+                    <li><span class="one"></span>基本信息：</li>
+                    <li><span class="two"></span>特征角色：</li>
+                    <li><span class="three"></span>片酬需求：</li>
+                    <li><span class="four"></span>档期匹配：</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+        <div id="0.9" class="recommend_edit" style="height: 132px">
+            <div>
+                <img src="image/img1.png" alt="" class="chart">
+            </div>
+            <div>
+                <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+                <div id="main" style="width: 100px;height:100px;float: left;"></div>
+                <ul class="pipei">
+                    <li><span class="one"></span>基本信息：</li>
+                    <li><span class="two"></span>特征角色：</li>
+                    <li><span class="three"></span>片酬需求：</li>
+                    <li><span class="four"></span>档期匹配：</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+        <div id="222" class="recommend_edit" style="height: 132px">
+            <div>
+                <img src="image/img1.png" alt="" class="chart">
+            </div>
+            <div>
+                <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+                <div id="main" style="width: 100px;height:100px;float: left;"></div>
+                <ul class="pipei">
+                    <li><span class="one"></span>基本信息：</li>
+                    <li><span class="two"></span>特征角色：</li>
+                    <li><span class="three"></span>片酬需求：</li>
+                    <li><span class="four"></span>档期匹配：</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+        <div id="0.9" class="recommend_edit" style="height: 132px">
+            <div>
+                <img src="image/img1.png" alt="" class="chart">
+            </div>
+            <div>
+                <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+                <div id="main" style="width: 100px;height:100px;float: left;"></div>
+                <ul class="pipei">
+                    <li><span class="one"></span>基本信息：</li>
+                    <li><span class="two"></span>特征角色：</li>
+                    <li><span class="three"></span>片酬需求：</li>
+                    <li><span class="four"></span>档期匹配：</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+        <div id="0.9" class="recommend_edit" style="height: 132px">
+            <div>
+                <img src="image/img1.png" alt="" class="chart">
+            </div>
+            <div>
+                <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+                <div id="main" style="width: 100px;height:100px;float: left;"></div>
+                <ul class="pipei">
+                    <li><span class="one"></span>基本信息：</li>
+                    <li><span class="two"></span>特征角色：</li>
+                    <li><span class="three"></span>片酬需求：</li>
+                    <li><span class="four"></span>档期匹配：</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+        <div id="2222" class="recommend_edit" style="height: 132px">
+            <div>
+                <img src="image/img1.png" alt="" class="chart">
+            </div>
+            <div>
+                <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+                <div id="main" style="width: 100px;height:100px;float: left;"></div>
+                <ul class="pipei">
+                    <li><span class="one"></span>基本信息：</li>
+                    <li><span class="two"></span>特征角色：</li>
+                    <li><span class="three"></span>片酬需求：</li>
+                    <li><span class="four"></span>档期匹配：</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div><div style="background: #f2f2f2;height: 3px;clear: both"></div><div id="0.9" class="recommend_edit" style="height: 132px">
+        <div>
+            <img src="image/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <p>与旗下演员<span>刘德华</span>匹配度59%</p>
+            <div id="main" style="width: 100px;height:100px;float: left;"></div>
+            <ul class="pipei">
+                <li><span class="one"></span>基本信息：</li>
+                <li><span class="two"></span>特征角色：</li>
+                <li><span class="three"></span>片酬需求：</li>
+                <li><span class="four"></span>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+
+        <div style="background: #f2f2f2;height: 3px;clear: both"></div>
+
+
+     </div>
+
+
+
+</section>
+    
+<div class="fixed">
+
+    <ul>
+        <li>200</li>
+        <li>190</li>
+        <li>180</li>
+        <li>170</li>
+        <li>160</li>
+        <li>150</li>
+        <li>140</li>
+        <li>130</li>
+        <li>120</li>
+        <li>110</li>
+        <li>100</li>
+        <li>90</li>
+        <li>80</li>
+        <li>70</li>
+        <li>60</li>
+        <li>50</li>
+        <li>40</li>
+        <li>30</li>
+        <li>20</li>
+        <li class="a">10</li>
+        <li>0</li>
+        <li>-10</li>
+        <li>-20</li>
+        <li>-30</li>
+
+
+    </ul>
+</div>
+    <div class="range"></div>
+</body>
+<script>
+    toggle($(".notice_type"));
+    $(".detail_type").on("click",".all_info",function () {
+        $(this).hide();
+        $(this).next(".information_actornone").show()
+    });
+    $(".detail_type").on("click",".put_away",function () {
+        $(this).parent(".information_actornone").prev(".all_info").show();
+        $(this).parent(".information_actornone").hide();
+    })
+    var btns =$(".tab li"),
+        contents =$("section>div")
+    var t = new TabView(btns,contents);
+    var myChart = echarts.init(document.getElementById('main'));
+//    var myChart1 = echarts.init(document.getElementById('main1'));
+//    var myChart2 = echarts.init(document.getElementById('main2'));
+//    var myChart3 = echarts.init(document.getElementById('main3'));
+    //app.title = '极坐标系下的堆叠柱状图';
+
+    var dataStyle = {
+        normal: {
+            label: {show:false},
+            labelLine: {show:false}
+        }
+    };
+    var placeHolderStyle = {
+        normal : {
+            color: 'rgba(0,0,0,0)',
+            label: {show:false},
+            labelLine: {show:false}
+        },
+        emphasis : {
+            color: 'rgba(0,0,0,0)'
+        }
+    };
+    var x=59;
+    var y=69;
+    var z=23;
+    var suitability=65;
+    option = {
+        title: {
+            text: suitability+'%',
+            //subtext: '紫螺',
+            //sublink: 'https://www.baidu.com',
+            x: 'center',
+            y: 'center',
+            itemGap: 10,
+            textStyle : {
+                color : '#4da2ad',
+                fontFamily : '微软雅黑',
+                fontSize : 20,
+                fontWeight : 'bolder',
+            }
+        },
+        grid:{
+            x:0,
+            y:5,
+            x2:50,
+            y2:0,
+            borderWidth:1
+        },
+//        tooltip : {
+//            show: true,
+//            formatter: "{a} <br/>{b}"
+//        },
+        color:[
+            '#4da2ad','#adebf3','#cee7ea','#222222'
+        ],
+//        legend: {
+//            orient : 'vertical',
+//            x : document.getElementById('main').offsetWidth/1.7,
+//            y : 0,
+//            itemGap:12,
+//            data:['基本信息匹配度'+x+'%','29%的人表示生活压力很大','3%的人表示“我姓曾”']
+//        },
+        toolbox: {
+            show : false,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        series : [
+            {
+                name:'基本信息',
+                type:'pie',
+                clockWise:false,
+                radius : [35, 40],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:x,
+                        name:'基本信息匹配度'+x+'%',
+                    },
+                    {
+                        value:100-x,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle
+                    }
+                ]
+            },
+            {
+                name:'特征角色',
+                type:'pie',
+                clockWise:false,
+                radius : [30, 35],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:y,
+                        name:'特征角色匹配度'+x+'%',
+                    },
+                    {
+                        value:100-y,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle
+                    }
+                ]
+            },
+            {
+                name:'片酬需求',
+                type:'pie',
+                clockWise:false,
+                radius : [25, 30],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:z,
+                        name:'片酬需求匹配度'
+                    },
+                    {
+                        value:100-z,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle
+                    }
+                ]
+            },
+//            {
+//                name:'档期匹配',
+//                type:'pie',
+//                clockWise:false,
+//                radius : [20, 25],
+//                itemStyle : dataStyle,
+//                data:[
+//                    {
+//                        value:3,
+//                        name:'档期匹配度'
+//                    },
+//                    {
+//                        value:97,
+//                        name:'invisible',
+//                        itemStyle : placeHolderStyle
+//                    }
+//                ]
+//            }
+        ]
+    };
+
+    myChart.setOption(option);
+//    myChart1.setOption(option);
+//    myChart2.setOption(option);
+//    myChart3.setOption(option);
+    var fixed_height=$(".fixed").height();
+    $(".number_div>.recommend_edit").scroll(function(){
+        console.log($(this).scrollTop())
+
+    });
+    var top = $(document).scrollTop();
+//    $('.recommend_edit').each(function () {
+//            var $this=$(this)
+//            var $this_offset=$this.offset().top;;
+//
+//            console.log($this_offset)
+//
+//
+//        });
+
+    var otop=$("#2222").offset().top;
+    console.log(otop);
+
+
+    $(window).scroll(function (){
+        var st = $(this).scrollTop();
+        console.log(st);
+//        var otop=$("#2222").offset().top;
+        if(otop<st){
+            $(".a").css("color","red")
+        }
+    })
+    //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    var hei=$(".recommend_edit").height();
+//
+//    //var hei=recommend_edit_height;
+////    倍数
+//    var multiple=recommend_edit_height/fixed_height;
+////    获取div个数
+//    var number_div=$('.number_div').children().length/2;
+//
+//    var recommend_edit_height=hei*number_div-fixed_height;
+//
+//    $('.recommend_edit').each(function () {
+//        var $this=$(this).offset().top;
+//        var $this_index=$(this);
+//        $(window).scroll(function ()
+//        {
+//            var st = $(this).scrollTop();
+//            str=st/$this;
+//            var ex = /^\d+$/;
+//            if (ex.test(str)) {
+//
+//                console.log("ll是整数")
+//                console.log($this_index.attr("id"))
+//                console.log($this_index)
+//            }
+//
+//
+//            //滚动的距离和总共高度的比
+//            var except=st/recommend_edit_height;
+//            //换算侧边栏应该滚动的比例或者距离
+//            var bi_height=fixed_height*except
+////            console.log(except);
+////            console.log(bi_height);
+//            $(".range").css("top",bi_height);
+////            console.log(st);
+//        });
+//        console.log($this)
+//
+//
+//    });
+//    console.log(number_div);
+//    console.log(hei);
+
+
+</script>
+</html>
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>发布通告</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/noticeJob.css">
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body >
+<!--<form action='' method='post' id="form" target="rfFrame">-->
+    <header id="header">
+        <div>
+            <p>角色信息</p>
+        </div>
+    </header>
+
+    <section>
+
+
+        <div class="page panel js_show">
+            <div class="page__bd">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label common-input"> 职位名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input name="role" class="weui-input font-color role" type="text" placeholder="请输入">
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_select-after">
+                    <div class="weui-cell__hd">
+                        <label for="" class="weui-label  common-input"> 性别</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select class="weui-select option select_sex" name="select_sex">
+                            <option value="1" style="text-align: right">男</option>
+                            <option value="2" style="text-align: right">女</option>
+                            <option value="3" style="text-align: right">不限</option>
+                        </select>
+                    </div>
+                </div>
+
+                    <div class="weui-cell weui-cell_select weui-cell_select-after">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label  common-input"> 年龄段</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <select class="weui-select option select_age" name="select_age">
+                                <option value="1" style="text-align: right">婴幼儿</option>
+                                <option value="2" style="text-align: right">少年</option>
+                                <option value="3" style="text-align: right">青年</option>
+                                <option value="4" style="text-align: right">中年</option>
+                                <option value="5" style="text-align: right">老年</option>
+                                <option value="6" style="text-align: right">不限</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 招募数量</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="recruit_number" class="recruit_number weui-input font-color" type="text" placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 身高</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="recruit_adress" class="weui-input font-color recruit_adress" type="text" placeholder="请输入">
+                        </div>
+                    </div>
+                <div class="weui-cell weui-cell_select weui-cell_select-after">
+                    <div class="weui-cell__hd">
+                        <label for="" class="weui-label  common-input"> 体型</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select class="weui-select option shape" name="shape">
+                            <option value="1" style="text-align: right">瘦子</option>
+                            <option value="2" style="text-align: right">偏瘦</option>
+                            <option value="3" style="text-align: right">适中</option>
+                            <option value="4" style="text-align: right">健硕</option>
+                            <option value="5" style="text-align: right">胖子</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="weui-cell add-college" >
+                    <div class="weui-cell__hd"><label class="weui-label common-input"> 技能特长</label></div>
+                    <div class="weui-cell__bd specialty">
+                        <div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div><div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div>
+
+                    </div>
+                </div>
+                <div class="weui-cell add-college" >
+                    <div class="weui-cell__hd"><label class="weui-label common-input"> 特征</label></div>
+                    <div class="weui-cell__bd specialty">
+                        <div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div><div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div>
+
+                    </div>
+                </div>
+                <div>
+
+                    <div class="weui-cells__title common-input">人物小传</div>
+                    <div class="weui-cells weui-cells_form">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <textarea name="describe" class="weui-textarea actorData describe" placeholder="描述" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+</section>
+<!--</form>-->
+<!--<iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe>-->
+<footer>
+    <div class="page__bd page__bd_spacing ">
+        <a  class="weui-btn look-over" id="subMit">确定</a>
+    </div>
+
+</footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/jqWeui.js"></script>
+<script src="js/rootfont.js"></script>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+<script>
+
+
+</script>
+
+</body>
+</html>
+<div class="page__bd"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input"> 职位名称</label></div><div class="weui-cell__bd"><input name="role" class="weui-input font-color role" type="text" placeholder="请输入"></div></div><div class="weui-cell weui-cell_select weui-cell_select-after"><div class="weui-cell__hd"><label for="" class="weui-label  common-input"> 性别</label></div><div class="weui-cell__bd"><select class="weui-select option select_sex" name="select_sex"><option value="1" style="text-align: right">男</option><option value="2" style="text-align: right">女</option><option value="3" style="text-align: right">不限</option></select></div></div><div class="weui-cell weui-cell_select weui-cell_select-after"><div class="weui-cell__hd"><label class="weui-label  common-input"> 年龄段</label></div><div class="weui-cell__bd"><select class="weui-select option select_age" name="select_age"><option value="1" style="text-align: right">婴幼儿</option><option value="2" style="text-align: right">少年</option><option value="3" style="text-align: right">青年</option><option value="4" style="text-align: right">中年</option><option value="5" style="text-align: right">老年</option><option value="6" style="text-align: right">不限</option></select></div></div><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input"> 招募数量</label></div><div class="weui-cell__bd"><input name="recruit_number" class="recruit_number weui-input font-color" type="text" placeholder="请输入"></div></div><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input"> 身高</label></div><div class="weui-cell__bd"><input name="height" class="weui-input font-color height" type="text" placeholder="请输入"></div></div><div class="weui-cell weui-cell_select weui-cell_select-after"><div class="weui-cell__hd"><label for="" class="weui-label  common-input"> 体型</label></div><div class="weui-cell__bd"><select class="weui-select option shape" name="shape"><option value="1" style="text-align: right">瘦子</option><option value="2" style="text-align: right">偏瘦</option><option value="3" style="text-align: right">适中</option><option value="4" style="text-align: right">健硕</option><option value="5" style="text-align: right">胖子</option></select></div></div><div class="weui-cell add-college" ><div class="weui-cell__hd"><label class="weui-label common-input"> 技能特长</label></div><div class="weui-cell__bd specialty"><div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div><div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div></div></div><div class="weui-cell add-college" ><div class="weui-cell__hd"><label class="weui-label common-input"> 特征</label></div><div class="weui-cell__bd specialty"><div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div><div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div></div></div><div><div class="weui-cells__title common-input">人物小传</div><div class="weui-cells weui-cells_form"><div class="weui-cell"><div class="weui-cell__bd"><textarea name="describe" class="weui-textarea actorData describe" placeholder="描述" rows="3"></textarea></div></div></div></div></div>

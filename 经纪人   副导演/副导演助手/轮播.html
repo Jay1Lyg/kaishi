@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery WeUI</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+
+
+    <style>
+        .swiper-container {
+            width: 100%;
+        }
+
+        .swiper-container img {
+            display: block;
+            width: 100%;
+        }
+        .swiper-pagination-bullet-active{
+            background: #4da2ad;
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><a href=""><img src="img/banner.png" /></a></div>
+        <div class="swiper-slide"><a href=""><img src="img/banner.png" /></a></div>
+        <div class="swiper-slide"><a href=""><img src="img/banner.png" /></a></div>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="js/jquery-2.1.4.js"></script>
+
+<script src="js/jquery-weui.js"></script>
+
+<script src="js/swiper.js"></script>
+
+<script>
+    $(".swiper-container").swiper({
+        loop: true,
+        autoplay: 3000
+    });
+</script>
+</body>
+</html>

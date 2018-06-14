@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="800" height="800" style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			
+			//1. 先绘制图形
+			ctx.rect(50,50,500,300);
+			
+			//2. 指定渐变的方向
+			//前两个参数是: 起始点坐标
+			//后两个参数是: 结束点坐标
+			var gradL = ctx.createLinearGradient(0,0,500,300);
+			
+			//3. 渐变的颜色
+			//一参: 相对位置  0-1  之间的数字
+			//二参: 颜色
+			gradL.addColorStop(0,"#f00")
+			gradL.addColorStop(0.5,"#ff0")
+			gradL.addColorStop(1,"#f0f")
+			
+			
+			//4. 将渐变应用到fillStyle
+			ctx.fillStyle = gradL;
+			
+			//5. 绘制
+			ctx.fill();
+			
+			
+			
+		</script>
+	</body>
+</html>

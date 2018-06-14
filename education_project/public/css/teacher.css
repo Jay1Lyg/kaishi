@@ -1,0 +1,85 @@
+.jum_white{
+    background: white;
+    width: 81%;
+    margin: 0 auto;
+}
+.jum_white h1{
+    font-size: 24px;
+    font-family: 微软雅黑;
+    color: #333333;
+    text-align: center;
+}
+.jum_white h2{
+    font-size: 20px;
+    font-family: 微软雅黑;
+    color: #333333;
+    text-align: center;
+}
+.jum_white p{
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: #333333;
+    line-height: 30px;
+    text-indent:35px;
+}
+
+.jum_hui2{
+    background: white;
+    width: 81%;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 40px;
+
+}
+.jum_hui2 h1{
+    font-size: 20px;
+    font-family: 微软雅黑;
+    color: #333333;
+    text-align: center;
+}
+.jum_hui2 p{
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: #333333;
+    line-height: 30px;
+}
+.jum_hui2 .hui_div{
+    padding: 0 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    height: 318px;
+    float: left;
+    width: 46.8%;
+
+}
+.divhui{
+    margin-left: 5%;
+}
+.hui_div h1{
+text-align: left;
+    font-size: 20px;
+    font-family: 微软雅黑;
+}
+.jum_hui2 .hui_div h2{
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: #333333;
+    line-height: 20px;
+}
+.jum_hui2 .hui_div p{
+    font-size: 14px;
+    font-family: 微软雅黑;
+    color: #333333;
+    line-height: 20px;
+}
+.b{
+    font-size: 16px;
+}
+.d1{
+    background: #f3f1fb;
+    overflow:hidden ;
+}
+.d2{
+    background: #fbfae9;
+    overflow:hidden ;
+}

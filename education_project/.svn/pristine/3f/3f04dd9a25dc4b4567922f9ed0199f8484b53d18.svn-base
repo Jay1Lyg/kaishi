@@ -1,0 +1,101 @@
+//
+   Created by Admin on 2017/8/3.
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 联系我们
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/couse.css')
+        link(rel='stylesheet', href='/css/save.css')
+        link(rel='stylesheet', href='/css/contactus.css')
+        script(src='js/jquery.js')
+        script(src='js/bootstrap.js')
+        script(src='js/first_page.js')
+        // <script src="js/less.js"></script>
+    body.container(style='padding:0')
+        header
+            .top_logo
+                img(src='/image/logo_option0.png', alt='')
+            div(style='border-top:1px solid black')
+                ul.nav.navbar-nav.ul2
+                    li.col-xs-4.col-sm-2
+                        a(href='/') 关于领智
+                    li.couse.col-xs-4.col-sm-2
+                        a 课程介绍
+                        ul.tab
+                            li
+                                a(href='/couse/bigdata') 大数据分析与应用
+                            li
+                                a(href='/couse/security') 网络与信息安全工程师
+                    li.col-xs-4.col-sm-2
+                        a(href='/campuslist') 校区一览
+                    li.col-xs-4.col-sm-2
+                        a(href='/teacher') 师资团队
+                    li.col-xs-4.col-sm-2
+                        a(href='/message') 综合消息
+                    li.col-xs-4.col-sm-2
+                        a(href='/contactus') 联系我们
+        section
+            div
+                img(width='100%', src='/image/contact.jpg', alt='')
+            .jumbotron.ID_content
+                .ID_title 报名材料：
+                br
+                div 1.身份证复印件
+                div 2.两寸免冠证件照4张
+                div 3.个人简历一份
+                div 4.报名申请费及住宿床位预定金600元 （可退）
+                div 5.报名邮箱：leadingwisdom@aliyuan.com
+                div(style='margin-left:50px;') (学生姓名+学校+专业+联系方式)
+            .jumbotron.ID_content(style='background:#fbfac9')
+                .ID_title 身份证复印件咨询及联系方式：
+                br
+                div 办公地址：北京市海淀区清华东路35号国家大学科技园
+                div 授课地址：北京邮电大学世纪学院校区
+                div 电话：010-62335969
+                div 网站：www.lingzhixueyuan.com
+                div
+                    | 微信公众号:lingzhixueyuan
+                    img.ID_code(src='/image/ma.jpg', alt='二维码')
+            a(href='/signup')
+                div(style='float: right;text-align: center;margin-right:20px')
+                    img(src='/image/baoming.png', alt='',width='50%')
+                    p(style='line-height:20px;color:#666666') 我要报名
+            div(style='clear: both')
+        .footer
+            div
+                ul.row.ul3
+                    li.col-xs-3.col-sm-1.col-sm-offset-2
+                        a(href='http://36kr.com')
+                            img(src='/image/1.png', alt='')
+                    li.col-xs-3.col-sm-1
+                        a(href='http://www.bupt.edu.cn')
+                            img(src='/image/2.png', alt='')
+                    li.col-xs-3.col-sm-1
+                        a(href='http://www.pku.edu.cn/')
+                            img(src='/image/3.png', alt='')
+                    li.col-xs-3.col-sm-1
+                        a(href='https://www.universityofcalifornia.edu/')
+                            img(src='/image/4.png', alt='')
+                    li.col-xs-3.col-sm-1
+                        a(href='http://www.ceiaec.org')
+                            img(src='/image/5.png', alt='')
+                    li.col-xs-3.col-sm-1
+                        a(href='https://www.tencent.com/zh-cn/')
+                            img(src='/image/6.png', alt='')
+                    li.col-xs-3.col-sm-1
+                        a(href='https://www.aliyun.com/')
+                            img(src='/image/7.png', alt='')
+                    li.col-xs-3.col-sm-1
+                        a(href='http://www.chinahitech.com.cn/')
+                            img(src='/image/8.png', alt='')
+                ul.row.ul4
+                    li.col-xs-12.col-sm-2.col-sm-offset-1 领智教育总部
+                    li.col-xs-12.col-sm-3 地址：北京市海淀区清华东路35号
+                    li.col-xs-12.col-sm-3 联系电话：010-62336169
+                    li.col-xs-12.col-sm-3 报名邮箱：leadingwisdom@aliyun.com

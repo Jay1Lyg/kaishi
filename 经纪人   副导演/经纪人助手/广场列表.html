@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>广场列表</title>
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/weui.css"/>
+    <style>
+        * {
+            padding: 0;
+
+            margin: 0;
+            list-style: none
+        }
+        .list{
+            height: 45px;
+            width: 100%;
+            background:#f2f2f2 ;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .list>img{
+            width:35px;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align:middle;
+            margin-right: 15px;
+        }
+        .list>span{
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="search">
+            <!--搜索内容-->
+            <div class="weui-search-bar" id="searchBar">
+                <form class="weui-search-bar__form">
+                    <div class="weui-search-bar__box">
+                        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                        <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                    </div>
+                    <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                        <i class="weui-icon-search"></i>
+                        <span>搜索</span>
+                    </label>
+                </form>
+                <a style="color: #4da2ad;font-size: 0.28rem;padding: 0.1rem">搜索</a>
+            </div>
+        </div>
+
+    </div>
+</header>
+<section>
+    <div class="list">
+        <img src="image/img1.png" alt="">
+        <span>副导演小胖子的工作室</span>
+    </div>
+</section>
+</body>
+<script>
+    $(document).attr("title","我被修改啦.哈哈");
+</script>
+</html>

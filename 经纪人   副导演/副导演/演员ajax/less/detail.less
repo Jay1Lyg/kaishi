@@ -1,0 +1,142 @@
+// title start
+.detail-header {
+    height: 48px;
+    width: 100%;
+}
+
+.detail-header div {
+    position: relative;
+}
+
+.detail-header div img {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    margin: 16px 0 0 5px;
+}
+
+.detail-header div p {
+    color: #222222;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    line-height: 48px;
+    text-align: center;
+}
+
+// title end
+// banner start
+.detail-banner {
+    width: 100%;
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .banner-job {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        text-align: right;
+        p {
+            height: 15px;
+            line-height: 15px;
+            font-size: 12px;
+            background-color: #909498;
+            color: #fff;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+            padding: 0 7px 0 7px;
+            border-radius: 3px;
+        }
+    }
+}
+
+// banner end
+// container start
+.detail-container {
+    position: relative;
+    width: 100%;
+    >div:first-child {
+        top: -49px;
+        >div {
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+            text-align: center;
+            height: 44px;
+            line-height: 44px;
+            p {
+                display: inline-block;
+            }
+            .tab-active {
+                height: 36px;
+                border-bottom: 2px solid #fff;
+            }
+        }
+    }
+    .contain-page {
+        position: absolute;
+        top: 16px;
+        left: 10px;
+        >div {
+            display: none;
+        }
+        .page-select {
+            display: block;
+        }
+        .exp-tv {
+            position: relative;
+            i {
+                display: block;
+                height: 10px;
+                background-color: #222222;
+                border: 2px solid #222;
+                border-radius: 3px;
+                position: absolute;
+                top: 3px;
+            }
+            h4 {
+                font-weight: 400;
+                padding-left: 14px;
+                font-size: 14px;
+            }
+            p {
+                line-height: 23px;
+                font-size: 14px;
+                color: #6e6e6e;
+                padding-left: 14px;
+            }
+            .exptv-name {
+                margin-top: 5px;
+            }
+        }
+        .page-base {
+            >div {
+                position: relative;
+            }
+            >div>p {
+                padding-left: 0;
+                margin: 20px 0 20px 0;
+            }
+            img {
+                width: 45px;
+                position: absolute;
+                top: 5px;
+                left: 20%;
+            }
+            .exp-skill {
+                p {
+                    margin-top: 10px;
+                }
+            }
+        }
+        .page-img{
+            width: 100%;
+            text-align: center;
+           img{
+                width: 100%;
+           }
+        }
+    }
+}
+
+// container end

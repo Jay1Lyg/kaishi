@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+    	html,body{
+    		height:100%;
+    	}
+    	footer{
+    		position: fixed;bottom:0;left:0;width:100%;
+    		
+    	}
+    	footer div{
+    		height:44px;line-height:44px;text-align:center;
+    		font-size:1.5em;
+    		background-color:#fafafa;
+    	}
+    	footer div.active{
+    		background-color:#f00;color:#fff;
+    	}
+    </style>
+</head>
+<body>
+	
+	
+	<footer class="display-box box-orient-h">
+		<div class="box-flex-1 active" onclick="changeIndex(0)">
+		   首页
+		</div>
+		<div class="box-flex-1" onclick="changeIndex(1)">
+		  课程
+		</div>
+		<div class="box-flex-1" onclick="changeIndex(2)">
+		  师资
+		</div>
+	</footer>
+</body>
+<!--<script src="../script/api.js"></script>-->
+<script src="../script/jquery-2.1.4.min.js"></script>
+<script>
+	apiready = function(){
+		api.openFrameGroup({
+		    name: 'group', 	//frame组的名字
+		    background: '#fff',
+		    scrollEnabled: false,  	//是否可以滑动
+		    rect: {					//frameGroup的位置与宽高
+		        x: 0,
+		        y: 0,
+		        w: 'auto',
+		        h: api.winHeight - 44
+		    },
+		    index: 0, 				//默认显示第几个, frame的索引
+		    frames: [{ 				//包含的每一个frame的数组
+		        name: 'frame1',
+		        url: 'frame1.html',
+		        bgColor: '#fff'
+		    }, {
+		        name: 'frame2',
+		        url: 'frame2.html',
+		        bgColor: '#fff'
+		    },{
+		    	name:'frame3',
+		    	url:'frame3.html',
+		    	bgColor:'#fff'
+		    }]
+		}, function(ret, err) {
+		    var index = ret.index;
+		});
+	};
+	
+//	var btns = $api.domAll('div');
+	
+	function changeIndex(index){
+//		for(var i=0;i<btns.length;i++){
+//			$api.removeCls(btns[i],'active')
+//		}
+//		$api.addCls(btns[index], 'active');
+		$('div').eq(index).addClass('active').siblings().removeClass('active');
+		//设置frame的索引
+		api.setFrameGroupIndex({
+		    name: 'group',
+		    index: index,
+		    scroll: false
+		});
+	}
+	
+</script>
+</html>

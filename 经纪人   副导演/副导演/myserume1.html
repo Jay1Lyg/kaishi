@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>我的简历</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/resume1.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body >
+
+<header id="header">
+    <div>
+        <img src="img/矩形-1-拷贝.png" alt="">
+        <p>我的简历</p>
+        <span class="submit-save">保存</span>
+    </div>
+</header>
+<form action='https://www.baidu.com' method='post' id="form" target="rfFrame" >
+<section>
+    <div class="banner-1">
+        <div class="page__bd page__bd_spacing " >
+            <img class="imgDis" src="1" alt="">
+            <a  class="weui-btn upload">上传封面</a>
+        </div>
+    </div>
+        <div class="page panel js_show">
+            <div class="page__bd">
+                <div class="weui-cells__title actor-data">基本资料</div>
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"><img src="img/必填项.png" class="must" alt=""> 艺名</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="text"  placeholder="请输入&gt">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"><img src="img/必填项.png" class="must" alt=""> 真实姓名</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="text" placeholder="请输入&gt">
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_select weui-cell_select-after">
+                        <div class="weui-cell__hd">
+                            <label for="" class="weui-label  common-input"><img src="img/必填项.png" class="must" alt=""> 性别</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <select class="weui-select option" name="select2">
+                                <option value="1" style="text-align: right">男</option>
+                                <option value="2" style="text-align: right">女</option>
+                                <option value="3" style="text-align: right">不限</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_switch">
+                        <div class="weui-cell__bd common-input"><img src="img/必填项.png" class="must" alt=""> 是否有经纪人</div>
+                        <div class="weui-cell__ft">
+                            <label for="switchCP" class="weui-switch-cp">
+                                <input id="switchCP" class="weui-switch-cp__input" type="checkbox"/>
+                                <div class="weui-switch-cp__box"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="weui-cell displayNone agent_tel">
+                        <div class="weui-cell__hd"><label class="weui-label common-input" ><img src="img/必填项.png" class="must" alt=""> 经纪人电话</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="number" pattern="[0-9]*" placeholder="请输入&gt">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label for="" class="weui-label common-input"><img src="img/必填项.png" class="must" alt=""> 出生年月</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input data actorData font "  type="date" value="">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input" ><img src="img/必填项.png" class="must" alt=""> 身高 cm</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="number" pattern="[0-9]*" placeholder="请输入&gt">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input" ><img src="img/必填项.png" class="must" alt="" > 体重 kg</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="number"  pattern="[0-9]*" placeholder="请输入&gt">
+                        </div>
+                    </div>
+
+                    <div class="weui-cells__title common-input"><img src="img/必填项.png" class="must" alt="" > 技能特长</div>
+                    <div class="weui-cells weui-cells_form">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <textarea class="weui-textarea actorData" placeholder="有什么特长，比如说民族舞、钢琴、绘画等" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cells__title common-input"><img src="img/必填项.png" class="must" alt=""> 自我介绍</div>
+                    <div class="weui-cells weui-cells_form">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <textarea class="weui-textarea actorData"  placeholder="介绍一下你自己吧" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cell add-college" >
+                        <div class="weui-cell__hd"><label class="weui-label common-input"><img src="img/必填项.png" class="must" alt=""> 毕业院校</label></div>
+                        <div class="weui-cell__bd">
+                            <input disabled  class="weui-input " type="text" placeholder="请输入&gt">
+                        </div>
+                    </div>
+                    <div class="weui-cells__title title-height">工作经历 </div>
+                    <div class="weui-panel__bd flex">
+                        <div class="weui-media-box weui-media-box_text movie-ex">
+                            <h4 class="weui-media-box__title"><img src="img/椭圆-1-拷贝.png" alt="">2016年&nbsp;网络电视剧《人民的名义》<span class="write" style="float: right"><a
+                                    href=""><img
+                                    src="img/编辑-拷贝.png" style="width: 20px ;height: 20px" alt=""></a></span></h4>
+                            <div class="weui-flex__item floatLeft"  >
+                            <img width="100%" height="100%" src="img/banner.png" alt="" style="border: 1px solid black">
+                             </div>
+                            <div class="weui-flex__item floatLeft">
+                                <img width="100%" height="100%"src="img/icon经纪人.png" alt="" style="border: 1px solid black">
+                            </div>
+                            <div class="weui-flex__item floatLeft">
+                                <img width="100%" height="100%" src="img/icon经纪人.png" alt="" style="border: 1px solid black">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-panel__bd flex">
+                        <div class="weui-media-box weui-media-box_text movie-ex">
+                            <h4 class="weui-media-box__title"><img src="img/椭圆-1-拷贝.png" alt="">2016年&nbsp;网络电视剧《人民的名义》<span class="write" style="float: right"><a href=""> <img  src="img/编辑-拷贝.png" style="width: 20px ;height: 20px" alt=""></a></span></h4>
+                            <div class="weui-flex__item floatLeft"  >
+                                <img width="100%" height="100%" src="img/banner.png" alt="" style="border: 1px solid black">
+                            </div>
+                            <div class="weui-flex__item floatLeft">
+                                <img width="100%" height="100%"src="img/icon经纪人.png" alt="" style="border: 1px solid black">
+                            </div>
+                            <div class="weui-flex__item floatLeft">
+                                <img width="100%" height="100%" src="img/icon经纪人.png" alt="" style="border: 1px solid black">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-btn">
+                        <a class="weui-btn add-live">+添加演艺经历</a>
+                    </div>
+                    <div class="weui-cells__title title-height">照片</div>
+                    <div class="page">
+                        <ul class="pic_ul">
+                            <li class="pic" >
+                                <img src="" alt="">
+                                <p>正面卡胸</p>
+                            </li>
+
+                            <li class=" pic">
+                                <img src="img/icon经纪人.png" alt="">
+                                <p>左侧45度卡胸
+                                </p>
+                            </li>
+
+                            <li class=" pic">
+                                <img src="" alt="">
+                                <p>右侧45度卡胸
+                                </p>
+                            </li>
+
+
+                            <li class=" pic" >
+                                <img src="" alt="">
+                                <p>右侧90度卡腰
+                                </p>
+                            </li>
+                            <li class="weui-flex__item pic">
+                                <img src="" alt="">
+                                <p>左侧90度卡腰
+                                </p>
+                            </li>
+
+                            <li class="weui-flex__item pic">
+                                <img src="" alt="">
+                                <p>正面卡腰
+                                </p>
+                            </li>
+
+
+                            <li class="weui-flex__item pic" >
+                                <img src="" alt="">
+                                <p>正面全身
+                                </p>
+                            </li>
+                            <li class="weui-flex__item pic">
+                                <img src="" alt="">
+                                <p>露额头正面卡胸
+                                </p>
+                            </li>
+
+                            <li class="weui-flex__item pic">
+                                <img src="" alt="">
+                                <p>艺术照
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    <div style="height: 35px"></div>
+    <div id="dialogs">
+        <div class="js_dialog" id="androidDialog2" style="display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog weui-skin_android">
+                <div class="weui-dialog__bd moveType">
+                    <p  style="text-align: center;">删除吗？</p>
+                </div>
+                <div class="weui-dialog__ft">
+                    <a onclick="" class="weui-dialog__btn movebtn" style="color: #4da2ad">确定</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog4-->
+    </div>
+
+</section>
+</form>
+<iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe>
+<footer>
+    <div class="page__bd page__bd_spacing ">
+        <a href="" class="weui-btn look-over">
+            <img src="img/眼--白.png" alt="">
+            预览简历</a>
+    </div>
+</footer>
+
+
+
+<script src="js/zepto.min.js"></script>
+<script src="js/zepto.cookie.js"></script>
+<script src="js/myserume.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+<script>
+    $(function () {
+        $(".pic_ul").on("click","li",function () {
+            var $this=$(this);
+            var $index=$this.index()+1;
+            var to=null;
+            var flag=false;
+            console.log($this.children("img").attr("src"));
+            console.log($index);
+            if($this.children("img").attr("src")!=""){
+                console.log("查看");
+            }else {
+
+
+                console.log("上传")
+            }
+        });
+        var time = 0;//初始化起始时间
+        $(".pic_ul").on('touchstart', 'li', function(e){
+            var $this=$(this);
+            var $index=$this.index()+1;
+            e.stopPropagation();
+            time = setTimeout(function(){
+                console.log("长按");
+                console.log($index);
+//                if($this.children("img").attr("src")!=""){
+                    $("#androidDialog2").fadeIn(200);
+//                }
+            }, 1000);//这里设置长按响应时间
+        });
+
+        $(".pic_ul").on('touchend', 'li', function(e){
+            e.stopPropagation();
+            clearTimeout(time);
+        });
+    })
+    $('#dialogs').on('click', '.weui-dialog__btn', function(){
+        $(this).parents('.js_dialog').fadeOut(200);
+    });
+    function dis() {
+        if($(".imgDis").attr("src")!=""){
+            $(".upload").css("display","none")
+        }
+    }
+    dis();
+    $(".upload").click(function () {
+        console.log($(this).prev("img"))
+        if($(this).prev("img").attr("src")!=""){
+
+        }else{
+            $(".upload").css("display","none")
+
+        }
+    });
+    $('#switchCP').click(function () {
+        if($('#switchCP').is(':checked')) {
+            $(".agent_tel").removeClass("displayNone")
+        }else{
+            $(".agent_tel").addClass("displayNone")
+        }
+    });
+    var img=document.querySelectorAll(".pic img");
+    function opacity() {
+
+        console.log(img)
+            }
+    opacity()
+</script>
+</body>
+</html>

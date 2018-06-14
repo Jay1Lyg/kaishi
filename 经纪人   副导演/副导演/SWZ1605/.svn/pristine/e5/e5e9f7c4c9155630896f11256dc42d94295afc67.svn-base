@@ -1,0 +1,17 @@
+apiready = function(){
+	//alert(JSON.stringify(api.pageParam)) //{"type":1}
+	var new_type = api.pageParam.type; //1-8  新闻类型字段
+	//"http://api.dagoogle.cn/news/get-news?tableNum="+ new_type
+	var base_url = "http://api.dagoogle.cn/news/get-news";
+	api.ajax({
+	    url: base_url + "?tableNum=" + new_type,
+	    method: 'get'
+	}, function(ret, err) {
+	    if (ret) {
+	    	//ret -> {"data":[]}
+	        api.alert({ msg: JSON.stringify(ret) });
+	    } else {
+	        api.alert({ msg: JSON.stringify(err) });
+	    }
+	});
+};

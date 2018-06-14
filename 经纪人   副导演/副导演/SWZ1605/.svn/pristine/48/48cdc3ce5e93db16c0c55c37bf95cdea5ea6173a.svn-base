@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+        img{
+            display: block;width: 100%;height: auto;
+        }
+    </style>
+</head>
+<body>
+	<h3></h3>
+    <script type="text/x-dot-template" id="news-template">
+            <h1>{{= it.title}}</h1>
+            <p>{{= it.content}}</p>
+
+    </script>
+    <div id="news"></div>
+</body>
+<script src="../script/api.js"></script>
+<script src="../script/doT.min.js"></script>
+<script>
+	apiready = function(){
+		var news_id = api.pageParam; //比如： {"name" : "tans-con"}
+        api.ajax({
+            url: 'http://api.dagoogle.cn/news/single-news?news_id=' + news_id.id,
+            method: 'get'
+        }, function(ret, err) {
+            if (ret) {
+                api.alert({ msg: JSON.stringify(ret) });
+                var tpl = $api.byId('news-template').text;
+                var tempFn = doT.template(tpl);
+                $api.html($api.byId('news'), tempFn(ret.data));
+            } else {
+                api.alert({ msg: JSON.stringify(err) });
+            }
+        });
+        $api.html($api.dom('h3'),JSON.stringify(news_id))
+	};
+</script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>演艺经历</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/serume-experience.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+</head>
+<body >
+<header id="header">
+    <div>
+        <img src="img/矩形-1-拷贝.png" alt="">
+        <p>演艺经历</p>
+        <span class="submit-save">保存</span>
+    </div>
+</header>
+<section>
+    <form action='' method='post'>
+
+            <div class="page__bd">
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell pic">
+                        <img  src="img/填写.png" class="imging" alt="">
+                        <img class="active imged" src="img/填写完毕.png" alt="">
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="text" placeholder="影片名" >
+                        </div>
+                    </div>
+                    <div class="weui-cell pic" id="showAndroidDialog2">
+                        <img  src="img/填写.png" class="imging moveing" alt="">
+                        <img class="active imged moved" src="img/填写完毕.png" alt="">
+                        <div class="weui-cell__bd">
+                           <input class="weui-input font-color" type="text" placeholder="影片类型" id="picker"/>  <!--// disabled="false"-->
+                        </div>
+                    </div>
+
+                    <div class="weui-cell pic">
+                        <img  src="img/填写.png" class="imging" alt="">
+                        <img class="active imged" src="img/填写完毕.png" alt="" >
+                        <div class="weui-cell__bd">
+                            <span class="span-none">毕业年份</span> <input class="weui-input data font-color "  type="date" style="color: #a0a0a0;font-size: 15px;width: 50%" value="">
+                        </div>
+                    </div>
+                    <div class="weui-cell pic">
+                        <img  src="img/填写.png" class="imging" alt="">
+                        <img class="active imged" src="img/填写完毕.png" alt="">
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="text" placeholder="角色名">
+                        </div>
+                    </div>
+                    <div class="weui-cell pic" id="showAndroidDialog1">
+                        <img  src="img/填写.png" class="imging actoring" alt="">
+                        <img class="active imged actored" src="img/填写完毕.png" alt="">
+                        <div class="weui-cell__bd">
+                            <input class="weui-input font-color" type="text"   placeholder="角色类型" id="moveActor">
+                        </div>
+                    </div>
+                    <div class="weui-cells__title common-input">添加照片</div>
+                    <div class="page">
+                        <div class="flex">
+                            <div class="weui-flex__item picture" >
+                                <img src="444" alt="">
+                            </div>
+                            <div class="weui-flex__item picture">
+                                <img src="" alt="">
+                            </div>
+
+                            <div class="weui-flex__item picture">
+                                <img src="img/banner.png" alt="">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="page__bd page__bd_spacing " style="margin-top: 120px">
+        <a href="" class="weui-btn upload">上传照片</a>
+    </div>
+    <div class="add-btn">
+        <a class="weui-btn add-live">删除此工作经历</a>
+    </div>
+</section>
+<script src="js/zepto.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jqWeui.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/myserume2.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+<script>
+//    var time = 0;//初始化起始时间
+//    $(".picture").on('touchstart', function(e){
+//        var $this=$(this);
+//        var $index=$this.index()+1;
+//        e.stopPropagation();
+//        time = setTimeout(function(){
+//            console.log("长按");
+//            console.log($index);
+//            $("#androidDialog").fadeIn(200);
+//        }, 1000);//这里设置长按响应时间
+//    });
+//
+//    $(".picture").on('touchend', function(e){
+//        e.stopPropagation();
+//        clearTimeout(time);
+//    });
+console.log($(".flex>div").length);
+if($(".flex>div").length>3){
+    alert("只能传3张")
+}else {
+
+}
+    $(".flex").on("click","div ",function () {
+        var $this=$(this);
+        var index=$(this).index();
+        var src=$this.children("img").attr("src");
+        console.log(index);
+        if(src!=""){
+            console.log("重新上传");
+            all()
+        }
+    });
+  function all() {
+      alert(11)
+  }
+$("#picker").picker({
+    title: "请选择",
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['供应商', '全部', '其他', '出品', '制片', '后期', '器材', '场景', '宣发', '导演', '录影', '摄影','服装','演员', '经纪人', '编剧','美术','造型','道具','音乐']
+        }
+    ]
+});
+</script>
+</body>
+</html>

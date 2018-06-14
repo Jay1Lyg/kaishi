@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>演员详情</title>
+    <!--<link rel="stylesheet" href="css/reset.css">-->
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/weui.css" />
+    <link rel="stylesheet" href="css/broker.css" />
+    <style>
+        *{padding: 0;margin: 0;list-style: none}
+    </style>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+</head>
+<body>
+<header>
+    <div class="newactor_banner">
+        <img src="image/img1.png" alt="">
+        <div>
+            <ul>
+                <li class="active">基本资料</li>
+                <li>参演经历</li>
+                <li>照片视频</li>
+                <li>接戏标准</li>
+            </ul>
+        </div>
+    </div>
+</header>
+<section>
+    <!--基本资料-->
+    <div class="information active">
+        <!--资料-->
+        <!--基本资料-->
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input"> 艺名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text"  placeholder="请输入艺名">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input">真实姓名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="请输入真实姓名">
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label  common-input"> 性别</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select option" name="select2">
+                        <option value="1" style="text-align: right">男</option>
+                        <option value="2" style="text-align: right">女</option>
+                        <option value="3" style="text-align: right">不限</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="" class="weui-label common-input"> 出生年月</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input  font "  type="date" value="">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="" class="weui-label common-input"> 三围</label></div>
+                <div class=" measurements">
+                    <input class="weui-input "  type="type" value="" placeholder="bust">
+                    <input class="weui-input "  type="type" value="" placeholder="waist">
+                    <input class="weui-input "  type="type" value="" placeholder="hip">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input" > 身高 cm</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="number" pattern="[0-9]*" placeholder="请输入身高">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input" >体重 kg</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="number"  pattern="[0-9]*" placeholder="请输入体重">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label common-input" >毕业院校</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="number"  pattern="[0-9]*" placeholder="请输入毕业院校">
+                </div>
+            </div>
+            <div class="weui-cell add-college" >
+                <div class="weui-cell__hd"><label class="weui-label common-input"> 技能特长</label></div>
+                <div class="weui-cell__bd specialty">
+                    <div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div>
+
+                </div>
+            </div>
+            <div class="weui-cell add-college" >
+                <div class="weui-cell__hd"><label class="weui-label common-input"> 特征</label></div>
+                <div class="weui-cell__bd specialty">
+                    <div><input  type="checkbox" name="specialty" value="" id="id1"><label for="id1">不限</label></div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+        <!--保存按钮
+        -->
+        <div class="newactor_button btn_information">
+            <button>保存并进行下一步</button>
+        </div>
+
+    </div>
+
+    <!--参演经历-->
+    <div class="experience">
+        <!--参演经历-->
+        <div class="display_experience">
+            <div>
+                <div class="photo_experience">
+                    <img src="image/img1.png" alt="">
+                </div>
+                <div class="detail_experience">
+                    <img src="image/copy.png" alt="">
+                    <ul>
+                        <li><span>剧名：</span>《寡妇》</li>
+                        <li><span>剧目类型：</span>电影</li>
+                        <li><span>饰演角色：</span>nana</li>
+                        <li><span>角色类型：</span>领携主演</li>
+                    </ul>
+                </div>
+                <div class="delete_experience">
+                    <p>删除</p>
+                </div>
+            </div>
+            <div>
+                <div class="photo_experience">
+                    <img src="image/img1.png" alt="">
+                </div>
+                <div class="detail_experience">
+                    <img src="image/copy.png" alt="">
+                    <ul>
+                        <li><span>剧名：</span>《寡妇》</li>
+                        <li><span>剧目类型：</span>电影</li>
+                        <li><span>饰演角色：</span>nana</li>
+                        <li><span>角色类型：</span>领携主演</li>
+                    </ul>
+                </div>
+                <div class="delete_experience">
+                    <p>删除</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="add_experience" >
+            <button>添加演绎经历</button>
+        </div>
+        <div class="newactor_button btn_experience">
+            <button>保存并进行下一步</button>
+        </div>
+    </div>
+    <!--照片视屏-->
+    <div class="photos">
+        <!--照片视屏-->
+        <div class="casting">
+            <h4 class="h4">照片</h4>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>正面卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>左侧45度卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>右侧45度卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>右侧90度卡腰</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>左侧90度卡腰</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>正面卡腰</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>正面全身</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>露额头正面卡胸</p>
+            </div>
+            <div>
+                <div>
+                    <img src="image/img1.png" alt="">
+                </div>
+                <p>生活照</p>
+            </div>
+
+        </div>
+        <div class="url">
+            <h4 class="h4">视频</h4>
+            <div>
+                <p>url：<input type="text"></p>
+            </div>
+        </div>
+        <div class="newactor_button btn_photos">
+            <button>保存并进行下一步</button>
+        </div>
+    </div>
+    <!--接戏标准-->
+    <div class="standard">
+        <!--接戏标准-->
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell" >
+                <div class="weui-cell__hd"><label class="weui-label common-input"><img src="img/必填项.png" class="must" alt="">剧目类型</label></div>
+                <div class="weui-cell__bd specialty">
+                    <div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div>
+
+                </div>
+            </div>
+            <div class="weui-cell" >
+                <div class="weui-cell__hd"><label class="weui-label common-input"><img src="img/必填项.png" class="must" alt="">角色类别</label></div>
+                <div class="weui-cell__bd specialty">
+                    <div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div>
+
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label  common-input"><img src="img/必填项.png" class="must" alt=""> 片酬：</label>
+                    <p class="no">(对外不公布)</p>
+                </div>
+                <div class="weui-cell__bd" >
+                    <select class="weui-select option" name="select2" style="width: 60%">
+                        <option value="1" style="text-align: right">请选择</option>
+                        <option value="1" style="text-align: right">0.1以下</option>
+                        <option value="2" style="text-align: right">0.1~0.5</option>
+                        <option value="3" style="text-align: right">0.5~1</option>
+                        <option value="4" style="text-align: right">1~3</option>
+                    </select>
+                    <span class="wan">万元/日</span>
+                </div>
+            </div>
+            <div class="weui-cell" >
+                <div class="weui-cell__hd"><label class="weui-label common-input"><img src="img/必填项.png" class="must" alt="">档期：</label></div>
+                <div class="weui-cell__bd specialty">
+                    <div><input  type="checkbox" name="specialty" value="" id="id"><label for="id">不限</label></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="newactor_button btn_standard">
+            <button>保存</button>
+        </div>
+    </div>
+</section>
+<div class="overlay"></div>
+<div class="dialogs_a" >
+    <div class="page__bd dialogs">
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell pic">
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="影片名" >
+                </div>
+            </div>
+            <div class="weui-cell pic" id="showAndroidDialog2">
+
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="影片类型" id="picker"/>  <!--// disabled="false"-->
+                </div>
+            </div>
+
+            <div class="weui-cell pic">
+
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="角色名">
+                </div>
+            </div>
+            <div class="weui-cell pic" id="showAndroidDialog1">
+
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text"   placeholder="角色类型" id="moveActor">
+                </div>
+            </div>
+            <div class="newactor_button " >
+                <button class="save_experience">保存</button>
+            </div>
+            <div class="weui-cells__title common-input">添加照片</div>
+            <div class="page" style="padding-bottom:0.5rem ">
+                <div class="picture">
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="newactor_button " >
+                <button class="save_experience">保存</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="dialogs_a" >
+    <div class="page__bd dialogs_delete">
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell pic">
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="影片名" >
+                </div>
+            </div>
+            <div class="weui-cell pic" id="showAndroidDialog4">
+
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="影片类型" id="picker1"/>  <!--// disabled="false"-->
+                </div>
+            </div>
+
+            <div class="weui-cell pic">
+
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text" placeholder="角色名">
+                </div>
+            </div>
+            <div class="weui-cell pic" id="showAndroidDialog3">
+
+                <div class="weui-cell__bd">
+                    <input class="weui-input font-color" type="text"   placeholder="角色类型" id="moveActor">
+                </div>
+            </div>
+            <div class="weui-cells__title common-input">添加照片</div>
+            <div class="page" style="padding-bottom:0.5rem ">
+                <div class="picture">
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="newactor_button " >
+                <button class="xiu_experience">修改</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+//    基本资料
+    $(".btn_information").click(function () {
+//        第一步提交
+
+        $(".information").removeClass("active")
+        $(".experience").addClass("active")
+        $(".newactor_banner div ul li").removeClass("active")
+        $(".newactor_banner div ul li").eq(1).addClass("active")
+    });
+//    参演经历
+    $(".btn_experience").click(function () {
+        $(".experience").removeClass("active")
+        $(".photos").addClass("active")
+        $(".newactor_banner div ul li").removeClass("active")
+        $(".newactor_banner div ul li").eq(2).addClass("active")
+    });
+//    照片视屏
+    $(".btn_photos").click(function () {
+        $(".photos").removeClass("active")
+        $(".standard").addClass("active")
+        $(".newactor_banner div ul li").removeClass("active")
+        $(".newactor_banner div ul li").eq(3).addClass("active")
+    })
+//接戏标准
+    $(".btn_standard").click(function () {
+        $.modal({
+            title: "成功",
+            text: "添加成功",
+            buttons: [
+                { text: "继续添加", onClick: function(){ $.alert("继续添加"); } },
+                { text: "添加完成", onClick: function(){ $.alert("添加完成"); } },
+            ]
+        });
+    })
+//添加演绎经历
+    $(".add_experience").click(function () {
+        $(".dialogs").css("display","block");
+        $(".overlay").css("display","block")
+    });
+    $(".save_experience").click(function () {
+
+        $(".dialogs").css("display","none");
+        $(".overlay").css("display","none");
+    });
+//    编辑修改
+    $(".display_experience").on("click","img",function () {
+        $(".dialogs_delete").css("display","block");
+        $(".overlay").css("display","block")
+    });
+$(".xiu_experience").click(function () {
+
+    $(".dialogs_delete").css("display","none");
+    $(".overlay").css("display","none");
+});
+    $("#picker").picker({
+        title: "请选择",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['供应商', '全部', '其他', '出品', '制片', '后期', '器材', '场景', '宣发', '导演', '录影', '摄影','服装','演员', '经纪人', '编剧','美术','造型','道具','音乐']
+            }
+        ]
+    });
+</script>
+</body>
+
+</html>
+<!--<div><div class="photo_experience"><img src="image/img1.png" alt=""></div><div class="detail_experience"><img src="image/copy.png" alt=""><ul><li><span>剧名：</span>《寡妇》</li><li><span>剧目类型：</span>电影</li><li><span>饰演角色：</span>nana</li><li><span>角色类型：</span>领携主演</li></ul></div><div class="delete_experience"><p>删除</p></div></div>-->

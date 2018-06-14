@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid #ccc;">
+			您的浏览器太旧
+		</canvas>
+		<script>
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			//设置canvas的宽高
+			
+			canvas.width = 800;
+			canvas.height = 800;
+			
+			//设置样式, 在绘制之前设置
+			ctx.strokeStyle = "#FF00FF"		//设置描边的颜色
+			ctx.lineWidth = 10;				//设置描边的粗细
+			ctx.lineCap = "round"			//设置端点	圆角
+			//ctx.lineCap = "butt"			
+			//ctx.lineCap = "square"
+			ctx.lineJoin = "bevel"		//连接点样式:  平
+			//ctx.lineJoin="miter"		//尖的
+			//ctx.lineJoin = "round"		//圆的
+			
+			//将起点移动到100,100的位置
+			ctx.moveTo(100,100);
+			//下一个绘制点 400,500
+			ctx.lineTo(200,400);
+			ctx.lineTo(300,100)
+			
+			
+			//绘制描边,  路径		只有绘制了,  上边的设置才能生效
+			ctx.stroke();
+			
+			
+			/*
+			canvas:
+				width:  300
+				hieght: 150
+				
+				canvas的宽高最好不用css去设置
+			
+			操作方法:
+				1. 获取到canvas元素
+				2. 指定2D场景
+				
+				//设置样式
+				ctx.strokeStyle = "#FF00FF"		//设置描边的颜色
+				ctx.lineWidth = 10;				//设置描边的粗细
+				//绘制点
+				ctx.moveTo(起点x坐标,起点y坐标)
+				ctx.lineTo(下一个点x,下一个点y)
+				ctx.lineCap = "round"	//设置端点样式
+				
+				ctx.stroke()	绘制描边
+			
+			*/
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="800" height="800" style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+
+			canvas.style.background = "url(../day02/img/girl.jpg) left top no-repeat"
+			canvas.style.backgroundSize = "cover"
+			
+			//设置字体样式
+			ctx.font="bold 40px '微软雅黑'"
+			ctx.strokeStyle = "rgba(255,255,255,.5)"
+			//设置对齐方式
+			ctx.textAlign = "right"	//水平方向对齐
+			ctx.textBaseline = "bottom"	//垂直方向
+			
+			ctx.strokeText("思软科技",canvas.width,canvas.height)
+			
+			
+			
+		</script>
+	</body>
+</html>

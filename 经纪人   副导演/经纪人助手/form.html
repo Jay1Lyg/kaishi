@@ -1,0 +1,56 @@
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>重设密码</title>
+
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/serume-experience.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<header id="header">
+    <div>
+        <a href=""><img src="img/x-灰.png" alt=""></a>
+        <p>重设密码</p>
+    </div>
+</header>
+
+<section>
+
+<div class="add-btn">
+    <button class="submitBtn">重设密码</button>
+    <p>注册即视为同意 <span>《用户协议和隐私条例》</span></p>
+</div>
+
+</section>
+<!--<script src="js/zepto.min.js"></script>-->
+<script src="js/jquery-2.1.4.js"></script>
+<script>
+    var data={
+        ddd:123
+    };
+    var url1=url+"/agent/a_allskilltypes/1/null";
+    $.ajax({
+        type : "get",
+        url : url1,
+        dataType : "jsonp",
+        // jsonp: "jsonpCallback",
+        success : function(data){
+            console.log(data);
+            var specialty = $(".specialty1").html();
+            var length=data.length;
+            for(var i=0;i<length;i++){
+                specialty += '<div><input  type="checkbox" name="specialty1" value="" id="'+data[i].id+'"><label for="'+data[i].id+'">'+data[i].name+'</label></div>'
+            }
+            $(".specialty1").html(specialty);
+        },
+        error:function(){
+            alert('fail');
+        }
+    });
+
+</script>
+</body>
+</html>

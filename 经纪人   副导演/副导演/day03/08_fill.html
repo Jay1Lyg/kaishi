@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid #ccc;"></canvas>
+		<script>
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			//stroke -> fill
+			
+			ctx.fillStyle = "#000";	//设置填充样式
+			ctx.strokeStyle = '#FFCC00'
+			ctx.lineWidth = 10;
+			ctx.moveTo(10,10);
+			ctx.lineTo(10,140)
+			ctx.lineTo(280,140);
+			ctx.lineTo(280,10);
+			ctx.closePath();
+			
+			ctx.stroke();
+			ctx.fill()		//绘制填充
+		</script>
+	</body>
+</html>

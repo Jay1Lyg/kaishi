@@ -1,0 +1,64 @@
+//
+   Created by Admin on 2017/8/4.
+
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 最新动态
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(Rel='ICON NAME', href='/image/linklogo.png')
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/lingzhi.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/weixin.js')
+        // <script src="js/less.js"></script>
+    body.container(style='padding: 0;')
+        header
+            .top_logo
+                a(href='/')
+                    img(src='/image/logo_option0.png', alt='')
+        section(style='width: 80%;margin: 0 auto;')
+            p(style='font-size:16px')
+                b 2017年中国互联网企业100强发布会在京召开
+            .font
+                span.data 2017-07-31
+                span.weixin
+                    | 领智学苑
+                    ul.tab1.row
+                        .col-xs-4
+                            img(width='100%', style='margin-top: 10px', src='/image/lingma.png', alt='')
+                        .col-xs-8
+                            p(style='margin-top: 5px;color: black')
+                                b 领智学苑
+                            p(style='font-size: 14px;color: #adadad')
+                                b(style='color: black;font-size: 14px') 微信号:
+                                | lingzhixueyuan
+                            p(style='font-size: 14px;color: #adadad')
+                                b(style='color: black;font-size: 14px') 功能介绍
+                                | “领智学苑”隶属于中教领智教育科技有限公司，是业界课程更新速度最快、涵盖范围最广、技术内容最新的IT职业教育机构。致力于“让科技助力未来”，以实战为特色，为注重自我提升的IT从业者和在校学生提供高品质的职业教育。
+                p
+                    | 2017年8月3日，中国互联网协会、工业和信息化部信息中心在京联合举办2017年中国互联网企业100强发布会暨百强企业CEO论坛。工业和信息化部党组成员、总工程师张峰出席会议并讲话。会议发布了2017年互联网百强企业名单，并对本次百强工作的评价方法和榜单新特点进行了深度解读。
+                .img_div
+                    img(src='/image/new_01.jpg', alt='第四个图片')
+                p
+                    | 张峰指出，在互联网行业蓬勃发展的形势下，中国互联网协会与部信息中心连续第五年开展的第三方中国互联网企业百强评价工作，树立了互联网产业发展“新标杆”，描绘了互联网与实体经济融合发展“新模式”，揭示了数字经济发展“新趋势”，将为全行业提供宝贵借鉴经验，为新常态下经济发展增添新动力，具有非常重要的现实意义。
+                p
+                    | 张峰提出两个“希望”：一是希望互联网协会和信息中心能够持之以恒，进一步加强深度调研、掌握产业发展的一手材料，丰富工作成果、对细分领域开展专题研究，将互联网百强评价工作做得更深、更细、更实，为网络强国、制造强国建设做出新的更大贡献；二是希望广大互联网企业强化大局观念和整体意识，将企业自身成长与国家战略、行业发展有机结合起来，找准业务定位，发挥各自优势，坚持创新引领和依法合规发展，促进互联网实现更广连接，激发互联网创新更大活力，推动互联网与实体经济更紧密融合。
+                p
+                    | 中国互联网协会理事长邬贺铨就数字金融和金融科技的发展现状及未来趋势进行了阐述，重点对区块链技术进行了展望；工业和信息化部信息中心主任孙蔚敏介绍了本年度百强企业体现的行业新特点，以及更好开展百强评价工作的下一步工作设想。中国互联网协会秘书长卢卫主持发布会。
+                p
+                    | 腾讯集团、黑龙江龙采科技集团、贵阳朗玛信息技术股份有限公司、有米科技股份有限公司、同程旅游集团、美团点评公司等企业负责人分享了在提升创新能力、建设完善生态环境、推进“双创”工作、壮大数字经济等方面积累的经验做法。
+                .img_div
+                    img(src='/image/new_02.jpg', alt='第四个图片')
+                .img_div
+                    img(src='/image/lin1.jpg', alt='第四个图片')
+            div(style='margin-bottom: 50px')
+                p
+                    | 阅读 12268
+                    img(style='margin-left: 5px', width='18px', src='image/zan.png', alt='')
+                    | 赞

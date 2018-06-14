@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>detail</title>
+    <link rel="stylesheet" href="./css/weui.css" />
+    <link rel="stylesheet" href="./css/detail.css">
+
+</head>
+
+<body>
+    <!-- title start -->
+    <header class="detail-header">
+        <div>
+            <img src="./img/矩形-1-拷贝.png" alt="">
+            <p>张依依</p>
+        </div>
+    </header>
+    <!-- title end -->
+    <!-- banner start -->
+    <div class="detail-banner">
+        <img src="./img/timg1.png" alt="">
+    </div>
+    <!-- banner end -->
+    <!-- container start -->
+    <div class="detail-container">
+        <div class="weui-tab">
+            <div class="weui-navbar">
+                <div class="weui-flex__item container-tab">
+                    <p class="tab-text">基本资料</p>
+                </div>
+                <div class="weui-flex__item container-tab">
+                    <p class="tab-text tab-active">演艺经历</p>
+                </div>
+                <div class="weui-flex__item container-tab">
+                    <p class="tab-text">照片</p>
+                </div>
+            </div>
+        </div>
+        <div class="contain-page">
+        </div>
+    </div>
+  hso;kjg;sklfghshfgsgfsr
+    <!-- container end -->
+
+
+
+    <script src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+    <script src="./js/detail.js"></script>
+    <script src="./node_modules/art-template/lib/template-web.js"></script>
+    <script type="text/html" id="artTemplate">
+        <div class="page-base">
+            <div class="exp-tv">
+                <i></i>
+                <h4 class="exptv-title">基本信息</h4>
+                <img src="./img/认证.png" alt="">
+                <p>艺名：{{ details.artname }}</p>
+                <p>真实姓名：{{ details.realname }}</p>
+                <p>生日：{{ details.birth }}</p>
+                <p>身高：{{ details.height }}</p>
+                <p>体重：{{ details.weight }}</p>
+                <p>毕业院校：{{ details.school }}</p>
+            </div>
+            <div class="exp-tv exp-skill">
+                <i></i>
+                <h4 class="exptv-title">技能特长</h4>
+                <p>{{ details.skill_name }}</p>
+            </div>
+            <div class="exp-tv exp-skill">
+                <i></i>
+                <h4 class="exptv-title">自我介绍</h4>
+                <p>{{ details.shortintroduce }}</p>
+            </div>
+        </div>
+        <div class="page-experience page-select">
+            <div class="exp-tv">
+                <i></i>
+                <h4 class="exptv-title">{{ details.productionPublishDate }} {{ details.productionType }} {{ details.productionName }}</h4>
+                <p class="exptv-name">{{ details.role }}</p>
+            </div>
+            <div class="page"></div>
+        </div>
+        <div class="page-img">
+            <ul>
+                <li>
+                    <img src="{{ details.frontimage }}" alt="">
+                    <p>正面卡胸</p>
+                </li>
+                <li>
+                    <img src="{{ details.leftimage45 }}" alt="">
+                    <p>左侧45度卡胸</p>
+                </li>
+                <li>
+                    <img src="{{ details.rightimage45 }}" alt="">
+                    <p>右侧45度卡胸</p>
+                </li>
+                <li>
+                    <img src="{{ details.rightimage90 }}" alt="">
+                    <p>右侧90度卡胸</p>
+                </li>
+                <li>
+                    <img src="{{ details.leftimage90 }}" alt="">
+                    <p>左侧90度卡胸</p>
+                </li>
+                <li>
+                    <img src="{{ details.frontimagewaist }}" alt="">
+                    <p>正面卡腰</p>
+                </li>
+                <li>
+                    <img src="{{ details.frontimageall }}" alt="">
+                    <p>正面全身</p>
+                </li>
+                <li>
+                    <img src="{{ details.rightimagehead }}" alt="">
+                    <p>露额头正面卡胸</p>
+                </li>
+                <li>
+                    <img src="{{ details.artimage }}" alt="">
+                    <p>生活照</p>
+                </li>
+            </ul>
+        </div>
+
+    </script>
+    <script>
+        $(function () {
+            var ajaxArr = [];
+            $.ajax({
+                type: "GET",
+                url: "http://www.kaishiapp.com/WX/wx_getactorresums/595b712b0e5c55c2260669ff",
+                dataType: "jsonp",
+                success: function (data) {
+                    var html = template('artTemplate', {
+                        details: data
+                    });
+                    $('.contain-page').html(html);
+                    console.log(data)
+                }
+            });
+
+        })
+        for(var a=0;a<imgUrl.length;a++){
+            for(var j=0;j<imgUrl.length;j++){
+                str+= '<div class="flex"><div class="weui-flex__item picture" ><img style="height: 120px" src="'+imgUrl[a].image_set.imagesURLArray[j]+'" alt=""></div></div>'
+            }
+        }
+    </script>
+
+</body>
+
+</html>

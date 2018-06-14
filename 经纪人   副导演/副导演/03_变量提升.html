@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			function fn(a,b){
+				console.log(a)	//function a(){}
+				function a(){}
+			}
+			fn(3)
+			
+			/*
+			JS预解析:
+				先找var function函数声明, 函数参数
+				找到var function函数声明 , 函数参数, 会将他们提升到当前作用域的最顶端
+				
+				如果函数名字与var声明的变量名字相同时:
+					函数声明的优先级  > var变量声明		
+				如果函数参数名字与内部函数名字及内部var变量声明的名字相同时:
+					函数声明的优先级   > 参数  > var变量声明的变量提升
+			
+			
+			1.	var a;
+				console.log(a)	//undefined
+			2.
+				console.log(a)	//undefined
+				var a = 1;
+				console.log(1)	//1
+				
+				实际过程:
+					var a;			//有var变量声明提升,但是只提升变量声明,不提升赋值操作
+					console.log(a)	//undefined
+					a = 1;
+					console.log(1)	//1
+			3.
+				a();
+				function a(){alert(1)}	//函数声明
+				实际过程:
+					function a(){alert(1)}
+					a();
+			
+			4. 
+				a();
+				var a = function(){		//函数表达式
+					alert(1)
+				}
+				实际过程:
+					var a;
+					a()		//a->undefined  报错
+					a = function(){alert(1)}
+			5.
+				console.log(a)	//function a(){alert(1)}	打印出完整的a函数体
+				function a(){alert(1)}
+			
+			6.	
+				alert(a)	
+				var a = 1;
+				alert(a)
+				function a(){}
+				alert(a)
+				实际过程:
+					var a;
+					function a(){}
+					alert(a)	//function a(){}
+					a=1
+					alert(a)	//1
+					alert(a)	//1
+			7. 	函数声明的优先级高于变量声明,如果变量声明与函数声明同名时,始终都会被函数声明覆盖
+				alert(a)	
+				function a(){}
+				var a = 1;
+				alert(a)
+				实际过程:
+					var a;
+					function a(){}
+					alert(a)	//function a(){}
+					a =1;
+					alert(a)	//1
+			8.
+				var a = 1;
+				function show(){
+					console.log(a);	//undefined
+					var a = 2;
+					console.log(a);	//2
+				}
+				show()
+				实际过程:
+					var a = 1;
+					function show(){
+						var a;
+						console.log(a);	//undefined
+						a = 2;
+						console.log(a);	//2
+					}
+					show()
+			9.
+				var a = 1;
+				function show(){
+					console.log(a);	//1
+					a = 2;
+					console.log(a);	//2
+				}
+				show()
+			10.
+				命名函数表达式中函数的名字,是不会进入名字空间的,  外部都取不到,  只能在其内部使用
+				alert(a)				//a is not defined  
+				var b = function a(){}	//命名的函数表达式
+				alert(a)				//a is not defined
+				
+				#____________________________________#
+				
+				var b = function a(){alert(a)}	//function a(){alert(a)}
+				b()  
+			11.
+				函数参数,会先将这里的a,b -> undefined
+				function fn(a,b){
+					console.log(a)	//undefined
+				}
+				fn()
+				
+				//参数的优先级   >  var 变量声明的优先级
+				
+				function fn(a,b){
+					console.log(a)	//3
+					var a = 1;
+				}
+				fn(3)
+				
+				//函数声明的优先级   > 参数  > var变量声明的变量提升
+				function fn(a,b){
+					console.log(a)	//function a(){}
+					function a(){}
+				}
+				fn(3)
+			
+			JS作用域:
+				JS只有函数作用域,判断循环都不是作用域
+				if(true){
+					var a = 1
+				}
+				alert(a)	//1
+				
+			
+				function show(){
+					var a = 1
+				}
+				alert(a)	// a is not defined
+			*/
+		</script>
+	</body>
+</html>

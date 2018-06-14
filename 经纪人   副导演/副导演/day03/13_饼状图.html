@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="600" height="600"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			var data = [
+				{
+					id: 123,
+					name: "Java",
+					value: "29%",
+					color: "#f0f"
+				},
+				{
+					id: 124,
+					name: "HTML5",
+					value: "31%",
+					color: "#0f0"
+				},
+				{
+					id: 125,
+					name: "VR",
+					value: "17%",
+					color: "#ff0"
+				},
+				{
+					id: 126,
+					name: "嵌入式",
+					value: "8%",
+					color: "#f00"
+				},{
+					id: 127,
+					name: "百度营销",
+					value: "15%",
+					color: "#12c"
+				}
+			];
+			
+			var startAngle = 0,endAndle = 0;
+			
+			for(var i=0,len=data.length;i<len;i++){
+				
+				//console.log(parseFloat(data[i].value))
+				//100	2π
+				//10  	0.2π
+				
+				endAndle = startAngle + parseFloat(data[i].value)*2*Math.PI/100;
+				//console.log(endAndle)
+				
+				ctx.beginPath()
+				ctx.moveTo(300,300)
+				ctx.fillStyle = data[i].color;
+				ctx.arc(300,300,140,startAngle,endAndle,false);
+				ctx.fill()
+				
+				startAngle = endAndle;
+			}
+			
+			
+			
+			
+			/*
+			//ctx.arc(x,y,radius,startAngle,endAngle,是否是逆时针)
+			
+			一个完整的圆弧是  2π  2*Math.PI
+			
+			五参:
+				true:	逆时针
+				false:  顺时针
+			*/
+		</script>
+	</body>
+</html>

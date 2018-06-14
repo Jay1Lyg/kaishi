@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../css/api.css"/>
+    <link rel="stylesheet" href="../css/swz_index.css">
+</head>
+<body>
+	<ul class="icon-bar clearfix">
+		<li>
+			<img src="../image/discount_u.png" alt="" />
+			<p>HTML5</p>
+		</li>
+		<li>
+			<img src="../image/film_u.png" alt="" />
+			<p>JavaScript</p>
+		</li>
+		<li>
+			<img src="../image/groupon_u.png" alt="" />
+			<p>jQuery</p>
+		</li>
+		<li>
+			<img src="../image/marry_u.png" alt="" />
+			<p>CSS3</p>
+		</li>
+		<li>
+			<img src="../image/takeaway_u.png" alt="" />
+			<p>Bootstrap</p>
+		</li>
+		<li>
+			<img src="../image/dish_o.png" alt="" />
+			<p>Angular</p>
+		</li>
+		<li>
+			<img src="../image/historic_o.png" alt="" />
+			<p>APICloud</p>
+		</li>
+		<li>
+			<img src="../image/performance_o.png" alt="" />
+			<p>MUI</p>
+		</li>
+		<li>
+			<img src="../image/mianbao.png" alt="" />
+			<p>NodeJS</p>
+		</li>
+		<li>
+			<img src="../image/more_o.png" alt="" />
+			<p>Express</p>
+		</li>
+	</ul>
+	<ul class="list-bar">
+	    <li class="display-box box-orient-h">
+	    	<img src="../image/bsk.png" alt="">
+	    	<div class="box-flex-1" style="overflow: hidden;">
+	    		<p class="title ellipsis">JavaScript</p>
+	    		<p class="text ellipsis">hello</p>
+    			<p class="ellipsis small">2017-12-9 南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园</p>
+	    	</div>
+	    </li>
+	    <li class="display-box box-orient-h">
+	    	<img src="../image/jyj.png" alt="">
+	    	<div class="box-flex-1" style="overflow: hidden;">
+	    		<p class="title ellipsis">JavaScript</p>
+	    		<p class="text ellipsis">hello</p>
+    			<p class="ellipsis small">2017-12-9 南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园</p>
+	    			
+	    	</div>
+	    </li>
+	    <li class="display-box box-orient-h">
+	    	<img src="../image/kfc.png" alt="">
+	    	<div class="box-flex-1" style="overflow: hidden;">
+	    		<p class="title ellipsis">JavaScript</p>
+	    		<p class="text ellipsis">hello</p>
+    			<p class="ellipsis small">2017-12-9 南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园</p>
+	    			
+	    	</div>
+	    </li>
+	    <li class="display-box box-orient-h">
+	    	<img src="../image/zgf.png" alt="">
+	    	<div class="box-flex-1" style="overflow: hidden;">
+	    		<p class="title ellipsis">JavaScript</p>
+	    		<p class="text ellipsis">hello</p>
+    			<p class="ellipsis small">2017-12-9 南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园南中环体育路口山西软件园</p>
+	    			
+	    	</div>
+	    </li>
+	</ul>
+</body>
+<script src="../script/api.js"></script>
+<script src="../script/swz_index.js"></script>
+</html>

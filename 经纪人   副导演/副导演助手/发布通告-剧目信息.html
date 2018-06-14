@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+   <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>发布通告</title>
+    <script type="text/javascript">
+//        document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 8 + "px";
+
+
+    </script>
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/jqueryWeui.css">
+    <link rel="stylesheet" href="css/giveNotice.css">
+</head>
+<body >
+
+    <header id="header">
+        <div>
+            <p>剧目信息</p>
+        </div>
+    </header>
+
+    <section >
+
+
+        <div class="page panel js_show">
+            <div class="page__bd">
+                <div class="weui-cells__title actor-data"></div>
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 剧名</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="production_name" class="weui-input font-color production_name"  type="text"  placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell" id="showAndroidDialog2">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 剧目类别</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="category_id" class="weui-input font-color category_id" type="text" placeholder="请选择" >
+                        </div>
+                    </div>
+                    <div class="weui-cell" >
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 剧目类型</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="category_id" class="weui-input font-color category_id" type="text" placeholder="请选择" >
+                        </div>
+                    </div>
+
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd" style="width: 40%"><label class="weui-label common-input"> 拍摄地</label></div>
+                        <div class="weui-cell__bd">
+                            <input  name="areaCode" class="areaCode weui-input font-color" type="text" placeholder="请输入" id="start" value="北京 北京市 东城区" readonly data-code="110101" data-codes="110000,110000,110101">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 见组地址：</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="date" class="date weui-input font-color actorData" type="text" placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input">报名截止日期</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="date" class="date weui-input font-color actorData" type="date" placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 拍摄周期（天）</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="date" class="date weui-input font-color actorData" type="number" placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input" > 出品公司（选填）</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="production_companies" class="protuction_companies weui-input font-color" type="text" placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label common-input"> 承制公司（选填）</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="issuser_companies" class="iss_companies weui-input font-color" type="text" placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd" ><label  class="weui-label common-input"> 投资规模（万元）</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="account" class="account weui-input font-color" type="number" placeholder="请输入">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd" ><label  class="weui-label common-input"> 演员预算</label></div>
+                        <div class="weui-cell__bd">
+                            <input name="account" class="account weui-input font-color" type="number" placeholder="请输入">
+                        </div>
+                    </div>
+
+            </div>
+            </div>
+        </div>
+</section>
+
+<footer>
+    <div class="page__bd page__bd_spacing ">
+        <a  class="weui-btn look-over">下一步</a>
+    </div>
+</footer>
+<div class="dialogs_leibie" id="androidDialog1" style="display: none;">
+    <img src="img/img1.png" alt=""  style="width:20px;float:right;padding:0.2rem 0.2rem 0 0">
+    <div class="specialty clearfix" >
+
+    </div>
+
+</div>
+<div class="overlay"></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/cityPicker.js"></script>
+<script src="js/jqWeui.js"></script>
+    <!--<script src="js/rootfont.js"></script>-->
+    <script src="js/jquery.cookie.js"></script>
+
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+<script>
+    $("#start").cityPicker({
+        title:"选择拍摄地",
+        onChange:function (picker,values) {
+            var a=values[2];
+            console.log(a);
+        }
+    });
+    $.ajax({
+        type : "get",
+        url : "http://www.kaishiapp.com/WX/wx_allproductiontypes/1/null",
+        dataType : "jsonp",
+        // jsonp: "jsonpCallback",
+        success : function(data){
+
+            var dataOne=data;
+            console.log(data);
+            var str = $('.specialty').html()
+            for(var i=0;i<dataOne.length;i++){
+                str += '<div><input  type="radio"  name="specialty" value="'+data[i].name+'" id="'+data[i].id+'"><label  for="'+data[i].id+'">'+data[i].name+'</label></div>'
+            }
+            $('.specialty').html(str)
+        },
+        error:function(){
+            alert('fail');
+        }
+    });
+
+    var $androidDialog1 = $('#androidDialog1');
+
+    $('#showAndroidDialog2').on('click', function(){
+        $('#androidDialog1').css("display","block");
+        $('.overlay').css("display","block");
+        $(".overlay").css({ "width": $(document).width(), "height": $(document).height() });
+
+    });
+
+    $.ajax({
+        type : "post",
+        url : leixing3,
+        data:arr22,
+        dataType : "jsonp",
+        success : function(data){
+            //alert("chengg")
+            $(".specialty6").empty();
+            console.log(data)
+
+        },
+        error:function(err){
+            console.log(err);
+            alert("fail")
+        }
+    })
+</script>
+
+</body>
+</html>
+
+<div class="weui-cells weui-cells_form">
+<div class="weui-cell">
+<div class="weui-cell__hd"><label class="weui-label common-input"> 剧名</label></div>
+<div class="weui-cell__bd">
+<input name="production_name" class="weui-input font-color production_name"  type="text"  placeholder="请输入">
+</div>
+</div>
+<div class="weui-cell" id="showAndroidDialog2">
+<div class="weui-cell__hd"><label class="weui-label common-input"> 剧目类别</label></div>
+<div class="weui-cell__bd">
+<input name="category_id" class="weui-input font-color category_id" type="text" placeholder="请选择" >
+</div>
+</div>
+<div class="weui-cell" >
+<div class="weui-cell__hd"><label class="weui-label common-input"> 剧目类型</label></div>
+<div class="weui-cell__bd">
+<input name="category_id" class="weui-input font-color category_id" type="text" placeholder="请选择" >
+</div>
+</div>
+
+<div class="weui-cell">
+<div class="weui-cell__hd" style="width: 40%"><label class="weui-label common-input"> 拍摄地</label></div>
+<div class="weui-cell__bd">
+<input  name="areaCode" class="areaCode weui-input font-color" type="text" placeholder="请输入" id="start" value="北京 北京市 东城区" readonly data-code="110101" data-codes="110000,110000,110101">
+</div>
+</div>
+<div class="weui-cell">
+<div class="weui-cell__hd"><label class="weui-label common-input"> 见组地址：</label></div>
+<div class="weui-cell__bd">
+<input name="date" class="date weui-input font-color actorData" type="text" placeholder="请输入">
+</div>
+</div>
+<div class="weui-cell">
+<div class="weui-cell__hd"><label class="weui-label common-input">报名截止日期</label></div>
+<div class="weui-cell__bd">
+<input name="date" class="date weui-input font-color actorData" type="date" placeholder="请输入">
+</div>
+</div>
+<div class="weui-cell">
+<div class="weui-cell__hd"><label class="weui-label common-input"> 拍摄周期（天）</label></div>
+<div class="weui-cell__bd">
+<input name="date" class="date weui-input font-color actorData" type="number" placeholder="请输入">
+</div>
+</div>
+<div class="weui-cell">
+<div class="weui-cell__hd"><label class="weui-label common-input" > 出品公司（选填）</label></div>
+<div class="weui-cell__bd">
+<input name="production_companies" class="protuction_companies weui-input font-color" type="text" placeholder="请输入">
+</div>
+</div>
+<div class="weui-cell">
+<div class="weui-cell__hd"><label class="weui-label common-input"> 承制公司（选填）</label></div><div class="weui-cell__bd"><input name="issuser_companies" class="iss_companies weui-input font-color" type="text" placeholder="请输入">
+</div></div>
+<div class="weui-cell"><div class="weui-cell__hd" ><label  class="weui-label common-input"> 投资规模（万元）</label></div>
+<div class="weui-cell__bd"><input name="account" class="account weui-input font-color" type="number" placeholder="请输入">
+</div></div><div class="weui-cell">
+<div class="weui-cell__hd" ><label  class="weui-label common-input"> 演员预算</label></div><div class="weui-cell__bd">
+<input name="account" class="account weui-input font-color" type="number" placeholder="请输入"></div></div>
+</div>
+
+<div class="weui-cells weui-cells_form"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input"> 剧名</label></div><div class="weui-cell__bd"><input name="production_name" class="weui-input font-color production_name"  type="text"  placeholder="请输入"></div></div><div class="weui-cell" id="showAndroidDialog2"><div class="weui-cell__hd"><label class="weui-label common-input"> 剧目类别</label></div><div class="weui-cell__bd"><input name="category_id" class="weui-input font-color category_id" type="text" placeholder="请选择" ></div></div><div class="weui-cell" ><div class="weui-cell__hd"><label class="weui-label common-input"> 剧目类型</label></div><div class="weui-cell__bd"><input name="category_id" class="weui-input font-color category_id" type="text" placeholder="请选择" ></div></div><div class="weui-cell"><div class="weui-cell__hd" style="width: 40%"><label class="weui-label common-input"> 拍摄地</label></div><div class="weui-cell__bd"><input  name="areaCode" class="areaCode weui-input font-color" type="text" placeholder="请输入" id="start" value="北京 北京市 东城区" readonly data-code="110101" data-codes="110000,110000,110101"></div></div><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input"> 见组地址：</label></div><div class="weui-cell__bd"><input name="date" class="date weui-input font-color actorData" type="text" placeholder="请输入"></div></div><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input">报名截止日期</label></div><div class="weui-cell__bd"><input name="date" class="date weui-input font-color actorData" type="date" placeholder="请输入"></div></div><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input"> 拍摄周期（天）</label></div><div class="weui-cell__bd"><input name="date" class="date weui-input font-color actorData" type="number" placeholder="请输入"></div></div><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input" > 出品公司（选填）</label></div><div class="weui-cell__bd"><input name="production_companies" class="protuction_companies weui-input font-color" type="text" placeholder="请输入"></div></div><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label common-input"> 承制公司（选填）</label></div><div class="weui-cell__bd"><input name="issuser_companies" class="iss_companies weui-input font-color" type="text" placeholder="请输入"></div></div><div class="weui-cell"><div class="weui-cell__hd" ><label  class="weui-label common-input"> 投资规模（万元）</label></div><div class="weui-cell__bd"><input name="account" class="account weui-input font-color" type="number" placeholder="请输入"></div></div><div class="weui-cell"><div class="weui-cell__hd" ><label  class="weui-label common-input"> 演员预算</label></div><div class="weui-cell__bd"><input name="account" class="account weui-input font-color" type="number" placeholder="请输入"></div></div>

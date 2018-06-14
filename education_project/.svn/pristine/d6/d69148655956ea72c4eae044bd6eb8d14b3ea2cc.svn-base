@@ -1,0 +1,89 @@
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 首页
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/couse.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/first_page.js')
+        // <script src="js/less.js"></script>
+    body.container(style='box-shadow: 0 0 5px #888888;')
+        header
+            .top_logo
+                img(src='image/logo_option0.png', alt='')
+            div(style='border-top:1px solid black')
+                ul.nav.navbar-nav.ul2
+                    li.col-xs-2
+                        a(href='#') 关于领智
+                    li.col-xs-2.couse
+                        a(href='#') 课程介绍
+                        ul.tab
+                            li 大数据分析与应用
+                            li 网络与信息安全工程师
+                    li.col-xs-2
+                        a(href='#') 校区一览
+                    li.col-xs-2
+                        a(href='#') 师资团队
+                    li.col-xs-2
+                        a(href='#') 最新综合消息
+                    li.col-xs-2
+                        a(href='#') 联系我们
+        section
+            div
+                img(width='100%', src='/image/xiao7.jpg', alt='')
+            .jumbotron.jum_white(style='margin-top: 20px;padding: 0')
+                div(style='text-align: center;')
+                    img(width='90%',height='336px', style='border-radius: 20px', src='/image/xiao1.jpg', alt='')
+            .jumbotron.jum_white(style='margin-top: 20px;padding: 0;')
+                div(style='text-align: center;')
+                    img(width='90%',height='336px',style='border-radius: 20px', src='/image/xiao2.jpg', alt='')
+            .jumbotron.jum_hui2(style='margin-top:20px;padding:0;')
+                .hui_divimg(style='float:left;width:45%;margin-left:5%;')
+                    img( style='width:90%;border-radius: 20px',height='336px', src='/image/xiao4.jpg', alt='')
+                .hui_divimg.divimg(style='float:left;width:45%;margin-left:5%;')
+                    img(style='width:90%;border-radius: 30px',height='336px', src='/image/xiao3.jpg', alt='')
+                div(style='clear: both')
+            .jumbotron.jum_white(style='margin-top: 20px;padding: 0;')
+                div(style='text-align: center;margin-top: 10px')
+                    img(width='90%',height='336px',style='border-radius: 20px', src='/image/xiao5.jpg', alt='')
+            .jumbotron.jum_white(style='margin-top: 20px;padding: 0;margin-bottom:100px')
+                div(style='text-align: center;margin-top: 10px')
+                    img(width='90%',height='336px',style='border-radius: 20px', src='/image/xiao6.jpg', alt='')
+        footer
+            div
+                ul.row.ul3
+                    li.col-xs-1.col-xs-offset-2
+                        a(href='')
+                            img(src='/image/1.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/2.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/3.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/4.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/5.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/6.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/7.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/8.png', alt='')
+                ul.row.ul4
+                    li.col-xs-2.col-xs-offset-1 领智教育总部
+                    li.col-xs-3 地址：北京市海淀区清华东路35号
+                    li.col-xs-2 联系电话：010-62336169
+                    li.col-xs-3 报名邮箱：leadingwisdom@aliyun.com

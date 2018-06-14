@@ -1,0 +1,58 @@
+//
+   Created by Admin on 2017/8/4.
+
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 领智学苑
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/lingzhi.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/weixin.js')
+        // <script src="js/less.js"></script>
+    body.container
+        header
+            .top_logo
+                a(href='/')
+                    img(src='/image/logo_option0.png', alt='')
+        section(style='width: 80%;margin: 0 auto')
+            .ling
+                p
+                    a(href='') 领智学苑
+                hr
+            .font
+                span.data 2017-07-31
+                span.weixin
+                    | 领智学苑
+                    ul.tab1.row
+                        .col-xs-4
+                            img(width='100%', style='margin-top: 10px', src='image/lingma.png', alt='')
+                        .col-xs-8
+                            p(style='margin-top: 5px;color: black')
+                                b 领智学苑
+                            p(style='font-size: 14px;color: #adadad')
+                                b(style='color: black;font-size: 14px') 微信号:
+                                | lingzhixueyuan
+                            p(style='font-size: 14px;color: #adadad')
+                                b(style='color: black;font-size: 14px') 功能介绍
+                                | “领智学苑”隶属于中教领智教育科技有限公司，是业界课程更新速度最快、涵盖范围最广、技术内容最新的IT职业教育机构。致力于“让科技助力未来”，以实战为特色，为注重自我提升的IT从业者和在校学生提供高品质的职业教育。
+                p
+                    | 中教领智（北京）教育科技有限公司是综合数据服务及教育信息化领域的新兴企业。公司拥有国际领先的“STEAM素质教育实验室解决方案”与自主研发的“智能深度学习高等教育实训实验室解决方案”。公司秉承“领异标新，智圆行方”的企业文化，拥有一支集海外归国人才与国内前沿学者相结合的高素质团队。目前，公司拥有教授（含正高级职称）3人、副教授7人、博士13人、硕士21人。合作伙伴遍及全球6个国家和地区，服务30余个国内外客户。
+                p
+                    | “领智学苑”隶属于中教领智教育科技有限公司，是IT职业教育线上+线下新型平台。致力于“让科技助力未来”，以实战为特色，为注重自我提升的IT从业者和在校学生提供高品质的职业教育。领智学苑IT职业培训涵盖前端，后段，移动全品类。数据挖掘、数据分析、机器学习、网络攻防模拟，信息安全等各学科依据职业需求设计课程，根据个人学习计划提供线下面授、线下小组协作、线上视频、图文、答疑、一对一辅导、推荐实习就业等服务。
+                p
+                    | 领智学苑是业界课程更新速度最快、涵盖范围最广、技术内容最新的IT职业教育机构。任课老师均来自于BAT等知名互联网公司以及国内外知名高校，并在全国7余所高校建立了“领智学苑IT培训基地”，连续3年实现了就业率94%的佳绩。
+                hr
+            .img_div
+                img(src='/image/lin1.jpg', alt='')
+            div(style='margin-bottom: 50px')
+                p
+                    | 阅读 18652
+                    img(style='margin-left: 5px', width='18px', src='/image/zan.png', alt='')
+                    | 赞

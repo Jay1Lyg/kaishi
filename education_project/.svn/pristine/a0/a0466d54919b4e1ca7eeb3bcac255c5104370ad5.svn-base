@@ -1,0 +1,72 @@
+//
+   Created by Admin on 2017/8/3.
+
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 首页
+        // <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/common.css')
+        link(rel='stylesheet', href='/css/couse.css')
+        link(rel='stylesheet', href='/css/save.css')
+        link(rel='stylesheet', href='/css/messdetail.css')
+        script(src='/js/jquery.js')
+        script(src='/js/bootstrap.js')
+        script(src='/js/first_page.js')
+        // <script src="js/less.js"></script>
+    body.container(style='box-shadow: 0 0 5px #888888;padding:0')
+        header
+            .top_logo
+                img(src='/image/logo_option0.png', alt='')
+            p.more_p
+                a(href='') 首页
+                |  > 
+                a(href='') 最新动态信息
+                |  > 
+                a(href='') 最新动态信息详情
+        section
+            .jumbotron
+                h4.text-center iPhone 8量产无忧：新固件显示苹果放弃Touch ID
+                .text-center 发表时间：2017-07-16
+                .more_content
+                    | 如果今年的iPhone 8放弃了Touch ID，大家也一定不用感到惊讶，按照苹果的个性来说，旧方案被放弃启用新方案后，那么它的体验一定是达标的，匆忙上新不是他们的风格。 最近，一直有传闻称，苹果要在iPhone 8上放弃Touch ID，事实恐怕真是如此。iOS开发者@r_idn在苹果HomePod的固件中发现，苹果在构建新的生物验证流程，简单点说就是，用户通过手机对面部的扫描功能来完成验证，当然这也支持Apple
+                    | Pay。 在固件中的com.apple.passbook.payment字符串中，开发者@r_idn发现了pearl.field-detect和pearl.pre-arm的支付验证数据，而这正是苹果面部识别系统的代码pearl
+                    | ID。
+                .text-center(style='margin-top:60px;')
+                    img(src='image/more.jpg', alt='手机照片')
+        footer
+            div
+                ul.row.ul3
+                    li.col-xs-1.col-xs-offset-2
+                        a(href='')
+                            img(src='/image/1.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/2.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/3.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/4.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/5.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/6.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/7.png', alt='')
+                    li.col-xs-1
+                        a(href='')
+                            img(src='/image/8.png', alt='')
+                ul.row.ul4
+                    li.col-xs-2.col-xs-offset-1 领智教育总部
+                    li.col-xs-3 地址：北京市海淀区清华东路35号
+                    li.col-xs-2 联系电话：010-62336169
+                    li.col-xs-3 报名邮箱：leadingwisdom@aliyun.com

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>SWZ1605</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+</head>
+<body>
+	<script>
+	apiready = function () {
+		api.openSlidLayout({
+		    type: 'left',
+		    fixedPane: {
+		        name: 'user',
+		        url: 'html/user.html',
+		        bgColor: '#fff',
+		        bounces: false,
+		        vScrollBarEnabled: true,
+		        hScrollBarEnabled: false
+		    },
+		    slidPane: {
+		        name: 'main',
+		        url: 'html/main.html',
+		        bgColor: '#fff',
+		        bounces: false,
+		        vScrollBarEnabled: true,
+		        hScrollBarEnabled: false
+		    }
+		}, function(ret, err) {
+		
+		});
+	}
+	</script>
+</body>
+</html>

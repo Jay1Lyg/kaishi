@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid #ccc;"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+
+			var image = new Image();
+			image.src = "../day02/img/girl.jpg";
+			image.onload = function(){
+				//画布的宽 = 图片的真实宽度  
+				canvas.width = this.width;
+				canvas.height = this.height;
+				ctx.drawImage(this,0,0,canvas.width,canvas.height)
+				//设置字体样式
+				ctx.font="bold 40px '微软雅黑'"
+				ctx.strokeStyle = "rgba(255,255,255,.5)"
+				//设置对齐方式
+				ctx.textAlign = "right"	//水平方向对齐
+				ctx.textBaseline = "bottom"	//垂直方向
+				
+				ctx.strokeText("思软科技",canvas.width,canvas.height)
+			}
+			
+			
+			
+			/*
+			ctx.drawImage(图片元素,起点x,起点y,结束x,结束y)
+			
+			*/
+			
+		</script>
+	</body>
+</html>

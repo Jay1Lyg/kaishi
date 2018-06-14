@@ -1,0 +1,134 @@
+.release-header {
+  height: 48px;
+  width: 100%;
+}
+.release-header div {
+  position: relative;
+}
+.release-header div img {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  margin: 16px 0 0 5px;
+}
+.release-header div p {
+  color: #222222;
+  font-size: 16px;
+  font-family: 微软雅黑;
+  line-height: 48px;
+  text-align: center;
+}
+.release-banner {
+  width: 100%;
+  position: relative;
+}
+.release-banner img {
+  width: 100%;
+}
+.release-container {
+  width: 100%;
+  position: relative;
+}
+.release-container > div:first-child {
+  top: -49px;
+}
+.release-container > div:first-child > div {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  height: 44px;
+  line-height: 44px;
+}
+.release-container > div:first-child > div p {
+  display: inline-block;
+}
+.release-container > div:first-child > div .tab-active {
+  height: 36px;
+  border-bottom: 2px solid #fff;
+}
+.release-container .contain-page {
+  position: relative;
+  top: 16px;
+  padding: 0 16px 0 10px;
+}
+.release-container .contain-page > div {
+  display: none;
+}
+.release-container .contain-page .page-select {
+  display: block;
+}
+.release-container .contain-page .exp-tv {
+  position: relative;
+}
+.release-container .contain-page .exp-tv i {
+  display: block;
+  height: 10px;
+  background-color: #222222;
+  border: 2px solid #222;
+  border-radius: 3px;
+  position: absolute;
+  top: 3px;
+}
+.release-container .contain-page .exp-tv h4 {
+  font-weight: 400;
+  padding-left: 14px;
+  font-size: 14px;
+}
+.release-container .contain-page .exp-tv p {
+  line-height: 23px;
+  font-size: 14px;
+  color: #6e6e6e;
+  padding-left: 14px;
+}
+.release-container .contain-page .exp-tv .exptv-name {
+  margin-top: 5px;
+}
+.release-container .contain-page .page-base > div {
+  position: relative;
+}
+.release-container .contain-page .page-base > div > p {
+  padding-left: 0;
+  margin: 20px 0 20px 0;
+}
+.release-container .contain-page .page-base img {
+  width: 45px;
+  position: absolute;
+  top: 5px;
+  left: 80px;
+}
+.release-container .contain-page .page-base .exp-skill p {
+  margin-top: 10px;
+}
+.release-container .contain-page .page-base .exp-skill .exptv-info {
+  text-indent: 2em;
+}
+.release-container {
+  width: 100%;
+}
+.release-container .contain-page .page-role {
+  width: 100%;
+}
+.release-container .contain-page .page-role > div {
+  position: relative;
+  margin-bottom: 5px;
+}
+.release-container .contain-page .page-role > div > div {
+  position: relative;
+}
+.release-container .contain-page .page-role > div > div .badge-role {
+  position: absolute;
+  font-size: 8px;
+  line-height: 1;
+  top: -5px;
+  right: 10px;
+  background-color: #eb4444;
+}
+.release-container .contain-page .page-role > div > div img {
+  width: 22px;
+  position: absolute;
+  right: -10px;
+  top: 0;
+}
+.release-container .contain-page .page-role p {
+  padding-bottom: 14px;
+}

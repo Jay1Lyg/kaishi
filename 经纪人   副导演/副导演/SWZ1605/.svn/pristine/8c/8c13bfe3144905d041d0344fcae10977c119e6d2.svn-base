@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="css/api.css" />
+</head>
+<body>
+	
+	<a href="">关闭</a>
+	<a href="" onclick="openStudent()">打开新窗口</a>
+	<script src="../script/api.js"></script>
+	<script>
+		var btn = $api.dom('a');
+		
+		//addEventListener
+		$api.addEvt(btn, 'touchend', function(){
+			closeMain();
+		}, false);
+		
+		function closeMain(){
+			api.closeFrame({
+				name:"main"
+			})
+		}
+		
+		//打开新窗口 openWin
+		//如果封装成函数就不要放到apiready中, 如果不是就必须放到apiready中
+		function openStudent(){
+			api.openWin({
+			    name: 'student',
+			    url: './student.html',
+			    animation:{
+			    	type:"movein",                //动画类型（详见动画类型常量）
+				    subType:"from_right",       //动画子类型（详见动画子类型常量）
+				    duration:300  
+			    },
+			    bgColor:'#FFF'
+			});
+		}
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>通告详情</title>
+    <!--<link rel="stylesheet" href="css/jqueryWeui.css">-->
+    <link rel="stylesheet" href="css/weui.css" />
+    <link rel="stylesheet" href="css/notice_actor.css" />
+    <script type="text/javascript">
+//        document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 8 + "px";
+    </script>
+    <style>
+        *{padding: 0;margin: 0;list-style: none}
+    </style>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/rootfont.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+
+</head>
+<body>
+
+<section>
+    <div>
+    <!--//匹配-->
+
+<div class="recommend_edit"><div><img src="img/img1.png" alt="" class="chart"></div><div><div id="main" style="width: 100px;height:132px;float: left;margin-top: 0.1rem"></div><ul class="pipei"><li><span class="one"></span>基本信息：</li><li><span class="two"></span>特征角色：</li><li><span class="three"></span>片酬需求：</li><li><span class="four"></span>档期匹配：</li></ul></div></div><div style="background: #f2f2f2;height: 0.1rem;clear: both"></div>
+    </div>
+
+    <div class="recommend_edit">
+        <div>
+            <img src="img/img1.png" alt="" class="chart">
+        </div>
+        <div>
+            <div id="main1" style="width: 100px;height:110px;float: left;"></div>
+            <ul class="pipei">
+                <li>基本信息：</li>
+                <li>特征角色：</li>
+                <li>片酬需求：</li>
+                <li>档期匹配：</li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+    <div style="background: #f2f2f2;height: 0.1rem;clear: both"></div>
+
+</section>
+</body>
+<script>
+    chart()
+function chart(){
+    var myChart = echarts.init(document.getElementById('main'));
+    var myChart1 = echarts.init(document.getElementById('main1'));
+    //app.title = '极坐标系下的堆叠柱状图';
+
+    var dataStyle = {
+        normal: {
+//            color: 'rgba(0,0,0,0.1)',
+            label: {show:false},
+            labelLine: {show:false}
+        }
+    };
+    var placeHolderStyle = {
+        normal : {
+            color: 'rgba(104,174,183,0.4)',
+            label: {show:false},
+            labelLine: {show:false}
+        },
+        emphasis : {
+            color: 'rgba(55,22,55,0)'
+        }
+    };
+    var placeHolderStyle1 = {
+        normal : {
+            color: 'rgba(104,174,183,0.3)',
+            label: {show:false},
+            labelLine: {show:false}
+        },
+        emphasis : {
+            color: 'rgba(55,22,55,0)'
+        }
+    };
+    var placeHolderStyle2 = {
+        normal : {
+            color: 'rgba(104,174,183,0.2)',
+            label: {show:false},
+            labelLine: {show:false}
+        },
+        emphasis : {
+            color: 'rgba(55,22,55,0)'
+        }
+    };
+    var placeHolderStyle3 = {
+        normal : {
+            color: 'rgba(104,174,183,0.1)',
+            label: {show:false},
+            labelLine: {show:false}
+        },
+        emphasis : {
+            color: 'rgba(55,22,55,0)'
+        }
+    };
+    var x=59;
+    option = {
+        title: {
+            text: '总匹：'+x+'%',
+            //subtext: '来自紫螺科技数据',
+            sublink: 'https://www.baidu.com',
+            x: 'center',
+            y: 'center',
+            itemGap: 10,
+            textStyle : {
+                color : 'rgba(30,144,255,0.8)',
+                fontFamily : '微软雅黑',
+                fontSize : 6,
+                fontWeight : 'bolder',
+            }
+        },
+        grid:{
+            x:0,
+            y:5,
+            x2:50,
+            y2:0,
+            borderWidth:1
+        },
+        tooltip : {
+            show: true,
+            formatter: "{a} <br/>{b}"
+        },
+        color:[
+            '#4da2ad','#adebf3','#cee7ea','#222222'
+        ],
+//        legend: {
+//            orient : 'vertical',
+//            x : document.getElementById('main').offsetWidth/1.7,
+//            y : 0,
+//            itemGap:12,
+//            data:['基本信息匹配度'+x+'%','29%的人表示生活压力很大','3%的人表示“我姓曾”']
+//        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: false},
+                dataView : {show: false, readOnly: false},
+                restore : {show: false},
+                saveAsImage : {show: false}
+            }
+        },
+        series : [
+            {
+                name:'基本信息',
+                type:'pie',
+                clockWise:false,
+                radius : [36, 45],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:x,
+                        name:'基本信息匹配度'+x+'%',
+                    },
+                    {
+                        value:100-x,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle
+                    }
+                ]
+            },
+            {
+                name:'特征角色',
+                type:'pie',
+                clockWise:false,
+                radius : [26, 35],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:x,
+                        name:'特征角色匹配度'+x+'%',
+                    },
+                    {
+                        value:100-x,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle1
+                    }
+                ]
+            },
+            {
+                name:'片酬需求',
+                type:'pie',
+                clockWise:false,
+                radius : [16, 25],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:29,
+                        name:'片酬需求匹配度'
+                    },
+                    {
+                        value:71,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle2
+                    }
+                ]
+            },
+            {
+                name:'档期匹配',
+                type:'pie',
+                clockWise:false,
+                radius : [5, 15],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:3,
+                        name:'档期匹配度'
+                    },
+                    {
+                        value:97,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle3
+                    }
+                ]
+            }
+        ]
+    };
+//    var dataStyle = {
+//        normal: {
+////            color: 'rgba(0,0,0,0.1)',
+//            label: {show:false},
+//            labelLine: {show:false}
+//        }
+//    };
+//    var placeHolderStyle = {
+//        normal : {
+//            color: 'rgba(55,55,55,0.1)',
+//            label: {show:false},
+//            labelLine: {show:false}
+//        },
+//        emphasis : {
+//            color: 'rgba(0,0,0,0)',
+//            label: {show:false},
+//            labelLine: {show:false}
+//        }
+//    };
+//    option = {
+//        title: {
+//            text: '你幸福吗？',
+//            subtext: 'From ExcelHome',
+//            sublink: 'http://e.weibo.com/1341556070/AhQXtjbqh',
+//            x: 'center',
+//            y: 'center',
+//            itemGap: 20,
+//            textStyle : {
+//                color : 'rgba(30,144,255,0.8)',
+//                fontFamily : '微软雅黑',
+//                fontSize : 35,
+//                fontWeight : 'bolder'
+//            }
+//        },
+//        tooltip : {
+//            show: true,
+//            formatter: "{a} <br/>{b} : {c} ({d}%)"
+//        },
+//        legend: {
+//            orient : 'vertical',
+//            x : document.getElementById('main').offsetWidth / 2,
+//            y : 45,
+//            itemGap:12,
+//            data:['68%的人表示过的不错','29%的人表示生活压力很大','3%的人表示“我姓曾”']
+//        },
+//        toolbox: {
+//            show : true,
+//            feature : {
+//                mark : {show: true},
+//                dataView : {show: true, readOnly: false},
+//                restore : {show: true},
+//                saveAsImage : {show: true}
+//            }
+//        },
+//        series : [
+//            {
+//                name:'1',
+//                type:'pie',
+//                clockWise:false,
+//                radius : [125, 150],
+//                itemStyle : dataStyle,
+//                data:[
+//                    {
+//                        value:68,
+//                        name:'68%的人表示过的不错'
+//                    },
+//                    {
+//                        value:32,
+//                        name:'invisible',
+//                        itemStyle : placeHolderStyle
+//                    }
+//                ]
+//            },
+//            {
+//                name:'2',
+//                type:'pie',
+//                clockWise:false,
+//                radius : [100, 125],
+//                itemStyle : dataStyle,
+//                data:[
+//                    {
+//                        value:29,
+//                        name:'29%的人表示生活压力很大'
+//                    },
+//                    {
+//                        value:71,
+//                        name:'invisible',
+//                        itemStyle : placeHolderStyle
+//                    }
+//                ]
+//            },
+//            {
+//                name:'3',
+//                type:'pie',
+//                clockWise:false,
+//                radius : [75, 100],
+//                itemStyle : dataStyle,
+//                data:[
+//                    {
+//                        value:3,
+//                        name:'3%的人表示“我姓曾”'
+//                    },
+//                    {
+//                        value:97,
+//                        name:'invisible',
+//                        itemStyle : placeHolderStyle
+//                    }
+//                ]
+//            }
+//        ]
+//    };
+
+
+    myChart.setOption(option);
+    myChart1.setOption(option);
+}
+
+</script>
+</html>

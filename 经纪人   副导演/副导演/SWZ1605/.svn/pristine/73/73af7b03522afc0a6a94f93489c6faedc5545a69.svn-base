@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+		<link rel="stylesheet" href="css/api.css" />
+	</head>
+	<body>
+		
+		<script type="text/x-dot-template" id="news-lists-template">
+			{{ for(var i=0;i<it.length;i++){ }}
+				<div data-id={{= it[i].news_id}} onclick="openNews({{= it[i].news_id}})">
+					<h1>{{= it[i].title}}</h1>
+					<img src={{= it[i].top_image}} alt="top_image">
+					<br>
+					<img src={{= it[i].text_image0}} alt="text_image0">
+					<br>
+					<img src={{= it[i].text_image1}} alt="text_image1">
+					<p>新闻来源：<span>{{= it[i].source}}</span>评论数：<span>{{= it[i].reply_count}}</span>编辑时间：<span>{{= it[i].edit_time}}</span></p>
+					<p>{{= it[i].digest}}</p>
+				</div>
+			{{ } }}
+		</script>
+		<div id="news-lists">
+			
+		</div>
+
+		<script src="../script/api.js"></script>
+		<script src="../script/doT.min.js"></script>
+		<script>
+		apiready = function () {
+			api.ajax({
+				url : 'http://api.dagoogle.cn/news/get-news',
+				method : 'get',
+				data : {
+					values : {
+						tableNum : 1,
+						page:1,
+						pagesize:10,
+						justList:1
+					}
+				}
+			}, function(ret, err) {
+				if (ret) {
+					var tpl = $api.byId('news-lists-template').text;
+		            var tempFn = doT.template(tpl);
+					$api.html($api.byId('news-lists'), tempFn(ret.data));
+				} else {
+					api.toast({
+	                    msg:'err'
+                    });
+				}
+			});
+		}
+
+		function openNews(news_id){
+			api.openWin({
+			    name: 'news',
+			    url: './news.html',
+			    pageParam: {
+			        id: news_id
+			    }
+			});
+		}
+		</script>
+	</body>
+</html>

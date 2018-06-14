@@ -1,0 +1,15 @@
+/**
+ * Created by Admin on 2017/8/4.
+ */
+$(function () {
+    $(".sub_btn").click(function () {
+        if($(".name").val()&&$(".sex").val()&&$(".date").val()&&$(".birthplace").val()&&$(".school").val()&&$(".specialty").val()&&$(".graduation_time").val()&&$(".specialty_bao").val()&&$(".phone").val()&&$(".email").val()&&$(".qq").val()&&$(".address").val()){
+            
+            $("#form").submit();
+            //window.location.href = "http://60.205.221.101";
+        }else {
+            alert("请完善您的信息")
+        }
+
+    })
+})

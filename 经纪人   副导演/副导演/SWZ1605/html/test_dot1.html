@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+</head>
+<body>
+	
+	<script type="text/x-dot-template" id="tml">
+		<h1>姓名是: {{= it.name }}</h1>
+		<p>性别是: <span>{{= it.sex}}</span>年龄是: <span>{{= it.age}}</span></p>
+	</script>
+	
+	<div id="name"></div>
+	
+</body>
+<script src="../script/api.js"></script>
+<script src="../script/doT.min.js"></script>
+<script>
+	var data = {
+		"name":"wally",
+		"sex":"man",
+		"age":17
+	}
+	
+	var tml = $api.byId("tml").text;
+	var tmlFn = doT.template(tml)
+	
+	$api.html($api.byId("name"),tmlFn(data))
+	/*
+	1. 引dot.js文件
+	2. 建模板 <script type="text/x-dot-template" id="tml">
+		type="text/x-dot-template"
+		给个id,方便js调用
+		模板内部赋值  {{= it.key }}  it代表赋给他的数据对象,key就是对象中的key值
+	3. 模板解析后存放的位置<div id="name"></div>
+	4. 构建、获取、解析数据
+	5. 获取模板中的内容，var tml = $api.byId("tml").text;
+	6. doT模板解析函数，var tmlFn = doT.template(tml)
+	7. 将模板绑定数据，解析后的内容，tmlFn(data) 存放到html中$api.byId("name")
+		$api.html($api.byId("name"),tmlFn(data))
+	*/
+</script>
+</html>

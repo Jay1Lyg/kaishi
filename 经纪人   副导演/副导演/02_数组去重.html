@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				border: 1px solid #4da2ad;margin-left: 10px;color:#4da2ad;border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			var arr = [1,13,24,11,11,14,1,2]
+			/*
+			var obj = {
+				name:'wally',
+				1:true
+			}
+			alert(obj[1])
+			*/
+			function clearRepeat(arr){
+				var result=[],
+					obj = {};
+				for(var i=0,len=arr.length;i<len;i++){
+					//obj.arr[i]
+					if(!obj[arr[i]]){
+						obj[arr[i]] = true;
+						result.push(arr[i])
+					}
+				}
+				return result;
+			}
+			
+			alert(clearRepeat(arr));
+			
+			/*
+			1.新建一个空的数据 result, 空的对象obj
+				obj={
+					1:true,
+					13:true
+				}
+			2.遍历数组,如果obj的key中没有当前值,就将其设置为obj的key值,并且添加到result
+				
+			3.最后返回result
+			
+			*/
+		</script>
+	</body>
+</html>
