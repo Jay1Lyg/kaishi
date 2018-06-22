@@ -1,0 +1,115 @@
+.outDiv{
+  background-color:#000;
+  text-align:center;
+  top :0px;left: 0;
+  height: 10000px;
+  width: 10000px;
+  position:fixed;
+  opacity:0.3;
+  z-index: 5;
+}
+
+.centerMain{
+  margin:auto;
+  width: 684px;
+  /* height:400px; */
+  min-height:400px;
+  max-height:600px;
+  z-index: 9;
+  position: absolute;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;  
+  top:0;left:0;bottom: 0;right: 0;
+}
+
+.cenHeader{
+  height: 60px;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  background-color: #4da3ad;  
+}
+.cenBody{
+  height:100%;
+  width:100%;
+  background-color: #fff;
+}
+.headLeft{
+  float:left;  
+  color:#fff;
+  font-size:20px;
+  margin-left:10px;  
+  line-height:60px;
+}
+.headRtPoi{
+  width:50px;  
+  float:right;
+  height:60px;
+  cursor: pointer;
+}
+.headRt{
+  width:35px;
+  height:3px;
+  float:right;  
+  margin-top:30px;
+  margin-right:15px;
+  background-color: #c3f5fe;  
+}
+.cenDetail{
+  margin:auto;
+  font-size: 14px;
+  color:#949494;
+  width:460px;
+  padding-top:20px;
+}
+.showMsg{
+  margin-top:20px;
+}
+.oneCeil{
+  margin:auto;
+  margin-bottom:10px;
+  
+  width: 460px;
+}
+.ceilLeft{
+  border:1px solid #e5e5e2;
+  width: 280px;
+  height: 45px;
+  border-radius: 4px;
+  float: left;  
+}
+.ceilLeft .nowImg{
+  width:30px;
+  height:30px;
+  margin-top:7px;
+  margin-left:12px;
+  border-radius: 4px;
+}
+.proTitle{
+  color:#333;
+  line-height: 44px;
+  margin-left:10px;
+}
+
+
+.cliSubImg{
+  color:#86bfc6;
+  font-size:14px;
+  display: block;
+  float: left;
+  margin-left:20px;
+  line-height: 44px;
+}
+.cliSubImg:active,.cliSubImg:hover{
+  color:#4da2ad;
+}
+.cliSubImg:focus{
+  color:#4da2ad;      
+}
+.successSub{
+  margin:auto;
+  display:block;
+  width: 114px;
+  position:absolute;
+  left:285px;
+  bottom: 0px;
+}

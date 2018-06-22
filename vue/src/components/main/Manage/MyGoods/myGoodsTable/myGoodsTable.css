@@ -1,0 +1,62 @@
+.myGoodsHeader .el-tabs__item {
+  margin-left:70px;
+  margin-right:120px;
+  height:50px;
+  line-height:50px;
+}
+
+.myGoodsHeader .el-tabs__active-bar{
+  margin-left:70px;
+  margin-right:120px;
+}
+ th .cell{
+  text-align: center;
+}
+.myGoodsFooter{
+  margin-top:50px;
+}
+.letfTwo{
+  width:120px;
+  position:absolute;
+  right:200px;
+  top:150px;
+}
+.leftUpdate{
+  right:80px;
+}
+
+.theClass{
+  width:120px; 
+  height: 53px;
+  border-bottom:1px solid #ebeef5;
+  line-height: 60px;
+  font-weight: bold;
+  font-size:14px;
+  color:#909399;
+}
+.theClassIn{
+  height:73px;
+  line-height: 73px;
+}
+.theClass .cell1{
+ line-height:50px;
+}
+.smllSleck{
+  height:0px;
+  width:0px;
+  border:none;
+  position:relative;
+  bottom:49px;
+  left:108px;
+}
+.smllSleck .el-cascader{
+  width:15px;
+  height:15px;
+}
+.smllSleck .el-input__inner{
+  border:none;
+  width:0;
+}
+.smllSleck .el-cascader__label{
+  opacity:0;  
+}

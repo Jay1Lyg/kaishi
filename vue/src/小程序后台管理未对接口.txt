@@ -1,0 +1,178 @@
+
+ 我的商品
+ 
+  2.上架/下架商品
+    接口：/program/ShelfOrLowerGoods（post）
+    请求参数：production_id
+              ifonshelves(上架---true 下架---false)    
+
+  3.根据价格排序
+    接口：/program/sortProductionByPrice（post）
+    请求参数：
+              index(=1 升序，=2降序)
+              userid
+              page
+              ifonshelves   
+
+  4.根据销量排序
+    接口：/program/sortProductionBySales（post）
+    请求参数：
+              index(=1 升序，=2降序)
+              userid
+              page
+              ifonshelves
+
+  5.根据分类排序
+    接口：/program/sortProductionByCategory（post）
+    请求参数：
+              userid
+              page
+              ifonshelves
+              personaltotalclass_id
+              firstclass_id
+              secondclass_id
+
+
+  6.删除商品
+    接口：/program/deleteProduction（post）
+    请求参数：productionid（数组）
+
+  7.查询商品详情
+    接口：/program/searchProductionDetails（post）
+    请求参数：productionid
+
+  8.删除规格
+    接口：/program/deleteSpecification（post）
+    请求参数：specifications_id
+
+  10.查询单条商品规格
+    接口：/program/searchSingleSpecification（post）
+    请求参数：specifications_id
+    
+  12.重新上传商品规格图片
+    接口：/program/reuploadSpecificationImage（post）
+    请求参数：specification_id
+             images_upload
+    
+  13.查询单条商品参数
+    接口：/program/searchSingleGoodsparameter（post）
+    请求参数：parameter_id
+
+
+  9.删除商品参数
+    接口：/program/deleteGoodsparameter（post）
+    请求参数：goodsParameters_id
+
+  14.编辑商品参数
+    接口：/program/editgoodsparameters（post）
+    请求参数：parameter_id;
+              parameterName;
+              parameterContent;
+
+  11.编辑商品规格
+    接口：/program/editSpecification（post）
+
+    请求参数： specification_id;
+               taste_name;
+               production_id
+               price;
+               inventory;
+       
+  15.编辑商品文本信息
+    接口：/program/editBasicProductionInfo（post）
+    请求参数： title;
+               present_price;
+               original_price;
+               freight;
+               personaltotalclass_id;
+               firstclass_id;
+               secondclass_id;
+
+
+    16.查询用户创建的所有分类
+    接口：/program/searchallCategoryCreateByUser（post）
+    请求参数：user_id
+
+
+
+
+
+
+
+
+
+首页设置
+
+  1.查询被选中的商品
+    接口：/program/searchCarouselProduction（post）
+    请求参数： user_id
+
+  2.设置轮播图
+    接口：/program/setCarouselImage（post）
+    请求参数：production_id   user_id
+
+  3.删除轮播商品
+    接口：/program/deleteCarouselProduction（post）
+    请求参数：carouselImage_id
+
+  4.根据商品名称查询商品
+    接口：/program/searchProductionByName（post）
+    请求参数：name
+
+
+
+  5.设置店长推荐商品
+    接口：/program/setRecommendGood（post）
+    请求参数：production_id(数组)
+
+  6.删除店长推荐商品
+    接口：/program/deleteRecommendGood（post）
+    请求参数：production_id
+
+
+
+  7.设置优惠券
+    接口：/program/setCoupon（post）
+    请求参数： userid;
+               full_money;
+               reduce_money;
+               start_time;
+               end_time;
+
+  8.删除优惠券
+    接口：/program/deleteCoupon（post）
+    请求参数：coupon_id
+
+  9.活动设置
+    接口：/program/setActivityInfo（post）
+    请求参数：userid  freeShiping_num
+
+  10.删除活动设置
+    接口：/program/deleteActivityInfo（post）
+    请求参数：activity_id
+
+
+  11.查询单条优惠券信息
+    接口：/program/searchSingleCouponInfo（post）
+    请求参数：coupon_id
+
+  12.编辑优惠券信息
+    接口：/program/editCouponInfo（post）
+    请求参数：coupon_id;
+              full_money;
+              reduce_money;
+              start_time;
+              end_time;
+
+  13.点击确认发布，修改活动设置
+    接口：/program/editHomePageInfo（post）
+    请求参数：freeShiping_num  userid
+
+  
+  14.查询首页设置信息
+    接口：/program/searchHomepageInfo（post）
+    请求参数： user_id
+
+  15.确认发布首页轮播商品
+    接口：/program/confirmPublishCarouselProduction（post）
+    请求参数：productionIdArray（数组）
